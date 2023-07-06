@@ -2,6 +2,8 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+
 //import 'package:flutter/services.dart';
 
 void main() {
@@ -28,7 +30,7 @@ class ReUpApp extends StatelessWidget {
 }
 
 final controller = PageController(
-  initialPage: 1,
+  initialPage: 0,
 );
 
 class MainPage extends StatelessWidget {
@@ -37,33 +39,63 @@ class MainPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-        child: Stack(children: [
-      Container(
-        height: 702,
-        child: PageView(
-          controller: controller,
-          children: const [
-            Promo(),
-            Promo(),
-          ],
+        child: SizedBox(
+      //height: MediaQuery.of(context).size.height,
+      child: Column(
+        children: [
+          Container(
+            height: 734, //678
+            child: PageView(
+              controller: controller,
 
-          //верстка дальше
-        ),
+              children: [
+                Promo(
+                    data: PromoData(
+                        Image(image: AssetImage('assets/images/reup_img1.jpg')),
+                        Image(image: AssetImage('assets/images/reup_img2.jpg')),
+                        'новый бренд',
+                        'Befree',
+                        'Наше дело не так однозначно, как может показаться: существующая теория напрямую зависит от стандартных подходов. Идейные соображения высшего порядка, а также разбавленное изрядной долей ')),
+                Promo(
+                    data: PromoData(
+                        Image(image: AssetImage('assets/images/reup_img1.jpg')),
+                        Image(image: AssetImage('assets/images/reup_img2.jpg')),
+                        '1',
+                        '1',
+                        '1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111 ')),
+              ],
+
+              //верстка дальше
+            ),
+          ),
+          Text('data'),
+        ],
       ),
-    ]));
+    ));
   }
 }
 
+class PromoData {
+  final Image img1;
+  final Image img2;
+  final String title;
+  final String subtitle;
+  final String text;
+
+  PromoData(this.img1, this.img2, this.title, this.subtitle, this.text);
+}
+
 class Promo extends StatelessWidget {
-  const Promo({super.key});
+  final PromoData data;
+  const Promo({super.key, required this.data});
 
   @override
   Widget build(BuildContext context) {
     return Column(children: [
-      const Image(image: AssetImage('assets/images/reup_img1.jpg')),
-      const Image(image: AssetImage('assets/images/reup_img2.jpg')),
+      data.img1,
+      data.img2,
       Container(
-          height: 276,
+          //height: 284, //276 284
           padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 20),
           decoration: const BoxDecoration(color: Colors.white),
           child: Column(
@@ -74,7 +106,7 @@ class Promo extends StatelessWidget {
               SizedBox(
                 width: double.infinity,
                 child: Text(
-                  'новый бренд',
+                  data.title,
                   style: GoogleFonts.delaGothicOne(
                     color: Colors.black,
                     fontSize: 32,
@@ -86,6 +118,7 @@ class Promo extends StatelessWidget {
               ),
               const SizedBox(height: 20),
               Container(
+                // линия
                 width: double.infinity,
                 decoration: const ShapeDecoration(
                   shape: RoundedRectangleBorder(
@@ -105,18 +138,18 @@ class Promo extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text('Befree',
+                      Text(data.subtitle,
                           style: GoogleFonts.delaGothicOne(
                             color: Colors.black,
                             fontSize: 20,
                             fontWeight: FontWeight.w400,
                             letterSpacing: 0.80,
                           )),
-                      const SizedBox(
+                      SizedBox(
                         width: double.infinity,
                         child: Text(
-                          'Наше дело не так однозначно, как может показаться: существующая теория напрямую зависит от стандартных подходов. Идейные соображения высшего порядка, а также разбавленное изрядной долей ',
-                          style: TextStyle(
+                          data.text,
+                          style: const TextStyle(
                             fontFamily: 'Gilroy',
                             color: Colors.black,
                             fontSize: 14,
@@ -125,6 +158,31 @@ class Promo extends StatelessWidget {
                           ),
                         ),
                       ),
+                      const SizedBox(
+                        height: 16,
+                      ),
+                      Align(
+                        //more button
+                        alignment: Alignment.centerLeft,
+                        child: IconButton(
+                          onPressed: (() {
+                            log('more');
+                          }),
+                          icon: SvgPicture.asset(
+                              'assets/icons/reup_icon_more.svg'),
+                          iconSize: 36,
+                        ),
+                      )
+                      // Align(
+                      //   alignment: Alignment.centerLeft,
+                      //   child: IconButton(
+                      //     onPressed: (() {
+                      //       log('more');
+                      //     }),
+                      //     icon: SvgPicture.asset('assets/icons/Button.svg'),
+                      //     iconSize: 40,
+                      //   ),
+                      // )
                     ]),
               ),
             ],
@@ -156,7 +214,8 @@ class AppBar extends StatelessWidget {
                   letterSpacing: 0.96,
                 )),
             IconButton(
-                icon: const Icon(Icons.search), //вставить реаповскую иконку
+                icon: const ImageIcon(AssetImage(
+                    'assets/icons/reup_search.png')), //вставить реаповскую иконку
                 iconSize: 32,
                 onPressed: (() {
                   log('message');
