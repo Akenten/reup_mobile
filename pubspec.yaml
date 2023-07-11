@@ -68,6 +68,11 @@ flutter:
     - assets/icons/reup_search.svg
     - assets/icons/reup_search.png
     - assets/icons/reup_icon_more.svg
+    - assets/icons/reup_icon.svg
+    - assets/icons/reup_icon_list.svg
+    - assets/icons/reup_icon_cart.svg
+    - assets/icons/reup_icon_favorite.svg
+    - assets/icons/reup_icon_profile.svg
   #  - assets/fonts/Gilroy-Light.ttf
     
   #   - images/a_dot_burr.jpeg
