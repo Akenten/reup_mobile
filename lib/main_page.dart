@@ -41,217 +41,208 @@ class MainPage extends StatelessWidget {
             //верстка дальше
           ),
         ),
-        Column(
+        Row(
           children: [
-            Row(
-              children: [
-                Expanded(
-                    flex: 1,
-                    child: OutlinedButton(
-                        onPressed: (() {
-                          log('more');
-                        }),
-                        style: ButtonStyle(
-                            alignment: Alignment.centerRight,
-                            padding:
-                                MaterialStateProperty.all<EdgeInsetsGeometry>(
-                                    EdgeInsets.only(right: 16)),
-                            shape: MaterialStateProperty.all<
-                                    RoundedRectangleBorder>(
+            Expanded(
+                flex: 1,
+                child: OutlinedButton(
+                    onPressed: (() {
+                      log('more');
+                    }),
+                    style: ButtonStyle(
+                        alignment: Alignment.centerRight,
+                        padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
+                            EdgeInsets.only(right: 16)),
+                        shape:
+                            MaterialStateProperty.all<RoundedRectangleBorder>(
                                 const RoundedRectangleBorder(
                                     borderRadius: BorderRadius.zero,
                                     side: BorderSide(
                                         color: Colors.black, width: 1)))),
-                        child: const Text('верхняя одежда',
-                            style: TextStyle(
-                              fontFamily: 'Gilroy',
-                              color: Colors.black,
-                              fontSize: 16,
-                              fontWeight: FontWeight.w700,
-                              letterSpacing: 1.12,
-                            )))),
-                Expanded(
-                    flex: 1,
-                    child: OutlinedButton(
-                        onPressed: (() {
-                          log('more');
-                        }),
-                        style: ButtonStyle(
-                            shape: MaterialStateProperty.all<
-                                    RoundedRectangleBorder>(
+                    child: const Text('верхняя одежда',
+                        style: TextStyle(
+                          fontFamily: 'Gilroy',
+                          color: Colors.black,
+                          fontSize: 16,
+                          fontWeight: FontWeight.w700,
+                          letterSpacing: 1.12,
+                        )))),
+            Expanded(
+                flex: 1,
+                child: OutlinedButton(
+                    onPressed: (() {
+                      log('more');
+                    }),
+                    style: ButtonStyle(
+                        shape:
+                            MaterialStateProperty.all<RoundedRectangleBorder>(
+                                const RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.zero,
+                                    side: BorderSide(
+                                      color: Colors.black,
+                                      width: 1,
+                                    )))),
+                    child: const Text('обувь',
+                        style: TextStyle(
+                          fontFamily: 'Gilroy',
+                          color: Colors.black,
+                          fontSize: 16,
+                          fontWeight: FontWeight.w700,
+                          letterSpacing: 1.12,
+                        ))))
+          ],
+        ),
+        Row(
+          children: [
+            Expanded(
+                flex: 1,
+                child: OutlinedButton(
+                    onPressed: (() {
+                      log('more');
+                    }),
+                    style: ButtonStyle(
+                        alignment: Alignment.centerLeft,
+                        padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
+                            EdgeInsets.only(left: 89)),
+                        shape:
+                            MaterialStateProperty.all<RoundedRectangleBorder>(
                                 const RoundedRectangleBorder(
                                     borderRadius: BorderRadius.zero,
                                     side: BorderSide(
                                         color: Colors.black, width: 1)))),
-                        child: const Text('обувь',
-                            style: TextStyle(
-                              fontFamily: 'Gilroy',
-                              color: Colors.black,
-                              fontSize: 16,
-                              fontWeight: FontWeight.w700,
-                              letterSpacing: 1.12,
-                            ))))
-              ],
-            ),
-            Row(
-              children: [
-                Expanded(
-                    flex: 1,
-                    child: OutlinedButton(
-                        onPressed: (() {
-                          log('more');
-                        }),
-                        style: ButtonStyle(
-                            alignment: Alignment.centerLeft,
-                            padding:
-                                MaterialStateProperty.all<EdgeInsetsGeometry>(
-                                    EdgeInsets.only(left: 89)),
-                            shape: MaterialStateProperty.all<
-                                    RoundedRectangleBorder>(
+                    child: const Text('сумки',
+                        style: TextStyle(
+                          fontFamily: 'Gilroy',
+                          color: Colors.black,
+                          fontSize: 16,
+                          fontWeight: FontWeight.w700,
+                          letterSpacing: 1.12,
+                        )))),
+            Expanded(
+                flex: 1,
+                child: OutlinedButton(
+                    onPressed: (() {
+                      log('more');
+                    }),
+                    style: ButtonStyle(
+                        alignment: Alignment.centerRight,
+                        padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
+                            EdgeInsets.only(right: 32)),
+                        shape:
+                            MaterialStateProperty.all<RoundedRectangleBorder>(
                                 const RoundedRectangleBorder(
                                     borderRadius: BorderRadius.zero,
                                     side: BorderSide(
                                         color: Colors.black, width: 1)))),
-                        child: const Text('сумки',
-                            style: TextStyle(
-                              fontFamily: 'Gilroy',
-                              color: Colors.black,
-                              fontSize: 16,
-                              fontWeight: FontWeight.w700,
-                              letterSpacing: 1.12,
-                            )))),
-                Expanded(
-                    flex: 1,
-                    child: OutlinedButton(
-                        onPressed: (() {
-                          log('more');
-                        }),
-                        style: ButtonStyle(
-                            alignment: Alignment.centerRight,
-                            padding:
-                                MaterialStateProperty.all<EdgeInsetsGeometry>(
-                                    EdgeInsets.only(right: 32)),
-                            shape: MaterialStateProperty.all<
-                                    RoundedRectangleBorder>(
+                    child: const Text('рубашки',
+                        style: TextStyle(
+                          fontFamily: 'Gilroy',
+                          color: Colors.black,
+                          fontSize: 16,
+                          fontWeight: FontWeight.w700,
+                          letterSpacing: 1.12,
+                        ))))
+          ],
+        ),
+        Row(
+          children: [
+            Expanded(
+                flex: 1,
+                child: OutlinedButton(
+                    onPressed: (() {
+                      log('more');
+                    }),
+                    style: ButtonStyle(
+                      alignment: Alignment.centerLeft,
+                      padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
+                          EdgeInsets.only(left: 40)),
+                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                          const RoundedRectangleBorder(
+                              borderRadius: BorderRadius.zero,
+                              side: BorderSide(color: Colors.black, width: 1))),
+                    ),
+                    child: const Text('платья',
+                        style: TextStyle(
+                          fontFamily: 'Gilroy',
+                          color: Colors.black,
+                          fontSize: 16,
+                          fontWeight: FontWeight.w700,
+                          letterSpacing: 1.12,
+                        )))),
+            Expanded(
+                flex: 1,
+                child: OutlinedButton(
+                    onPressed: (() {
+                      log('more');
+                    }),
+                    style: ButtonStyle(
+                        alignment: Alignment.centerRight,
+                        padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
+                            EdgeInsets.only(right: 100)),
+                        shape:
+                            MaterialStateProperty.all<RoundedRectangleBorder>(
                                 const RoundedRectangleBorder(
                                     borderRadius: BorderRadius.zero,
                                     side: BorderSide(
                                         color: Colors.black, width: 1)))),
-                        child: const Text('рубашки',
-                            style: TextStyle(
-                              fontFamily: 'Gilroy',
-                              color: Colors.black,
-                              fontSize: 16,
-                              fontWeight: FontWeight.w700,
-                              letterSpacing: 1.12,
-                            ))))
-              ],
-            ),
-            Row(
-              children: [
-                Expanded(
-                    flex: 1,
-                    child: OutlinedButton(
-                        onPressed: (() {
-                          log('more');
-                        }),
-                        style: ButtonStyle(
-                            alignment: Alignment.centerLeft,
-                            padding:
-                                MaterialStateProperty.all<EdgeInsetsGeometry>(
-                                    EdgeInsets.only(left: 40)),
-                            shape: MaterialStateProperty.all<
-                                    RoundedRectangleBorder>(
+                    child: const Text('костюмы',
+                        style: TextStyle(
+                          fontFamily: 'Gilroy',
+                          color: Colors.black,
+                          fontSize: 16,
+                          fontWeight: FontWeight.w700,
+                          letterSpacing: 1.12,
+                        ))))
+          ],
+        ),
+        Row(
+          children: [
+            Expanded(
+                flex: 1,
+                child: OutlinedButton(
+                    onPressed: (() {
+                      log('more');
+                    }),
+                    style: ButtonStyle(
+                        alignment: Alignment.center,
+                        shape:
+                            MaterialStateProperty.all<RoundedRectangleBorder>(
                                 const RoundedRectangleBorder(
                                     borderRadius: BorderRadius.zero,
                                     side: BorderSide(
                                         color: Colors.black, width: 1)))),
-                        child: const Text('платья',
-                            style: TextStyle(
-                              fontFamily: 'Gilroy',
-                              color: Colors.black,
-                              fontSize: 16,
-                              fontWeight: FontWeight.w700,
-                              letterSpacing: 1.12,
-                            )))),
-                Expanded(
-                    flex: 1,
-                    child: OutlinedButton(
-                        onPressed: (() {
-                          log('more');
-                        }),
-                        style: ButtonStyle(
-                            alignment: Alignment.centerRight,
-                            padding:
-                                MaterialStateProperty.all<EdgeInsetsGeometry>(
-                                    EdgeInsets.only(right: 100)),
-                            shape: MaterialStateProperty.all<
-                                    RoundedRectangleBorder>(
+                    child: const Text('штаны',
+                        style: TextStyle(
+                          fontFamily: 'Gilroy',
+                          color: Colors.black,
+                          fontSize: 16,
+                          fontWeight: FontWeight.w700,
+                          letterSpacing: 1.12,
+                        )))),
+            Expanded(
+                flex: 1,
+                child: OutlinedButton(
+                    onPressed: (() {
+                      log('more');
+                    }),
+                    style: ButtonStyle(
+                        alignment: Alignment.centerRight,
+                        padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
+                            EdgeInsets.only(right: 16)),
+                        shape:
+                            MaterialStateProperty.all<RoundedRectangleBorder>(
                                 const RoundedRectangleBorder(
                                     borderRadius: BorderRadius.zero,
                                     side: BorderSide(
                                         color: Colors.black, width: 1)))),
-                        child: const Text('костюмы',
-                            style: TextStyle(
-                              fontFamily: 'Gilroy',
-                              color: Colors.black,
-                              fontSize: 16,
-                              fontWeight: FontWeight.w700,
-                              letterSpacing: 1.12,
-                            ))))
-              ],
-            ),
-            Row(
-              children: [
-                Expanded(
-                    flex: 1,
-                    child: OutlinedButton(
-                        onPressed: (() {
-                          log('more');
-                        }),
-                        style: ButtonStyle(
-                            alignment: Alignment.center,
-                            shape: MaterialStateProperty.all<
-                                    RoundedRectangleBorder>(
-                                const RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.zero,
-                                    side: BorderSide(
-                                        color: Colors.black, width: 1)))),
-                        child: const Text('штаны',
-                            style: TextStyle(
-                              fontFamily: 'Gilroy',
-                              color: Colors.black,
-                              fontSize: 16,
-                              fontWeight: FontWeight.w700,
-                              letterSpacing: 1.12,
-                            )))),
-                Expanded(
-                    flex: 1,
-                    child: OutlinedButton(
-                        onPressed: (() {
-                          log('more');
-                        }),
-                        style: ButtonStyle(
-                            alignment: Alignment.centerRight,
-                            padding:
-                                MaterialStateProperty.all<EdgeInsetsGeometry>(
-                                    EdgeInsets.only(right: 16)),
-                            shape: MaterialStateProperty.all<
-                                    RoundedRectangleBorder>(
-                                const RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.zero,
-                                    side: BorderSide(
-                                        color: Colors.black, width: 1)))),
-                        child: const Text('аксессуары',
-                            style: TextStyle(
-                              fontFamily: 'Gilroy',
-                              color: Colors.black,
-                              fontSize: 16,
-                              fontWeight: FontWeight.w700,
-                              letterSpacing: 1.12,
-                            ))))
-              ],
-            ),
+                    child: const Text('аксессуары',
+                        style: TextStyle(
+                          fontFamily: 'Gilroy',
+                          color: Colors.black,
+                          fontSize: 16,
+                          fontWeight: FontWeight.w700,
+                          letterSpacing: 1.12,
+                        ))))
           ],
         )
       ],
