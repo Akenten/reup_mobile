@@ -3,6 +3,8 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:infinite_carousel/infinite_carousel.dart';
+import 'product.dart';
 
 class MainPage extends StatelessWidget {
   const MainPage({super.key});
@@ -49,16 +51,13 @@ class MainPage extends StatelessWidget {
                     onPressed: (() {
                       log('more');
                     }),
-                    style: ButtonStyle(
+                    style: OutlinedButton.styleFrom(
+                        tapTargetSize: MaterialTapTargetSize.shrinkWrap,
                         alignment: Alignment.centerRight,
-                        padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
-                            EdgeInsets.only(right: 16)),
-                        shape:
-                            MaterialStateProperty.all<RoundedRectangleBorder>(
-                                const RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.zero,
-                                    side: BorderSide(
-                                        color: Colors.black, width: 1)))),
+                        padding: EdgeInsets.only(right: 16),
+                        shape: const RoundedRectangleBorder(
+                            borderRadius: BorderRadius.zero,
+                            side: BorderSide(color: Colors.black, width: 1))),
                     child: const Text('верхняя одежда',
                         style: TextStyle(
                           fontFamily: 'Gilroy',
@@ -73,15 +72,11 @@ class MainPage extends StatelessWidget {
                     onPressed: (() {
                       log('more');
                     }),
-                    style: ButtonStyle(
-                        shape:
-                            MaterialStateProperty.all<RoundedRectangleBorder>(
-                                const RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.zero,
-                                    side: BorderSide(
-                                      color: Colors.black,
-                                      width: 1,
-                                    )))),
+                    style: OutlinedButton.styleFrom(
+                        tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                        shape: const RoundedRectangleBorder(
+                            borderRadius: BorderRadius.zero,
+                            side: BorderSide(color: Colors.black, width: 1))),
                     child: const Text('обувь',
                         style: TextStyle(
                           fontFamily: 'Gilroy',
@@ -100,16 +95,13 @@ class MainPage extends StatelessWidget {
                     onPressed: (() {
                       log('more');
                     }),
-                    style: ButtonStyle(
+                    style: OutlinedButton.styleFrom(
+                        tapTargetSize: MaterialTapTargetSize.shrinkWrap,
                         alignment: Alignment.centerLeft,
-                        padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
-                            EdgeInsets.only(left: 89)),
-                        shape:
-                            MaterialStateProperty.all<RoundedRectangleBorder>(
-                                const RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.zero,
-                                    side: BorderSide(
-                                        color: Colors.black, width: 1)))),
+                        padding: EdgeInsets.only(left: 89),
+                        shape: const RoundedRectangleBorder(
+                            borderRadius: BorderRadius.zero,
+                            side: BorderSide(color: Colors.black, width: 1))),
                     child: const Text('сумки',
                         style: TextStyle(
                           fontFamily: 'Gilroy',
@@ -124,16 +116,13 @@ class MainPage extends StatelessWidget {
                     onPressed: (() {
                       log('more');
                     }),
-                    style: ButtonStyle(
+                    style: OutlinedButton.styleFrom(
+                        tapTargetSize: MaterialTapTargetSize.shrinkWrap,
                         alignment: Alignment.centerRight,
-                        padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
-                            EdgeInsets.only(right: 32)),
-                        shape:
-                            MaterialStateProperty.all<RoundedRectangleBorder>(
-                                const RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.zero,
-                                    side: BorderSide(
-                                        color: Colors.black, width: 1)))),
+                        padding: EdgeInsets.only(right: 32),
+                        shape: const RoundedRectangleBorder(
+                            borderRadius: BorderRadius.zero,
+                            side: BorderSide(color: Colors.black, width: 1))),
                     child: const Text('рубашки',
                         style: TextStyle(
                           fontFamily: 'Gilroy',
@@ -152,15 +141,13 @@ class MainPage extends StatelessWidget {
                     onPressed: (() {
                       log('more');
                     }),
-                    style: ButtonStyle(
-                      alignment: Alignment.centerLeft,
-                      padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
-                          EdgeInsets.only(left: 40)),
-                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                          const RoundedRectangleBorder(
-                              borderRadius: BorderRadius.zero,
-                              side: BorderSide(color: Colors.black, width: 1))),
-                    ),
+                    style: OutlinedButton.styleFrom(
+                        tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                        alignment: Alignment.centerLeft,
+                        padding: EdgeInsets.only(left: 40),
+                        shape: const RoundedRectangleBorder(
+                            borderRadius: BorderRadius.zero,
+                            side: BorderSide(color: Colors.black, width: 1))),
                     child: const Text('платья',
                         style: TextStyle(
                           fontFamily: 'Gilroy',
@@ -175,16 +162,13 @@ class MainPage extends StatelessWidget {
                     onPressed: (() {
                       log('more');
                     }),
-                    style: ButtonStyle(
+                    style: OutlinedButton.styleFrom(
+                        tapTargetSize: MaterialTapTargetSize.shrinkWrap,
                         alignment: Alignment.centerRight,
-                        padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
-                            EdgeInsets.only(right: 100)),
-                        shape:
-                            MaterialStateProperty.all<RoundedRectangleBorder>(
-                                const RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.zero,
-                                    side: BorderSide(
-                                        color: Colors.black, width: 1)))),
+                        padding: EdgeInsets.only(right: 100, left: 8),
+                        shape: const RoundedRectangleBorder(
+                            borderRadius: BorderRadius.zero,
+                            side: BorderSide(color: Colors.black, width: 1))),
                     child: const Text('костюмы',
                         style: TextStyle(
                           fontFamily: 'Gilroy',
@@ -203,14 +187,12 @@ class MainPage extends StatelessWidget {
                     onPressed: (() {
                       log('more');
                     }),
-                    style: ButtonStyle(
+                    style: OutlinedButton.styleFrom(
+                        tapTargetSize: MaterialTapTargetSize.shrinkWrap,
                         alignment: Alignment.center,
-                        shape:
-                            MaterialStateProperty.all<RoundedRectangleBorder>(
-                                const RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.zero,
-                                    side: BorderSide(
-                                        color: Colors.black, width: 1)))),
+                        shape: const RoundedRectangleBorder(
+                            borderRadius: BorderRadius.zero,
+                            side: BorderSide(color: Colors.black, width: 1))),
                     child: const Text('штаны',
                         style: TextStyle(
                           fontFamily: 'Gilroy',
@@ -225,16 +207,13 @@ class MainPage extends StatelessWidget {
                     onPressed: (() {
                       log('more');
                     }),
-                    style: ButtonStyle(
+                    style: OutlinedButton.styleFrom(
+                        tapTargetSize: MaterialTapTargetSize.shrinkWrap,
                         alignment: Alignment.centerRight,
-                        padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
-                            EdgeInsets.only(right: 16)),
-                        shape:
-                            MaterialStateProperty.all<RoundedRectangleBorder>(
-                                const RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.zero,
-                                    side: BorderSide(
-                                        color: Colors.black, width: 1)))),
+                        padding: EdgeInsets.only(right: 16),
+                        shape: const RoundedRectangleBorder(
+                            borderRadius: BorderRadius.zero,
+                            side: BorderSide(color: Colors.black, width: 1))),
                     child: const Text('аксессуары',
                         style: TextStyle(
                           fontFamily: 'Gilroy',
@@ -244,7 +223,12 @@ class MainPage extends StatelessWidget {
                           letterSpacing: 1.12,
                         ))))
           ],
-        )
+        ),
+        // тут кончаются кнопки
+        product(
+          data: productData(Image.asset('assets/images/reup_product.jpg'),
+              'befree', 'Блузка женская Лейди', '7500'),
+        ),
       ],
     ));
   }
