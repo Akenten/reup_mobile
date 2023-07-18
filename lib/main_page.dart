@@ -5,6 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:infinite_carousel/infinite_carousel.dart';
 import 'product.dart';
+import 'carousel.dart';
 
 class MainPage extends StatelessWidget {
   const MainPage({super.key});
@@ -229,6 +230,8 @@ class MainPage extends StatelessWidget {
           data: productData(Image.asset('assets/images/reup_product.jpg'),
               'befree', 'Блузка женская Лейди', '7500'),
         ),
+        //InfiniteCarousel.builder(itemCount: 10, itemExtent: 175, itemBuilder: (BuildContext, ))
+        SizedBox(height: 292, child: carousel()),
       ],
     ));
   }
