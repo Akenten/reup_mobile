@@ -6,6 +6,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:infinite_carousel/infinite_carousel.dart';
 import 'product.dart';
 import 'carousel.dart';
+import 'reup_choise.dart';
 
 class MainPage extends StatelessWidget {
   const MainPage({super.key});
@@ -226,12 +227,47 @@ class MainPage extends StatelessWidget {
           ],
         ),
         // тут кончаются кнопки
-        product(
-          data: productData(Image.asset('assets/images/reup_product.jpg'),
-              'befree', 'Блузка женская Лейди', '7500'),
-        ),
+        // product(
+        //   data: productData(Image.asset('assets/images/reup_product.jpg'),
+        //       'befree', 'Блузка женская Лейди', '7500'),
+        // ),
         //InfiniteCarousel.builder(itemCount: 10, itemExtent: 175, itemBuilder: (BuildContext, ))
-        SizedBox(height: 292, child: carousel()),
+        const SizedBox(height: 48),
+        SizedBox(
+          width: 351,
+          child: Text('подобрали для тебя',
+              style: GoogleFonts.delaGothicOne(
+                color: Colors.black,
+                fontSize: 24,
+                fontWeight: FontWeight.w400,
+                letterSpacing: 0.96,
+              )),
+        ),
+
+        const SizedBox(height: 16),
+        const SizedBox(height: 292, child: carousel()),
+        //const SizedBox(height: 16),
+        Align(
+          alignment: Alignment.centerLeft,
+          child: IconButton(
+            onPressed: null,
+            icon: SvgPicture.asset('assets/icons/reup_icon_more.svg'),
+            iconSize: 64,
+            style: ButtonStyle(
+              tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+            ),
+          ),
+        ),
+        SizedBox(
+            width: 351,
+            child: Text('выбор REUP',
+                style: GoogleFonts.delaGothicOne(
+                  color: Colors.black,
+                  fontSize: 24,
+                  fontWeight: FontWeight.w400,
+                  letterSpacing: 0.96,
+                ))),
+        const reupChoise(),
       ],
     ));
   }
