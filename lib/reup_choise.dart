@@ -2,8 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+final controller = PageController(
+  initialPage: 0,
+);
+
+class reupChoiseData {
+  final String title;
+  final String text;
+  final Image img;
+
+  reupChoiseData(this.title, this.text, this.img);
+}
+
 class reupChoise extends StatefulWidget {
-  const reupChoise({super.key});
+  final reupChoiseData data;
+  const reupChoise({super.key, required this.data});
 
   @override
   State<reupChoise> createState() => _reupChoiseState();
@@ -14,7 +27,7 @@ class _reupChoiseState extends State<reupChoise> {
   Widget build(BuildContext context) {
     return Container(
       color: const Color.fromARGB(255, 188, 218, 99),
-      height: 500,
+      height: 500, //446
       width: MediaQuery.of(context).size.width,
       child: Column(
         children: [
@@ -26,7 +39,7 @@ class _reupChoiseState extends State<reupChoise> {
             child: Padding(
               padding: EdgeInsets.only(left: 16, right: 16),
               child: Text(
-                'BEFREE',
+                widget.data.title,
                 style: GoogleFonts.delaGothicOne(
                   color: Colors.black,
                   fontSize: 20,
@@ -39,11 +52,11 @@ class _reupChoiseState extends State<reupChoise> {
           const SizedBox(
             height: 12,
           ),
-          const Padding(
-            padding: EdgeInsets.only(left: 16, right: 16),
+          Padding(
+            padding: const EdgeInsets.only(left: 16, right: 16),
             child: Text(
-              'Наше дело не так однозначно, как может показаться: существующая теория напрямую зависит от стандартных подходов. Идейные соображения высшего порядка, а также разбавленное изрядной долей',
-              style: TextStyle(
+              widget.data.text,
+              style: const TextStyle(
                 color: Colors.black,
                 fontSize: 14,
                 fontFamily: 'Gilroy',
@@ -67,7 +80,7 @@ class _reupChoiseState extends State<reupChoise> {
               ),
             ),
           ),
-          Image.asset('assets/images/reup_img3.jpg')
+          widget.data.img,
         ],
       ),
     );

@@ -8,6 +8,10 @@ import 'product.dart';
 import 'carousel.dart';
 import 'reup_choise.dart';
 
+final controllerReupChoise = PageController(
+  initialPage: 0,
+);
+
 class MainPage extends StatelessWidget {
   const MainPage({super.key});
 
@@ -267,7 +271,28 @@ class MainPage extends StatelessWidget {
                   fontWeight: FontWeight.w400,
                   letterSpacing: 0.96,
                 ))),
-        const reupChoise(),
+
+        //карусель выбора reup
+        Container(
+          height: 500,
+          child: PageView(controller: controllerReupChoise, children: [
+            reupChoise(
+                data: reupChoiseData(
+                    'BEFREE',
+                    'Наше дело не так однозначно, как может показаться: существующая теория напрямую зависит от стандартных подходов. Идейные соображения высшего порядка, а также разбавленное изрядной долей',
+                    Image.asset('assets/images/reup_img3.jpg'))),
+            reupChoise(
+                data: reupChoiseData(
+                    'BEFREE',
+                    'Наше дело не так однозначно, как может показаться: существующая теория напрямую зависит от стандартных подходов. Идейные соображения высшего порядка, а также разбавленное изрядной долей',
+                    Image.asset('assets/images/reup_img3.jpg'))),
+            reupChoise(
+                data: reupChoiseData(
+                    'BEFREE',
+                    'Наше дело не так однозначно, как может показаться: существующая теория напрямую зависит от стандартных подходов. Идейные соображения высшего порядка, а также разбавленное изрядной долей',
+                    Image.asset('assets/images/reup_img3.jpg'))),
+          ]),
+        )
       ],
     ));
   }
