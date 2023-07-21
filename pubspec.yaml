@@ -81,6 +81,7 @@ flutter:
     - assets/fonts/Gilroy/Gilroy-Medium.ttf
     - assets/fonts/Gilroy/Gilroy-Thin.ttf
     - assets/images/reup_img3.jpg
+    - assets/images/reup_collection.jpg
   #  - assets/fonts/Gilroy-Light.ttf
     
   #   - images/a_dot_burr.jpeg

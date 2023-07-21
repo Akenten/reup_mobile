@@ -7,6 +7,7 @@ import 'package:infinite_carousel/infinite_carousel.dart';
 import 'product.dart';
 import 'carousel.dart';
 import 'reup_choise.dart';
+import 'collection.dart';
 
 final controllerReupChoise = PageController(
   initialPage: 0,
@@ -292,6 +293,61 @@ class MainPage extends StatelessWidget {
                     'Наше дело не так однозначно, как может показаться: существующая теория напрямую зависит от стандартных подходов. Идейные соображения высшего порядка, а также разбавленное изрядной долей',
                     Image.asset('assets/images/reup_img3.jpg'))),
           ]),
+        ),
+
+        Container(
+          width: MediaQuery.of(context).size.width,
+          color: const Color.fromARGB(255, 188, 218, 99),
+          child: Column(
+            //mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const SizedBox(height: 48),
+              Padding(
+                padding: EdgeInsets.only(left: 16),
+                child: Text(
+                  'Коллекции',
+                  style: GoogleFonts.delaGothicOne(
+                    color: Colors.black,
+                    fontSize: 24,
+                    fontWeight: FontWeight.w400,
+                    letterSpacing: 0.96,
+                  ),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.only(left: 16, right: 16),
+                child: Column(
+                  children: [
+                    Row(
+                      children: [
+                        collection(
+                          data: collectionData('Название коллекции', 'бренд',
+                              Image.asset('assets/images/reup_collection.jpg')),
+                        ),
+                        collection(
+                          data: collectionData('Название коллекции', 'бренд',
+                              Image.asset('assets/images/reup_collection.jpg')),
+                        ),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        collection(
+                          data: collectionData('Название коллекции', 'бренд',
+                              Image.asset('assets/images/reup_collection.jpg')),
+                        ),
+                        collection(
+                          data: collectionData('Название коллекции', 'бренд',
+                              Image.asset('assets/images/reup_collection.jpg')),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
         )
       ],
     ));
