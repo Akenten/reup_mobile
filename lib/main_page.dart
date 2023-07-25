@@ -22,7 +22,7 @@ class MainPage extends StatelessWidget {
         child: Column(
       children: [
         Container(
-          height: 774, //734, //678
+          height: 779, //774, //734, //678
           child: PageView(
             controller: controller,
 
@@ -454,44 +454,69 @@ class MainPage extends StatelessWidget {
         //     ),
         //   ],
         // )
-        // Row(
-
-        //   children: [
-        //     // Text(
-        //     //   'REUP',
-        //     //   style: GoogleFonts.delaGothicOne(
-        //     //     color: Colors.black,
-        //     //     fontSize: 24,
-        //     //     fontWeight: FontWeight.w400,
-        //     //     letterSpacing: 0.96,
-        //     //   ),
-        //     // ),
-        //     //const Expanded(child: SizedBox()),
-        //     IconButton(
-        //       onPressed: null,
-        //       icon: SvgPicture.asset('assets/icons/reup_icon_vk.svg'),
-        //       //iconSize: 40,
-        //     ),
-        //     IconButton(
-        //       onPressed: null,
-        //       icon: SvgPicture.asset('assets/icons/reup_icon_inst.svg'),
-        //       //iconSize: 40,
-        //     ),
-        //     IconButton(
-        //       onPressed: null,
-        //       icon: SvgPicture.asset('assets/icons/reup_icon_fb.svg'),
-        //       //iconSize: 40,
-        //     ),
-        //     IconButton(
-        //       onPressed: null,
-        //       icon: SvgPicture.asset('assets/icons/reup_icon_tg.svg'),
-        //       //iconSize: 40,
-        //     ),
-        //   ],
-        // )
+        Row(
+          children: [
+            // Text(
+            //   'REUP',
+            //   style: GoogleFonts.delaGothicOne(
+            //     color: Colors.black,
+            //     fontSize: 24,
+            //     fontWeight: FontWeight.w400,
+            //     letterSpacing: 0.96,
+            //   ),
+            // ),
+            //const Expanded(child: SizedBox()),
+            IconButton(
+              onPressed: null,
+              icon: SvgPicture.asset('assets/icons/reup_icon_vk.svg'),
+              //iconSize: 40,
+            ),
+            IconButton(
+              onPressed: null,
+              icon: SvgPicture.asset('assets/icons/reup_icon_inst.svg'),
+              //iconSize: 40,
+            ),
+            IconButton(
+              onPressed: null,
+              icon: SvgPicture.asset('assets/icons/reup_icon_fb.svg'),
+              //iconSize: 40,
+            ),
+            IconButton(
+              onPressed: null,
+              icon: SvgPicture.asset('assets/icons/reup_icon_tg.svg'),
+              //iconSize: 40,
+            ),
+          ],
+        ),
         const Column(
           textDirection: TextDirection.ltr,
           children: [
+            TextButton(
+                onPressed: null,
+                child: Text(
+                  'Написать в поддержку',
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 16,
+                    fontFamily: 'Gilroy',
+                    fontWeight: FontWeight.w300,
+                    //height: 17.60,
+                    letterSpacing: 1.12,
+                  ),
+                )),
+            TextButton(
+                onPressed: null,
+                child: Text(
+                  'FAQ',
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 16,
+                    fontFamily: 'Gilroy',
+                    fontWeight: FontWeight.w300,
+                    //height: 17.60,
+                    letterSpacing: 1.12,
+                  ),
+                )),
             TextButton(
                 onPressed: null,
                 child: Text(
