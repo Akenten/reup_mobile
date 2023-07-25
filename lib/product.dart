@@ -77,6 +77,7 @@ class _productState extends State<product> {
             child: OutlinedButton(
               onPressed: null,
               style: OutlinedButton.styleFrom(
+                  backgroundColor: Colors.white,
                   tapTargetSize: MaterialTapTargetSize.shrinkWrap,
                   shape: const RoundedRectangleBorder(
                       borderRadius: BorderRadius.zero,

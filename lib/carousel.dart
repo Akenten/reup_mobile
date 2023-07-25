@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/foundation.dart';
-import 'package:flutter/gestures.dart';
+//import 'package:flutter/foundation.dart';
+//import 'package:flutter/gestures.dart';
 import 'package:infinite_carousel/infinite_carousel.dart';
 import 'product.dart';
 

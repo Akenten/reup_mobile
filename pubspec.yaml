@@ -82,6 +82,13 @@ flutter:
     - assets/fonts/Gilroy/Gilroy-Thin.ttf
     - assets/images/reup_img3.jpg
     - assets/images/reup_collection.jpg
+    - assets/icons/upcycle.svg
+    - assets/images/reup_ad1.1.svg
+    - assets/images/reup_ad1.jpg
+    - assets/icons/reup_icon_vk.svg
+    - assets/icons/reup_icon_inst.svg
+    - assets/icons/reup_icon_fb.svg
+    - assets/icons/reup_icon_tg.svg
   #  - assets/fonts/Gilroy-Light.ttf
     
   #   - images/a_dot_burr.jpeg

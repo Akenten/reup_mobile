@@ -343,17 +343,147 @@ class MainPage extends StatelessWidget {
                         ),
                       ],
                     ),
+                    const SizedBox(
+                      height: 48,
+                    ),
+                    Align(
+                      alignment: Alignment.centerRight,
+                      child: Text(
+                        'мне нравится',
+                        textAlign: TextAlign.right,
+                        style: GoogleFonts.delaGothicOne(
+                          color: Colors.black,
+                          fontSize: 24,
+                          fontWeight: FontWeight.w400,
+                          letterSpacing: 0.96,
+                        ),
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 24,
+                    ),
+                    const SizedBox(height: 292, child: carousel()),
+                    Align(
+                      alignment: Alignment.centerRight,
+                      child: IconButton(
+                        onPressed: null,
+                        icon:
+                            SvgPicture.asset('assets/icons/reup_icon_more.svg'),
+                        iconSize: 64,
+                        style: const ButtonStyle(
+                          tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                        ),
+                      ),
+                    ),
                   ],
                 ),
               ),
             ],
           ),
+        ),
+        //анимашка
+        //upcycleWidget()
+        const SizedBox(
+          height: 48,
+        ),
+        const SizedBox(height: 292, child: carousel()),
+        Align(
+          alignment: Alignment.centerLeft,
+          child: Padding(
+            padding: const EdgeInsets.only(left: 16),
+            child: IconButton(
+              onPressed: null,
+              icon: SvgPicture.asset('assets/icons/reup_icon_more.svg'),
+              iconSize: 64,
+              style: const ButtonStyle(
+                tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+              ),
+            ),
+          ),
+        ),
+        // Row(
+        //   children: [
+        //     Image.asset('assets/images/reup_ad1.jpg'),
+        //     IconButton(
+        //       onPressed: null,
+        //       icon: SvgPicture.asset('assets/images/reup_ad1.1.svg'),
+        //       iconSize: 150,
+        //     ),
+        //   ],
+        // )
+        Row(
+          children: [
+            // Text(
+            //   'REUP',
+            //   style: GoogleFonts.delaGothicOne(
+            //     color: Colors.black,
+            //     fontSize: 24,
+            //     fontWeight: FontWeight.w400,
+            //     letterSpacing: 0.96,
+            //   ),
+            // ),
+            //const Expanded(child: SizedBox()),
+            IconButton(
+              onPressed: null,
+              icon: SvgPicture.asset('assets/icons/reup_icon_vk.svg'),
+              //iconSize: 40,
+            ),
+            IconButton(
+              onPressed: null,
+              icon: SvgPicture.asset('assets/icons/reup_icon_inst.svg'),
+              //iconSize: 40,
+            ),
+            IconButton(
+              onPressed: null,
+              icon: SvgPicture.asset('assets/icons/reup_icon_fb.svg'),
+              //iconSize: 40,
+            ),
+            IconButton(
+              onPressed: null,
+              icon: SvgPicture.asset('assets/icons/reup_icon_tg.svg'),
+              //iconSize: 40,
+            ),
+          ],
         )
       ],
     ));
   }
 }
 
+class upcycleWidget extends StatelessWidget {
+  const upcycleWidget({
+    super.key,
+  });
+
+  // void initState() {
+  //   initState();
+  //   WidgetsBinding.instance.addPostFrameCallback((_) {
+  //     // автоматическая прокрутка до конца списка
+  //     sc.animateTo(99999, duration: Duration(hours: 2), curve: Curves.easeOut);
+  //   });
+  // }
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: 100,
+      child: ListView.builder(
+        scrollDirection: Axis.horizontal,
+        shrinkWrap: true,
+        itemBuilder: (context, index) {
+          return SvgPicture.asset('assets/icons/upcycle.svg');
+        },
+        itemCount: 99999999,
+
+        controller: sc,
+        //sc.animateTo(99999, duration:Duration(hours: 2), curve:Curves.easeOut),
+        //sc.animateTo(0.0, duration: Duration(hours: 2), curve:Curves.easeOut),
+      ),
+    );
+  }
+}
+
+final sc = ScrollController();
 final controller = PageController(
   initialPage: 0,
 );
