@@ -62,6 +62,7 @@ class MainPage extends StatelessWidget {
                         tapTargetSize: MaterialTapTargetSize.shrinkWrap,
                         alignment: Alignment.centerRight,
                         padding: EdgeInsets.only(right: 16),
+                        side: BorderSide(color: Colors.black, width: 1),
                         shape: const RoundedRectangleBorder(
                             borderRadius: BorderRadius.zero,
                             side: BorderSide(color: Colors.black, width: 1))),
@@ -83,6 +84,7 @@ class MainPage extends StatelessWidget {
                     }),
                     style: OutlinedButton.styleFrom(
                         tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                        side: BorderSide(color: Colors.black, width: 1),
                         shape: const RoundedRectangleBorder(
                             borderRadius: BorderRadius.zero,
                             side: BorderSide(color: Colors.black, width: 1))),
@@ -108,6 +110,7 @@ class MainPage extends StatelessWidget {
                     }),
                     style: OutlinedButton.styleFrom(
                         tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                        side: BorderSide(color: Colors.black, width: 1),
                         alignment: Alignment.centerLeft,
                         padding: EdgeInsets.only(left: 89),
                         shape: const RoundedRectangleBorder(
@@ -131,6 +134,7 @@ class MainPage extends StatelessWidget {
                     }),
                     style: OutlinedButton.styleFrom(
                         tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                        side: BorderSide(color: Colors.black, width: 1),
                         alignment: Alignment.centerRight,
                         padding: EdgeInsets.only(right: 32),
                         shape: const RoundedRectangleBorder(
@@ -158,6 +162,7 @@ class MainPage extends StatelessWidget {
                     }),
                     style: OutlinedButton.styleFrom(
                         tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                        side: BorderSide(color: Colors.black, width: 1),
                         alignment: Alignment.centerLeft,
                         padding: EdgeInsets.only(left: 40),
                         shape: const RoundedRectangleBorder(
@@ -181,6 +186,7 @@ class MainPage extends StatelessWidget {
                     }),
                     style: OutlinedButton.styleFrom(
                         tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                        side: BorderSide(color: Colors.black, width: 1),
                         alignment: Alignment.centerLeft,
                         padding: EdgeInsets.only(left: 20),
                         shape: const RoundedRectangleBorder(
@@ -208,6 +214,7 @@ class MainPage extends StatelessWidget {
                     }),
                     style: OutlinedButton.styleFrom(
                         tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                        side: BorderSide(color: Colors.black, width: 1),
                         alignment: Alignment.center,
                         shape: const RoundedRectangleBorder(
                             borderRadius: BorderRadius.zero,
@@ -232,6 +239,7 @@ class MainPage extends StatelessWidget {
                         tapTargetSize: MaterialTapTargetSize.shrinkWrap,
                         alignment: Alignment.centerRight,
                         padding: EdgeInsets.only(right: 16),
+                        side: BorderSide(color: Colors.black, width: 1),
                         shape: const RoundedRectangleBorder(
                             borderRadius: BorderRadius.zero,
                             side: BorderSide(color: Colors.black, width: 1))),
@@ -444,6 +452,43 @@ class MainPage extends StatelessWidget {
             ),
           ),
         ),
+
+        Row(
+          //crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Expanded(
+                child: Image.asset(
+              'assets/images/reup_ad1.jpg',
+              fit: BoxFit.fitWidth,
+            )),
+            Expanded(
+                child: Container(
+              color: Colors.red,
+              child: IconButton(
+                onPressed: (() {
+                  log('tap');
+                }),
+                style: IconButton.styleFrom(
+                    tapTargetSize: MaterialTapTargetSize.shrinkWrap),
+                //iconSize: double.infinity,
+                icon: SvgPicture.asset(
+                  'assets/images/reup_ad1.1.svg',
+                  //fit: BoxFit.contain,
+                ),
+                //iconSize: ,
+              ),
+            ))
+            // Expanded(
+            //   child: FittedBox(
+            //     child: IconButton(
+            //       onPressed: null,
+            //       icon: SvgPicture.asset('assets/images/reup_ad1.1.svg'),
+            //       //iconSize: 150,
+            //     ),
+            //   ),
+            // )
+          ],
+        ),
         // Row(
         //   children: [
         //     Image.asset('assets/images/reup_ad1.jpg'),
@@ -488,50 +533,99 @@ class MainPage extends StatelessWidget {
             ),
           ],
         ),
-        const Column(
-          textDirection: TextDirection.ltr,
-          children: [
-            TextButton(
-                onPressed: null,
-                child: Text(
-                  'Написать в поддержку',
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 16,
-                    fontFamily: 'Gilroy',
-                    fontWeight: FontWeight.w300,
-                    //height: 17.60,
-                    letterSpacing: 1.12,
-                  ),
-                )),
-            TextButton(
-                onPressed: null,
-                child: Text(
-                  'FAQ',
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 16,
-                    fontFamily: 'Gilroy',
-                    fontWeight: FontWeight.w300,
-                    //height: 17.60,
-                    letterSpacing: 1.12,
-                  ),
-                )),
-            TextButton(
-                onPressed: null,
-                child: Text(
-                  'Написать в поддержку',
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 16,
-                    fontFamily: 'Gilroy',
-                    fontWeight: FontWeight.w300,
-                    //height: 17.60,
-                    letterSpacing: 1.12,
-                  ),
-                )),
-          ],
-        )
+        Align(
+          alignment: Alignment.centerLeft,
+          child: Padding(
+            padding: EdgeInsets.only(left: 16),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              textDirection: TextDirection.ltr,
+              children: [
+                TextButton(
+                    style: TextButton.styleFrom(
+                      minimumSize: Size.zero,
+                      padding: EdgeInsets.zero,
+                      tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                    ),
+                    onPressed: null,
+                    child: const Text(
+                      'Написать в поддержку',
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 16,
+                        fontFamily: 'Gilroy',
+                        fontWeight: FontWeight.w300,
+                        //height: 17.60,
+                        letterSpacing: 1.12,
+                      ),
+                    )),
+                TextButton(
+                    style: TextButton.styleFrom(
+                      minimumSize: Size.zero,
+                      padding: EdgeInsets.zero,
+                      tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                    ),
+                    onPressed: null,
+                    child: const Text(
+                      'FAQ',
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 16,
+                        fontFamily: 'Gilroy',
+                        fontWeight: FontWeight.w300,
+                        //height: 17.60,
+                        letterSpacing: 1.12,
+                      ),
+                    )),
+                TextButton(
+                    style: TextButton.styleFrom(
+                      minimumSize: Size.zero,
+                      padding: EdgeInsets.zero,
+                      tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                    ),
+                    onPressed: null,
+                    child: const Text(
+                      'Публичная оферта',
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 16,
+                        fontFamily: 'Gilroy',
+                        fontWeight: FontWeight.w300,
+                        //height: 17.60,
+                        letterSpacing: 1.12,
+                      ),
+                    )),
+              ],
+            ),
+          ),
+        ),
+        const SizedBox(height: 16),
+        Row(children: [
+          Expanded(
+            child: Padding(
+              padding: EdgeInsets.only(left: 16, right: 16),
+              child: OutlinedButton(
+                  onPressed: null,
+                  style: OutlinedButton.styleFrom(
+                      tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                      side: BorderSide(color: Colors.black, width: 1),
+                      shape: const RoundedRectangleBorder(
+                        borderRadius: BorderRadius.zero,
+                      )),
+                  child: Text(
+                    'Стать продавцом',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 16,
+                      fontFamily: 'Gilroy',
+                      fontWeight: FontWeight.w500,
+                      //height: 17.60,
+                      letterSpacing: 1.12,
+                    ),
+                  )),
+            ),
+          ),
+        ])
       ],
     ));
   }
@@ -645,7 +739,7 @@ class Promo extends StatelessWidget {
                             fontWeight: FontWeight.w400,
                             letterSpacing: 0.80,
                           )),
-                      SizedBox(
+                      const SizedBox(
                         height: 16,
                       ),
                       SizedBox(
