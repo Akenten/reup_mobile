@@ -1,16 +1,19 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:infinite_carousel/infinite_carousel.dart';
-import 'product.dart';
 import 'carousel.dart';
 import 'reup_choise.dart';
 import 'collection.dart';
 import 'styles.dart';
+import 'promo.dart';
 
 final controllerReupChoise = PageController(
+  initialPage: 0,
+);
+
+//controller for promo
+final controller = PageController(
   initialPage: 0,
 );
 
@@ -26,7 +29,6 @@ class MainPage extends StatelessWidget {
           height: 779, //774, //734, //678
           child: PageView(
             controller: controller,
-
             children: [
               Promo(
                   data: PromoData(
@@ -47,10 +49,10 @@ class MainPage extends StatelessWidget {
                       '1',
                       '1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111 ')),
             ],
-
-            //верстка дальше
           ),
         ),
+
+        // ряды кнопок с категориями товаров
         Row(
           children: [
             Expanded(
@@ -263,6 +265,7 @@ class MainPage extends StatelessWidget {
           ]),
         ),
 
+// раздел с коллекциями
         Container(
           width: MediaQuery.of(context).size.width,
           color: const Color.fromARGB(255, 188, 218, 99),
@@ -353,6 +356,8 @@ class MainPage extends StatelessWidget {
         const SizedBox(
           height: 48,
         ),
+
+        // карусель товаров
         const Align(
             alignment: Alignment.centerLeft,
             child: Padding(
@@ -400,6 +405,7 @@ class MainPage extends StatelessWidget {
         //   ],
         // ),
 
+// соцсети
         Row(
           children: [
             // Text(
@@ -434,6 +440,8 @@ class MainPage extends StatelessWidget {
             ),
           ],
         ),
+
+        // текстовые кнопки для помощи
         Align(
           alignment: Alignment.centerLeft,
           child: Padding(
@@ -475,6 +483,8 @@ class MainPage extends StatelessWidget {
             ),
           ),
         ),
+
+        //кнопка "стать продавцом"
         const SizedBox(height: 16),
         Row(children: [
           Expanded(
@@ -532,99 +542,3 @@ class upcycleWidget extends StatelessWidget {
 }
 
 final sc = ScrollController();
-final controller = PageController(
-  initialPage: 0,
-);
-
-class PromoData {
-  final Image img1;
-  final Image img2;
-  final String title;
-  final String subtitle;
-  final String text;
-
-  PromoData(this.img1, this.img2, this.title, this.subtitle, this.text);
-}
-
-class Promo extends StatelessWidget {
-  final PromoData data;
-  const Promo({super.key, required this.data});
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(children: [
-      data.img1,
-      data.img2,
-      Container(
-          //height: 284, //276 284
-          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 20),
-          decoration: const BoxDecoration(color: Colors.white),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              SizedBox(
-                width: double.infinity,
-                child: Text(data.title,
-                    style: CustomTextStyle.titlePromoTextStyle),
-              ),
-              const SizedBox(height: 20),
-              Container(
-                // линия
-                width: double.infinity,
-                decoration: const ShapeDecoration(
-                  shape: RoundedRectangleBorder(
-                    side: BorderSide(
-                      width: 0.50,
-                      //strokeAlign:
-                    ),
-                  ),
-                ),
-              ),
-              const SizedBox(height: 20),
-              Container(
-                width: double.infinity,
-                //height: 161,
-                child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(data.subtitle,
-                          style: CustomTextStyle.subtitlePromoTextStyle),
-                      const SizedBox(
-                        height: 16,
-                      ),
-                      SizedBox(
-                        width: double.infinity,
-                        child: Text(
-                          data.text,
-                          style: CustomTextStyle.promoTextStyle,
-                        ),
-                      ),
-                      const SizedBox(
-                        height: 16,
-                      ),
-                      Align(
-                        //more button
-                        alignment: Alignment.centerLeft,
-                        child: IconButton(
-                          onPressed: (() {
-                            log('more');
-                          }),
-                          icon: SvgPicture.asset(
-                              'assets/icons/reup_icon_more.svg'),
-                          iconSize: 64,
-                          style: const ButtonStyle(
-                            tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                          ),
-                        ),
-                      )
-                    ]),
-              ),
-            ],
-          ))
-    ]);
-  }
-}

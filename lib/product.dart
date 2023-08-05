@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:reup/styles.dart';
+import 'dart:developer';
 
 class product extends StatefulWidget {
   final productData data;
@@ -35,9 +36,14 @@ class _productState extends State<product> {
           Align(
               alignment: Alignment.topRight,
               child: IconButton(
-                onPressed: null,
+                onPressed: (() {
+                  log('fav');
+                }),
                 icon: SvgPicture.asset('assets/icons/reup_icon_favorite.svg'),
                 iconSize: 16,
+                style: IconButton.styleFrom(
+                  tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                ),
               )),
           //бренд
           Positioned(

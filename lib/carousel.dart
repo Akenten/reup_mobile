@@ -72,7 +72,7 @@ class _carouselState extends State<carousel> {
                           Image.asset('assets/images/reup_product.jpg'),
                           'befree',
                           'Блузка женская Лейди',
-                          '7500')),
+                          '7500₽')),
                 ));
           }),
     );
