@@ -65,6 +65,7 @@ flutter:
   assets:
     - assets/images/reup_img1.jpg
     - assets/images/reup_img2.jpg
+    - assets/images/reup_img3.jpg
     - assets/icons/reup_search.svg
     - assets/icons/reup_search.png
     - assets/icons/reup_icon_more.svg
