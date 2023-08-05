@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:reup/styles.dart';
 
 class product extends StatefulWidget {
   final productData data;
@@ -44,14 +45,7 @@ class _productState extends State<product> {
             left: 0,
             child: Text(
               widget.data.brand,
-              style: const TextStyle(
-                color: Color(0xFF333333),
-                fontSize: 14,
-                fontFamily: 'Gilroy',
-                fontWeight: FontWeight.w300,
-                //height: 15.40,
-                letterSpacing: 0.98,
-              ),
+              style: CustomTextStyle.brandTextStyle,
             ),
           ),
           //название товара
@@ -60,14 +54,7 @@ class _productState extends State<product> {
             left: 0,
             child: Text(
               widget.data.name,
-              style: const TextStyle(
-                color: Colors.black,
-                fontSize: 14,
-                fontFamily: 'Gilroy',
-                fontWeight: FontWeight.w500,
-                //height: 15.40,
-                letterSpacing: 0.98,
-              ),
+              style: CustomTextStyle.productTextStyle,
             ),
           ),
           // кнопка в корзину
@@ -82,17 +69,8 @@ class _productState extends State<product> {
                   shape: const RoundedRectangleBorder(
                       borderRadius: BorderRadius.zero,
                       side: BorderSide(color: Colors.black, width: 1.0))),
-              child: const Text(
-                'в корзину',
-                style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 14,
-                  fontFamily: 'Gilroy',
-                  fontWeight: FontWeight.w500,
-                  //height: 15.40,
-                  letterSpacing: 0.98,
-                ),
-              ),
+              child: const Text('в корзину',
+                  style: CustomButtonTextStyle.buttonBoldStyle),
             ),
           ),
           // линия
@@ -120,14 +98,7 @@ class _productState extends State<product> {
                 child: Center(
                     child: Text(
                   widget.data.price,
-                  style: const TextStyle(
-                    color: Colors.black,
-                    fontSize: 14,
-                    fontFamily: 'Gilroy',
-                    fontWeight: FontWeight.w700,
-                    //height: 15.40,
-                    letterSpacing: 0.98,
-                  ),
+                  style: CustomTextStyle.boldTextStyle,
                 )),
               ))
         ],

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:reup/styles.dart';
 
 class collection extends StatefulWidget {
   final collectionData data;
@@ -39,13 +40,7 @@ class _collectionState extends State<collection> {
               alignment: Alignment.centerLeft,
               child: Text(
                 widget.data.collectionName,
-                style: const TextStyle(
-                  color: Colors.black,
-                  fontSize: 14,
-                  fontFamily: 'Gilroy',
-                  fontWeight: FontWeight.w700,
-                  letterSpacing: 0.98,
-                ),
+                style: CustomTextStyle.boldTextStyle,
               ),
             ),
           ),
@@ -53,13 +48,7 @@ class _collectionState extends State<collection> {
               left: 8,
               bottom: 8,
               child: Text(widget.data.Brand,
-                  style: const TextStyle(
-                    color: Colors.black,
-                    fontSize: 14,
-                    fontFamily: 'Gilroy',
-                    fontWeight: FontWeight.w300,
-                    letterSpacing: 0.98,
-                  )))
+                  style: CustomTextStyle.promoTextStyle))
         ],
       ),
     );

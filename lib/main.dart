@@ -3,6 +3,7 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:reup/styles.dart';
 import 'main_page.dart';
 import 'package:flutter/services.dart';
 
@@ -67,14 +68,7 @@ class AppBar extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Text('REUP',
-                style: GoogleFonts.delaGothicOne(
-                  color: Colors.black,
-                  fontSize: 24,
-                  fontWeight: FontWeight.w400,
-                  //height: 24,
-                  letterSpacing: 0.96,
-                )),
+            Text('REUP', style: CustomTextStyle.headerTextStyle),
             IconButton(
                 icon:
                     const ImageIcon(AssetImage('assets/icons/reup_search.png')),

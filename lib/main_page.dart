@@ -8,6 +8,7 @@ import 'product.dart';
 import 'carousel.dart';
 import 'reup_choise.dart';
 import 'collection.dart';
+import 'styles.dart';
 
 final controllerReupChoise = PageController(
   initialPage: 0,
@@ -68,14 +69,7 @@ class MainPage extends StatelessWidget {
                             side: BorderSide(color: Colors.black, width: 1))),
                     child: const Text('верхняя одежда',
                         maxLines: 1,
-                        style: TextStyle(
-                          fontFamily: 'Gilroy',
-                          color: Colors.black,
-                          fontSize: 16,
-                          fontWeight: FontWeight.w700,
-                          letterSpacing: 1.12,
-                          overflow: TextOverflow.ellipsis,
-                        )))),
+                        style: CustomButtonTextStyle.buttonItemStyle))),
             Expanded(
                 flex: 1,
                 child: OutlinedButton(
@@ -90,14 +84,7 @@ class MainPage extends StatelessWidget {
                             side: BorderSide(color: Colors.black, width: 1))),
                     child: const Text('обувь',
                         maxLines: 1,
-                        style: TextStyle(
-                          fontFamily: 'Gilroy',
-                          color: Colors.black,
-                          fontSize: 16,
-                          fontWeight: FontWeight.w700,
-                          letterSpacing: 1.12,
-                          overflow: TextOverflow.ellipsis,
-                        ))))
+                        style: CustomButtonTextStyle.buttonItemStyle)))
           ],
         ),
         Row(
@@ -118,14 +105,7 @@ class MainPage extends StatelessWidget {
                             side: BorderSide(color: Colors.black, width: 1))),
                     child: const Text('сумки',
                         maxLines: 1,
-                        style: TextStyle(
-                          fontFamily: 'Gilroy',
-                          color: Colors.black,
-                          fontSize: 16,
-                          fontWeight: FontWeight.w700,
-                          letterSpacing: 1.12,
-                          overflow: TextOverflow.ellipsis,
-                        )))),
+                        style: CustomButtonTextStyle.buttonItemStyle))),
             Expanded(
                 flex: 1,
                 child: OutlinedButton(
@@ -142,14 +122,7 @@ class MainPage extends StatelessWidget {
                             side: BorderSide(color: Colors.black, width: 1))),
                     child: const Text('рубашки',
                         maxLines: 1,
-                        style: TextStyle(
-                          fontFamily: 'Gilroy',
-                          color: Colors.black,
-                          fontSize: 16,
-                          fontWeight: FontWeight.w700,
-                          letterSpacing: 1.12,
-                          overflow: TextOverflow.ellipsis,
-                        ))))
+                        style: CustomButtonTextStyle.buttonItemStyle)))
           ],
         ),
         Row(
@@ -170,14 +143,7 @@ class MainPage extends StatelessWidget {
                             side: BorderSide(color: Colors.black, width: 1))),
                     child: const Text('платья',
                         maxLines: 1,
-                        style: TextStyle(
-                          fontFamily: 'Gilroy',
-                          color: Colors.black,
-                          fontSize: 16,
-                          fontWeight: FontWeight.w700,
-                          letterSpacing: 1.12,
-                          overflow: TextOverflow.ellipsis,
-                        )))),
+                        style: CustomButtonTextStyle.buttonItemStyle))),
             Expanded(
                 flex: 1,
                 child: OutlinedButton(
@@ -194,14 +160,7 @@ class MainPage extends StatelessWidget {
                             side: BorderSide(color: Colors.black, width: 1))),
                     child: const Text('костюмы',
                         maxLines: 1,
-                        style: TextStyle(
-                          fontFamily: 'Gilroy',
-                          color: Colors.black,
-                          fontSize: 16,
-                          fontWeight: FontWeight.w700,
-                          letterSpacing: 1.12,
-                          overflow: TextOverflow.ellipsis,
-                        ))))
+                        style: CustomButtonTextStyle.buttonItemStyle)))
           ],
         ),
         Row(
@@ -221,14 +180,7 @@ class MainPage extends StatelessWidget {
                             side: BorderSide(color: Colors.black, width: 1))),
                     child: const Text('штаны',
                         maxLines: 1,
-                        style: TextStyle(
-                          fontFamily: 'Gilroy',
-                          color: Colors.black,
-                          fontSize: 16,
-                          fontWeight: FontWeight.w700,
-                          letterSpacing: 1.12,
-                          overflow: TextOverflow.ellipsis,
-                        )))),
+                        style: CustomButtonTextStyle.buttonItemStyle))),
             Expanded(
                 flex: 1,
                 child: OutlinedButton(
@@ -245,39 +197,23 @@ class MainPage extends StatelessWidget {
                             side: BorderSide(color: Colors.black, width: 1))),
                     child: const Text('аксессуары',
                         maxLines: 1,
-                        style: TextStyle(
-                          fontFamily: 'Gilroy',
-                          color: Colors.black,
-                          fontSize: 16,
-                          fontWeight: FontWeight.w700,
-                          letterSpacing: 1.12,
-                          overflow: TextOverflow.ellipsis,
-                        ))))
+                        style: CustomButtonTextStyle.buttonItemStyle)))
           ],
         ),
         // тут кончаются кнопки
-        // product(
-        //   data: productData(Image.asset('assets/images/reup_product.jpg'),
-        //       'befree', 'Блузка женская Лейди', '7500'),
-        // ),
-        //InfiniteCarousel.builder(itemCount: 10, itemExtent: 175, itemBuilder: (BuildContext, ))
+
         const SizedBox(height: 48),
         Align(
           alignment: Alignment.centerLeft,
           child: Padding(
             padding: EdgeInsets.only(left: 16),
             child: Text('подобрали для тебя',
-                style: GoogleFonts.delaGothicOne(
-                  color: Colors.black,
-                  fontSize: 24,
-                  fontWeight: FontWeight.w400,
-                  letterSpacing: 0.96,
-                )),
+                style: CustomTextStyle.headerTextStyle),
           ),
         ),
 
         const SizedBox(height: 16),
-        Align(
+        const Align(
             alignment: Alignment.centerLeft,
             child: Padding(
                 padding: EdgeInsets.only(left: 8),
@@ -291,7 +227,7 @@ class MainPage extends StatelessWidget {
               onPressed: null,
               icon: SvgPicture.asset('assets/icons/reup_icon_more.svg'),
               iconSize: 64,
-              style: ButtonStyle(
+              style: const ButtonStyle(
                 tapTargetSize: MaterialTapTargetSize.shrinkWrap,
               ),
             ),
@@ -301,18 +237,12 @@ class MainPage extends StatelessWidget {
           alignment: Alignment.centerLeft,
           child: Padding(
             padding: const EdgeInsets.only(left: 16),
-            child: Text('выбор REUP',
-                style: GoogleFonts.delaGothicOne(
-                  color: Colors.black,
-                  fontSize: 24,
-                  fontWeight: FontWeight.w400,
-                  letterSpacing: 0.96,
-                )),
+            child: Text('выбор REUP', style: CustomTextStyle.headerTextStyle),
           ),
         ),
 
         //карусель выбора reup
-        Container(
+        SizedBox(
           height: 500,
           child: PageView(controller: controllerReupChoise, children: [
             reupChoise(
@@ -342,15 +272,10 @@ class MainPage extends StatelessWidget {
             children: [
               const SizedBox(height: 48),
               Padding(
-                padding: EdgeInsets.only(left: 16),
+                padding: const EdgeInsets.only(left: 16),
                 child: Text(
                   'Коллекции',
-                  style: GoogleFonts.delaGothicOne(
-                    color: Colors.black,
-                    fontSize: 24,
-                    fontWeight: FontWeight.w400,
-                    letterSpacing: 0.96,
-                  ),
+                  style: CustomTextStyle.headerTextStyle,
                 ),
               ),
               const SizedBox(
@@ -391,16 +316,11 @@ class MainPage extends StatelessWidget {
                   Align(
                     alignment: Alignment.centerRight,
                     child: Padding(
-                      padding: EdgeInsets.only(right: 16),
+                      padding: const EdgeInsets.only(right: 16),
                       child: Text(
                         'мне нравится',
                         textAlign: TextAlign.right,
-                        style: GoogleFonts.delaGothicOne(
-                          color: Colors.black,
-                          fontSize: 24,
-                          fontWeight: FontWeight.w400,
-                          letterSpacing: 0.96,
-                        ),
+                        style: CustomTextStyle.headerTextStyle,
                       ),
                     ),
                   ),
@@ -453,52 +373,33 @@ class MainPage extends StatelessWidget {
           ),
         ),
 
-        Row(
-          //crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Expanded(
-                child: Image.asset(
-              'assets/images/reup_ad1.jpg',
-              fit: BoxFit.fitWidth,
-            )),
-            Expanded(
-                child: Container(
-              color: Colors.red,
-              child: IconButton(
-                onPressed: (() {
-                  log('tap');
-                }),
-                style: IconButton.styleFrom(
-                    tapTargetSize: MaterialTapTargetSize.shrinkWrap),
-                //iconSize: double.infinity,
-                icon: SvgPicture.asset(
-                  'assets/images/reup_ad1.1.svg',
-                  //fit: BoxFit.contain,
-                ),
-                //iconSize: ,
-              ),
-            ))
-            // Expanded(
-            //   child: FittedBox(
-            //     child: IconButton(
-            //       onPressed: null,
-            //       icon: SvgPicture.asset('assets/images/reup_ad1.1.svg'),
-            //       //iconSize: 150,
-            //     ),
-            //   ),
-            // )
-          ],
-        ),
         // Row(
+        //   //crossAxisAlignment: CrossAxisAlignment.stretch,
         //   children: [
-        //     Image.asset('assets/images/reup_ad1.jpg'),
-        //     IconButton(
-        //       onPressed: null,
-        //       icon: SvgPicture.asset('assets/images/reup_ad1.1.svg'),
-        //       iconSize: 150,
-        //     ),
+        //     Expanded(
+        //         child: Image.asset(
+        //       'assets/images/reup_ad1.jpg',
+        //       fit: BoxFit.fitWidth,
+        //     )),
+        //     Expanded(
+        //         child: Container(
+        //       color: Colors.red,
+        //       child: IconButton(
+        //         onPressed: (() {
+        //           log('tap');
+        //         }),
+        //         style: IconButton.styleFrom(
+        //             tapTargetSize: MaterialTapTargetSize.shrinkWrap),
+        //         //iconSize: double.infinity,
+        //         icon: SvgPicture.asset(
+        //           'assets/images/reup_ad1.1.svg',
+        //           //fit: BoxFit.contain,
+        //         ),
+        //       ),
+        //     ))
         //   ],
-        // )
+        // ),
+
         Row(
           children: [
             // Text(
@@ -536,7 +437,7 @@ class MainPage extends StatelessWidget {
         Align(
           alignment: Alignment.centerLeft,
           child: Padding(
-            padding: EdgeInsets.only(left: 16),
+            padding: const EdgeInsets.only(left: 16),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               textDirection: TextDirection.ltr,
@@ -550,14 +451,7 @@ class MainPage extends StatelessWidget {
                     onPressed: null,
                     child: const Text(
                       'Написать в поддержку',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 16,
-                        fontFamily: 'Gilroy',
-                        fontWeight: FontWeight.w300,
-                        //height: 17.60,
-                        letterSpacing: 1.12,
-                      ),
+                      style: CustomButtonTextStyle.basicStyle,
                     )),
                 TextButton(
                     style: TextButton.styleFrom(
@@ -566,17 +460,8 @@ class MainPage extends StatelessWidget {
                       tapTargetSize: MaterialTapTargetSize.shrinkWrap,
                     ),
                     onPressed: null,
-                    child: const Text(
-                      'FAQ',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 16,
-                        fontFamily: 'Gilroy',
-                        fontWeight: FontWeight.w300,
-                        //height: 17.60,
-                        letterSpacing: 1.12,
-                      ),
-                    )),
+                    child: const Text('FAQ',
+                        style: CustomButtonTextStyle.basicStyle)),
                 TextButton(
                     style: TextButton.styleFrom(
                       minimumSize: Size.zero,
@@ -584,17 +469,8 @@ class MainPage extends StatelessWidget {
                       tapTargetSize: MaterialTapTargetSize.shrinkWrap,
                     ),
                     onPressed: null,
-                    child: const Text(
-                      'Публичная оферта',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 16,
-                        fontFamily: 'Gilroy',
-                        fontWeight: FontWeight.w300,
-                        //height: 17.60,
-                        letterSpacing: 1.12,
-                      ),
-                    )),
+                    child: const Text('Публичная оферта',
+                        style: CustomButtonTextStyle.basicStyle)),
               ],
             ),
           ),
@@ -603,7 +479,7 @@ class MainPage extends StatelessWidget {
         Row(children: [
           Expanded(
             child: Padding(
-              padding: EdgeInsets.only(left: 16, right: 16),
+              padding: const EdgeInsets.only(left: 16, right: 16),
               child: OutlinedButton(
                   onPressed: null,
                   style: OutlinedButton.styleFrom(
@@ -612,17 +488,8 @@ class MainPage extends StatelessWidget {
                       shape: const RoundedRectangleBorder(
                         borderRadius: BorderRadius.zero,
                       )),
-                  child: Text(
-                    'Стать продавцом',
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 16,
-                      fontFamily: 'Gilroy',
-                      fontWeight: FontWeight.w500,
-                      //height: 17.60,
-                      letterSpacing: 1.12,
-                    ),
-                  )),
+                  child: const Text('Стать продавцом',
+                      style: CustomButtonTextStyle.buttonBoldStyle)),
             ),
           ),
         ])
@@ -699,16 +566,8 @@ class Promo extends StatelessWidget {
             children: [
               SizedBox(
                 width: double.infinity,
-                child: Text(
-                  data.title,
-                  style: GoogleFonts.delaGothicOne(
-                    color: Colors.black,
-                    fontSize: 32,
-                    fontWeight: FontWeight.w400,
-                    //height: 35.20,
-                    letterSpacing: 1.28,
-                  ),
-                ),
+                child: Text(data.title,
+                    style: CustomTextStyle.titlePromoTextStyle),
               ),
               const SizedBox(height: 20),
               Container(
@@ -733,12 +592,7 @@ class Promo extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(data.subtitle,
-                          style: GoogleFonts.delaGothicOne(
-                            color: Colors.black,
-                            fontSize: 20,
-                            fontWeight: FontWeight.w400,
-                            letterSpacing: 0.80,
-                          )),
+                          style: CustomTextStyle.subtitlePromoTextStyle),
                       const SizedBox(
                         height: 16,
                       ),
@@ -746,13 +600,7 @@ class Promo extends StatelessWidget {
                         width: double.infinity,
                         child: Text(
                           data.text,
-                          style: const TextStyle(
-                            fontFamily: 'Gilroy',
-                            color: Colors.black,
-                            fontSize: 14,
-                            fontWeight: FontWeight.w300,
-                            letterSpacing: 0.98,
-                          ),
+                          style: CustomTextStyle.promoTextStyle,
                         ),
                       ),
                       const SizedBox(

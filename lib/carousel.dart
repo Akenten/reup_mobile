@@ -1,3 +1,5 @@
+//import 'dart:math';
+import 'dart:developer';
 import 'package:flutter/material.dart';
 //import 'package:flutter/foundation.dart';
 //import 'package:flutter/gestures.dart';
@@ -61,7 +63,9 @@ class _carouselState extends State<carousel> {
                 padding: const EdgeInsets.symmetric(horizontal: 8.0),
                 child: GestureDetector(
                   onTap: () {
-                    _controller.animateToItem(realIndex);
+                    // first item index is 0
+                    var s = itemIndex.toString();
+                    log(s);
                   },
                   child: product(
                       data: productData(

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:reup/styles.dart';
 
 final controller = PageController(
   initialPage: 0,
@@ -40,12 +41,7 @@ class _reupChoiseState extends State<reupChoise> {
               padding: EdgeInsets.only(left: 16, right: 16),
               child: Text(
                 widget.data.title,
-                style: GoogleFonts.delaGothicOne(
-                  color: Colors.black,
-                  fontSize: 20,
-                  fontWeight: FontWeight.w400,
-                  letterSpacing: 1.40,
-                ),
+                style: CustomTextStyle.reupChoiseTitle,
               ),
             ),
           ),
@@ -56,14 +52,7 @@ class _reupChoiseState extends State<reupChoise> {
             padding: const EdgeInsets.only(left: 16, right: 16),
             child: Text(
               widget.data.text,
-              style: const TextStyle(
-                color: Colors.black,
-                fontSize: 14,
-                fontFamily: 'Gilroy',
-                fontWeight: FontWeight.w400,
-                //height: 15.40,
-                letterSpacing: 0.98,
-              ),
+              style: CustomTextStyle.reupChoiseText,
             ),
           ),
           Align(
