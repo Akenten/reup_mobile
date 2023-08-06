@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:reup/product_page/custom_size_button.dart';
-
 import 'product_characteristics.dart';
 import 'product_description.dart';
 
@@ -29,7 +28,25 @@ class ProductPage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Image.asset('assets/images/reup_img3.jpg'),
+            SizedBox(height: MediaQuery.of(context).viewPadding.top),
+            Stack(
+              children: [
+                Image.asset('assets/images/reup_img3.jpg'),
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 16, right: 16),
+                  child: SizedBox(
+                    height: 20,
+                    width: 20,
+                    child: FloatingActionButton.small(
+                      onPressed: () => null,
+                      backgroundColor: Color.fromRGBO(228, 228, 228, 1),
+                      child: Text('!', style: TextStyle(color: Colors.black),),
+                    ),
+                  ),
+                )
+              ],
+              alignment: Alignment.bottomRight,
+            ),
             // название товара, бренд, артикул, цена
             Padding(
               padding: const EdgeInsets.only(top: 16, left: 16, right: 16),

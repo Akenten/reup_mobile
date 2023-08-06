@@ -67,17 +67,6 @@ class _ProductCharacteristicsState extends State<ProductCharacteristics> {
                 )
               : SizedBox.shrink(),
         ),
-
-        // expandedFlag ? Wrap(
-        //   runSpacing: 8,
-        //   children: [
-        //     CharacteristicsEntry(title: 'состав', subtitle: 'какой-то состав'),
-        //     CharacteristicsEntry(title: 'сезон', subtitle: 'зима-лето'),
-        //     CharacteristicsEntry(title: 'узор', subtitle: 'зебра'),
-        //     CharacteristicsEntry(title: 'стиль', subtitle: 'постмодерн'),
-        //     CharacteristicsEntry(title: 'цвет', subtitle: 'белый'),
-        //   ],
-        // ) : SizedBox.shrink(),
       ],
     );
   }
