@@ -1,8 +1,90 @@
+import 'dart:async';
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'styles.dart';
+
+//controller for promo
+final controller = PageController(
+  initialPage: 0,
+);
+
+Timer _timer = Timer.periodic(Duration(seconds: 7), (Timer timer) {});
+
+int currentPage = 0;
+
+class Promo extends StatefulWidget {
+  const Promo({
+    super.key,
+  });
+
+  @override
+  State<Promo> createState() => _PromoState();
+}
+
+class _PromoState extends State<Promo> {
+  @override
+  void initState() {
+    super.initState();
+    _timer = Timer.periodic(Duration(seconds: 7), (Timer timer) {
+      if (currentPage < 3) {
+        currentPage++;
+      } else {
+        currentPage = 0;
+      }
+
+      controller.animateToPage(currentPage,
+          duration: Duration(milliseconds: 350), curve: Curves.easeIn);
+    });
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    _timer.cancel();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 779, //774, //734, //678
+      child: PageView(
+        controller: controller,
+        children: [
+          PromoPage(
+              data: PromoData(
+                  const Image(image: AssetImage('assets/images/reup_img1.jpg')),
+                  const Image(image: AssetImage('assets/images/reup_img2.jpg')),
+                  'новый бренд',
+                  'Befree',
+                  'Наше дело не так однозначно, как может показаться: существующая теория напрямую зависит от стандартных подходов. Идейные соображения высшего порядка, а также разбавленное изрядной долей ')),
+          PromoPage(
+              data: PromoData(
+                  const Image(image: AssetImage('assets/images/reup_img1.jpg')),
+                  const Image(image: AssetImage('assets/images/reup_img2.jpg')),
+                  '2',
+                  '2',
+                  '22222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222 ')),
+          PromoPage(
+              data: PromoData(
+                  const Image(image: AssetImage('assets/images/reup_img1.jpg')),
+                  const Image(image: AssetImage('assets/images/reup_img2.jpg')),
+                  '3',
+                  '3',
+                  '3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333 ')),
+          PromoPage(
+              data: PromoData(
+                  const Image(image: AssetImage('assets/images/reup_img1.jpg')),
+                  const Image(image: AssetImage('assets/images/reup_img2.jpg')),
+                  '4',
+                  '4',
+                  '4444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444 ')),
+        ],
+      ),
+    );
+  }
+}
 
 class PromoData {
   final Image img1;
@@ -14,9 +96,9 @@ class PromoData {
   PromoData(this.img1, this.img2, this.title, this.subtitle, this.text);
 }
 
-class Promo extends StatelessWidget {
+class PromoPage extends StatelessWidget {
   final PromoData data;
-  const Promo({super.key, required this.data});
+  const PromoPage({super.key, required this.data});
 
   @override
   Widget build(BuildContext context) {
@@ -68,6 +150,7 @@ class Promo extends StatelessWidget {
                         width: double.infinity,
                         child: Text(
                           data.text,
+                          maxLines: 5,
                           style: CustomTextStyle.promoTextStyle,
                         ),
                       ),

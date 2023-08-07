@@ -12,11 +12,6 @@ final controllerReupChoise = PageController(
   initialPage: 0,
 );
 
-//controller for promo
-final controller = PageController(
-  initialPage: 0,
-);
-
 class MainPage extends StatelessWidget {
   const MainPage({super.key});
 
@@ -25,32 +20,7 @@ class MainPage extends StatelessWidget {
     return SingleChildScrollView(
         child: Column(
       children: [
-        Container(
-          height: 779, //774, //734, //678
-          child: PageView(
-            controller: controller,
-            children: [
-              Promo(
-                  data: PromoData(
-                      const Image(
-                          image: AssetImage('assets/images/reup_img1.jpg')),
-                      const Image(
-                          image: AssetImage('assets/images/reup_img2.jpg')),
-                      'новый бренд',
-                      'Befree',
-                      'Наше дело не так однозначно, как может показаться: существующая теория напрямую зависит от стандартных подходов. Идейные соображения высшего порядка, а также разбавленное изрядной долей ')),
-              Promo(
-                  data: PromoData(
-                      const Image(
-                          image: AssetImage('assets/images/reup_img1.jpg')),
-                      const Image(
-                          image: AssetImage('assets/images/reup_img2.jpg')),
-                      '1',
-                      '1',
-                      '1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111 ')),
-            ],
-          ),
-        ),
+        Promo(),
 
         // ряды кнопок с категориями товаров
         Row(
@@ -352,7 +322,7 @@ class MainPage extends StatelessWidget {
           ),
         ),
         //анимашка
-        //upcycleWidget()
+        //UpcycleWidget(),
         const SizedBox(
           height: 48,
         ),
@@ -508,18 +478,34 @@ class MainPage extends StatelessWidget {
   }
 }
 
-class upcycleWidget extends StatelessWidget {
-  const upcycleWidget({
-    super.key,
-  });
+class UpcycleWidget extends StatefulWidget {
+  const UpcycleWidget({super.key});
 
-  // void initState() {
-  //   initState();
-  //   WidgetsBinding.instance.addPostFrameCallback((_) {
-  //     // автоматическая прокрутка до конца списка
-  //     sc.animateTo(99999, duration: Duration(hours: 2), curve: Curves.easeOut);
-  //   });
-  // }
+  @override
+  State<UpcycleWidget> createState() => _UpcycleWidgetState();
+}
+
+class _UpcycleWidgetState extends State<UpcycleWidget>
+    with SingleTickerProviderStateMixin {
+  late AnimationController _controller;
+
+  ScrollController scrollControllerUpcycle = ScrollController();
+
+  @override
+  void initState() {
+    super.initState();
+    // _controller = AnimationController(vsync: this);
+    if (scrollControllerUpcycle.hasClients) {
+      scrollControllerUpcycle.animateTo(99999,
+          duration: Duration(hours: 2), curve: Curves.easeOut);
+    }
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -532,13 +518,8 @@ class upcycleWidget extends StatelessWidget {
           return SvgPicture.asset('assets/icons/upcycle.svg');
         },
         itemCount: 99999999,
-
-        controller: sc,
-        //sc.animateTo(99999, duration:Duration(hours: 2), curve:Curves.easeOut),
-        //sc.animateTo(0.0, duration: Duration(hours: 2), curve:Curves.easeOut),
+        controller: scrollControllerUpcycle,
       ),
     );
   }
 }
-
-final sc = ScrollController();
