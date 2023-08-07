@@ -51,6 +51,9 @@ class _PromoState extends State<Promo> {
       height: 779, //774, //734, //678
       child: PageView(
         controller: controller,
+        onPageChanged: (index) {
+          currentPage = index;
+        },
         children: [
           PromoPage(
               data: PromoData(

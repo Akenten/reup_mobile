@@ -52,23 +52,28 @@ class _ReupChoiseState extends State<ReupChoise> {
   Widget build(BuildContext context) {
     return SizedBox(
       height: 500,
-      child: PageView(controller: controllerReupChoise, children: [
-        reupChoisePage(
-            data: reupChoiseData(
-                'BEFREE',
-                'Наше дело не так однозначно, как может показаться: существующая теория напрямую зависит от стандартных подходов. Идейные соображения высшего порядка, а также разбавленное изрядной долей',
-                Image.asset('assets/images/reup_img3.jpg'))),
-        reupChoisePage(
-            data: reupChoiseData(
-                'BEFREE',
-                'Наше дело не так однозначно, как может показаться: существующая теория напрямую зависит от стандартных подходов. Идейные соображения высшего порядка, а также разбавленное изрядной долей',
-                Image.asset('assets/images/reup_img3.jpg'))),
-        reupChoisePage(
-            data: reupChoiseData(
-                'BEFREE',
-                'Наше дело не так однозначно, как может показаться: существующая теория напрямую зависит от стандартных подходов. Идейные соображения высшего порядка, а также разбавленное изрядной долей',
-                Image.asset('assets/images/reup_img3.jpg'))),
-      ]),
+      child: PageView(
+          controller: controllerReupChoise,
+          onPageChanged: (index) {
+            _currentPage = index;
+          },
+          children: [
+            reupChoisePage(
+                data: reupChoiseData(
+                    'BEFREE',
+                    'Наше дело не так однозначно, как может показаться: существующая теория напрямую зависит от стандартных подходов. Идейные соображения высшего порядка, а также разбавленное изрядной долей',
+                    Image.asset('assets/images/reup_img3.jpg'))),
+            reupChoisePage(
+                data: reupChoiseData(
+                    'BEFREE',
+                    'Наше дело не так однозначно, как может показаться: существующая теория напрямую зависит от стандартных подходов. Идейные соображения высшего порядка, а также разбавленное изрядной долей',
+                    Image.asset('assets/images/reup_img3.jpg'))),
+            reupChoisePage(
+                data: reupChoiseData(
+                    'BEFREE',
+                    'Наше дело не так однозначно, как может показаться: существующая теория напрямую зависит от стандартных подходов. Идейные соображения высшего порядка, а также разбавленное изрядной долей',
+                    Image.asset('assets/images/reup_img3.jpg'))),
+          ]),
     );
   }
 }
