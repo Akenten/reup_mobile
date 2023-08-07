@@ -8,10 +8,6 @@ import 'collection.dart';
 import 'styles.dart';
 import 'promo.dart';
 
-final controllerReupChoise = PageController(
-  initialPage: 0,
-);
-
 class MainPage extends StatelessWidget {
   const MainPage({super.key});
 
@@ -20,6 +16,7 @@ class MainPage extends StatelessWidget {
     return SingleChildScrollView(
         child: Column(
       children: [
+        //промо
         Promo(),
 
         // ряды кнопок с категориями товаров
@@ -214,26 +211,7 @@ class MainPage extends StatelessWidget {
         ),
 
         //карусель выбора reup
-        SizedBox(
-          height: 500,
-          child: PageView(controller: controllerReupChoise, children: [
-            reupChoise(
-                data: reupChoiseData(
-                    'BEFREE',
-                    'Наше дело не так однозначно, как может показаться: существующая теория напрямую зависит от стандартных подходов. Идейные соображения высшего порядка, а также разбавленное изрядной долей',
-                    Image.asset('assets/images/reup_img3.jpg'))),
-            reupChoise(
-                data: reupChoiseData(
-                    'BEFREE',
-                    'Наше дело не так однозначно, как может показаться: существующая теория напрямую зависит от стандартных подходов. Идейные соображения высшего порядка, а также разбавленное изрядной долей',
-                    Image.asset('assets/images/reup_img3.jpg'))),
-            reupChoise(
-                data: reupChoiseData(
-                    'BEFREE',
-                    'Наше дело не так однозначно, как может показаться: существующая теория напрямую зависит от стандартных подходов. Идейные соображения высшего порядка, а также разбавленное изрядной долей',
-                    Image.asset('assets/images/reup_img3.jpg'))),
-          ]),
-        ),
+        ReupChoise(),
 
 // раздел с коллекциями
         Container(
