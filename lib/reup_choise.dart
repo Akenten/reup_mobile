@@ -3,11 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:reup/styles.dart';
-
-// final controller = PageController(
-//   initialPage: 0,
-
-// );
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 final controllerReupChoise = PageController(
   initialPage: 0,
@@ -50,30 +46,87 @@ class _ReupChoiseState extends State<ReupChoise> {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 500,
-      child: PageView(
-          controller: controllerReupChoise,
-          onPageChanged: (index) {
-            _currentPage = index;
-          },
-          children: [
-            reupChoisePage(
-                data: reupChoiseData(
-                    'BEFREE',
-                    'Наше дело не так однозначно, как может показаться: существующая теория напрямую зависит от стандартных подходов. Идейные соображения высшего порядка, а также разбавленное изрядной долей',
-                    Image.asset('assets/images/reup_img3.jpg'))),
-            reupChoisePage(
-                data: reupChoiseData(
-                    'BEFREE',
-                    'Наше дело не так однозначно, как может показаться: существующая теория напрямую зависит от стандартных подходов. Идейные соображения высшего порядка, а также разбавленное изрядной долей',
-                    Image.asset('assets/images/reup_img3.jpg'))),
-            reupChoisePage(
-                data: reupChoiseData(
-                    'BEFREE',
-                    'Наше дело не так однозначно, как может показаться: существующая теория напрямую зависит от стандартных подходов. Идейные соображения высшего порядка, а также разбавленное изрядной долей',
-                    Image.asset('assets/images/reup_img3.jpg'))),
-          ]),
+    return Column(
+      children: [
+        SizedBox(
+          height: 500,
+          child: PageView(
+              controller: controllerReupChoise,
+              onPageChanged: (index) {
+                _currentPage = index;
+              },
+              children: [
+                reupChoisePage(
+                    data: reupChoiseData(
+                        'BEFREE',
+                        'Наше дело не так однозначно, как может показаться: существующая теория напрямую зависит от стандартных подходов. Идейные соображения высшего порядка, а также разбавленное изрядной долей',
+                        Image.asset('assets/images/reup_img3.jpg'))),
+                reupChoisePage(
+                    data: reupChoiseData(
+                        'BEFREE',
+                        'Наше дело не так однозначно, как может показаться: существующая теория напрямую зависит от стандартных подходов. Идейные соображения высшего порядка, а также разбавленное изрядной долей',
+                        Image.asset('assets/images/reup_img3.jpg'))),
+                reupChoisePage(
+                    data: reupChoiseData(
+                        'BEFREE',
+                        'Наше дело не так однозначно, как может показаться: существующая теория напрямую зависит от стандартных подходов. Идейные соображения высшего порядка, а также разбавленное изрядной долей',
+                        Image.asset('assets/images/reup_img3.jpg'))),
+                reupChoisePage(
+                    data: reupChoiseData(
+                        'BEFREE',
+                        'Наше дело не так однозначно, как может показаться: существующая теория напрямую зависит от стандартных подходов. Идейные соображения высшего порядка, а также разбавленное изрядной долей',
+                        Image.asset('assets/images/reup_img3.jpg'))),
+                reupChoisePage(
+                    data: reupChoiseData(
+                        'BEFREE',
+                        'Наше дело не так однозначно, как может показаться: существующая теория напрямую зависит от стандартных подходов. Идейные соображения высшего порядка, а также разбавленное изрядной долей',
+                        Image.asset('assets/images/reup_img3.jpg'))),
+                reupChoisePage(
+                    data: reupChoiseData(
+                        'BEFREE',
+                        'Наше дело не так однозначно, как может показаться: существующая теория напрямую зависит от стандартных подходов. Идейные соображения высшего порядка, а также разбавленное изрядной долей',
+                        Image.asset('assets/images/reup_img3.jpg'))),
+              ]),
+        ),
+
+        // Padding(
+        //   padding: EdgeInsets.only(left: 16),
+        //   child: Text(
+        //     '$_currentPage из 6',
+        //     style: CustomButtonTextStyle.buttonBoldStyle,
+        //   ),
+        // ),
+
+        //индикатор страниц
+        Container(
+          width: MediaQuery.of(context).size.width,
+          color: const Color.fromARGB(255, 188, 218, 99),
+          child: Padding(
+            padding: const EdgeInsets.only(left: 16, right: 16),
+            child: SmoothPageIndicator(
+              controller: controllerReupChoise,
+              count: 6,
+              effect: ExpandingDotsEffect(
+                  dotColor: Colors.white.withOpacity(0.5),
+                  activeDotColor: Colors.black,
+                  radius: 0,
+                  dotHeight: 8,
+                  spacing: 4,
+                  dotWidth: 8,
+                  //expansionFactor: 37,
+                  expansionFactor: ((MediaQuery.of(context).size.width -
+                              32 -
+                              (5 * 4 + 5 * 8)) ~/
+                          8)
+                      .toDouble()
+                  //(MediaQuery.of(context).size.width - (5 * 4 * 8)) / 8,
+                  //expansionFactor:   length - (count-1) * 4
+                  //dotWidth: 180,     ((count-1) * 4 * 8 ) /8
+                  ),
+            ),
+          ),
+        )
+      ],
     );
   }
 }
@@ -141,6 +194,9 @@ class _reupChoiseState extends State<reupChoisePage> {
             ),
           ),
           widget.data.img,
+          const SizedBox(
+            height: 8,
+          ),
         ],
       ),
     );

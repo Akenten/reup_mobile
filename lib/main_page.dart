@@ -301,6 +301,7 @@ class MainPage extends StatelessWidget {
         ),
         //анимашка
         //UpcycleWidget(),
+        //tr(),
         const SizedBox(
           height: 48,
         ),
@@ -337,57 +338,61 @@ class MainPage extends StatelessWidget {
         //     Expanded(
         //         child: Container(
         //       color: Colors.red,
-        //       child: IconButton(
-        //         onPressed: (() {
-        //           log('tap');
-        //         }),
-        //         style: IconButton.styleFrom(
-        //             tapTargetSize: MaterialTapTargetSize.shrinkWrap),
-        //         //iconSize: double.infinity,
-        //         icon: SvgPicture.asset(
-        //           'assets/images/reup_ad1.1.svg',
-        //           //fit: BoxFit.contain,
+        //       child: FittedBox(
+        //         child: IconButton(
+        //           onPressed: (() {
+        //             log('tap');
+        //           }),
+        //           style: IconButton.styleFrom(
+        //               tapTargetSize: MaterialTapTargetSize.shrinkWrap),
+        //           //iconSize: double.infinity,
+        //           icon: SvgPicture.asset(
+        //             'assets/images/reup_ad1.1.svg',
+        //             fit: BoxFit.contain,
+        //           ),
+        //           iconSize: 100,
         //         ),
+        //         fit: BoxFit.fill,
         //       ),
         //     ))
         //   ],
         // ),
 
 // соцсети
-        Row(
-          children: [
-            // Text(
-            //   'REUP',
-            //   style: GoogleFonts.delaGothicOne(
-            //     color: Colors.black,
-            //     fontSize: 24,
-            //     fontWeight: FontWeight.w400,
-            //     letterSpacing: 0.96,
-            //   ),
-            // ),
-            //const Expanded(child: SizedBox()),
-            IconButton(
-              onPressed: null,
-              icon: SvgPicture.asset('assets/icons/reup_icon_vk.svg'),
-              //iconSize: 40,
-            ),
-            IconButton(
-              onPressed: null,
-              icon: SvgPicture.asset('assets/icons/reup_icon_inst.svg'),
-              //iconSize: 40,
-            ),
-            IconButton(
-              onPressed: null,
-              icon: SvgPicture.asset('assets/icons/reup_icon_fb.svg'),
-              //iconSize: 40,
-            ),
-            IconButton(
-              onPressed: null,
-              icon: SvgPicture.asset('assets/icons/reup_icon_tg.svg'),
-              //iconSize: 40,
-            ),
-          ],
-        ),
+        // Row(
+        //   children: [
+        //     // Text(
+        //     //   'REUP',
+        //     //   style: GoogleFonts.delaGothicOne(
+        //     //     color: Colors.black,
+        //     //     fontSize: 24,
+        //     //     fontWeight: FontWeight.w400,
+        //     //     letterSpacing: 0.96,
+        //     //   ),
+        //     // ),
+        //     //const Expanded(child: SizedBox()),
+        //     IconButton(
+        //       onPressed: null,
+        //       icon: SvgPicture.asset('assets/icons/reup_icon_vk.svg'),
+        //       //iconSize: 40,
+        //     ),
+        //     IconButton(
+        //       onPressed: null,
+        //       icon: SvgPicture.asset('assets/icons/reup_icon_inst.svg'),
+        //       //iconSize: 40,
+        //     ),
+        //     IconButton(
+        //       onPressed: null,
+        //       icon: SvgPicture.asset('assets/icons/reup_icon_fb.svg'),
+        //       //iconSize: 40,
+        //     ),
+        //     IconButton(
+        //       onPressed: null,
+        //       icon: SvgPicture.asset('assets/icons/reup_icon_tg.svg'),
+        //       //iconSize: 40,
+        //     ),
+        //   ],
+        // ),
 
         // текстовые кнопки для помощи
         Align(
@@ -472,7 +477,7 @@ class _UpcycleWidgetState extends State<UpcycleWidget>
   @override
   void initState() {
     super.initState();
-    // _controller = AnimationController(vsync: this);
+    _controller = AnimationController(vsync: this);
     if (scrollControllerUpcycle.hasClients) {
       scrollControllerUpcycle.animateTo(99999,
           duration: Duration(hours: 2), curve: Curves.easeOut);
@@ -495,7 +500,7 @@ class _UpcycleWidgetState extends State<UpcycleWidget>
         itemBuilder: (context, index) {
           return SvgPicture.asset('assets/icons/upcycle.svg');
         },
-        itemCount: 99999999,
+        itemCount: 999999,
         controller: scrollControllerUpcycle,
       ),
     );
