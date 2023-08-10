@@ -1,12 +1,12 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'carousel.dart';
-import 'reup_choise.dart';
-import 'collection.dart';
-import 'styles.dart';
-import 'promo.dart';
+import 'features/carousel.dart';
+import 'features/reup_choise.dart';
+import 'features/collection.dart';
+import '../common/styles.dart';
+import 'features/promo.dart';
+import 'features/category_buttons.dart';
+import 'features/collections_section.dart';
 
 class MainPage extends StatelessWidget {
   const MainPage({super.key});
@@ -20,162 +20,16 @@ class MainPage extends StatelessWidget {
         Promo(),
 
         // ряды кнопок с категориями товаров
-        Row(
-          children: [
-            Expanded(
-                flex: 1,
-                child: OutlinedButton(
-                    onPressed: (() {
-                      log('more');
-                    }),
-                    style: OutlinedButton.styleFrom(
-                        tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                        alignment: Alignment.centerRight,
-                        padding: EdgeInsets.only(right: 16),
-                        side: BorderSide(color: Colors.black, width: 1),
-                        shape: const RoundedRectangleBorder(
-                            borderRadius: BorderRadius.zero,
-                            side: BorderSide(color: Colors.black, width: 1))),
-                    child: const Text('верхняя одежда',
-                        maxLines: 1,
-                        style: CustomButtonTextStyle.buttonItemStyle))),
-            Expanded(
-                flex: 1,
-                child: OutlinedButton(
-                    onPressed: (() {
-                      log('more');
-                    }),
-                    style: OutlinedButton.styleFrom(
-                        tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                        side: BorderSide(color: Colors.black, width: 1),
-                        shape: const RoundedRectangleBorder(
-                            borderRadius: BorderRadius.zero,
-                            side: BorderSide(color: Colors.black, width: 1))),
-                    child: const Text('обувь',
-                        maxLines: 1,
-                        style: CustomButtonTextStyle.buttonItemStyle)))
-          ],
-        ),
-        Row(
-          children: [
-            Expanded(
-                flex: 1,
-                child: OutlinedButton(
-                    onPressed: (() {
-                      log('more');
-                    }),
-                    style: OutlinedButton.styleFrom(
-                        tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                        side: BorderSide(color: Colors.black, width: 1),
-                        alignment: Alignment.centerLeft,
-                        padding: EdgeInsets.only(left: 89),
-                        shape: const RoundedRectangleBorder(
-                            borderRadius: BorderRadius.zero,
-                            side: BorderSide(color: Colors.black, width: 1))),
-                    child: const Text('сумки',
-                        maxLines: 1,
-                        style: CustomButtonTextStyle.buttonItemStyle))),
-            Expanded(
-                flex: 1,
-                child: OutlinedButton(
-                    onPressed: (() {
-                      log('more');
-                    }),
-                    style: OutlinedButton.styleFrom(
-                        tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                        side: BorderSide(color: Colors.black, width: 1),
-                        alignment: Alignment.centerRight,
-                        padding: EdgeInsets.only(right: 32),
-                        shape: const RoundedRectangleBorder(
-                            borderRadius: BorderRadius.zero,
-                            side: BorderSide(color: Colors.black, width: 1))),
-                    child: const Text('рубашки',
-                        maxLines: 1,
-                        style: CustomButtonTextStyle.buttonItemStyle)))
-          ],
-        ),
-        Row(
-          children: [
-            Expanded(
-                flex: 1,
-                child: OutlinedButton(
-                    onPressed: (() {
-                      log('more');
-                    }),
-                    style: OutlinedButton.styleFrom(
-                        tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                        side: BorderSide(color: Colors.black, width: 1),
-                        alignment: Alignment.centerLeft,
-                        padding: EdgeInsets.only(left: 40),
-                        shape: const RoundedRectangleBorder(
-                            borderRadius: BorderRadius.zero,
-                            side: BorderSide(color: Colors.black, width: 1))),
-                    child: const Text('платья',
-                        maxLines: 1,
-                        style: CustomButtonTextStyle.buttonItemStyle))),
-            Expanded(
-                flex: 1,
-                child: OutlinedButton(
-                    onPressed: (() {
-                      log('more');
-                    }),
-                    style: OutlinedButton.styleFrom(
-                        tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                        side: BorderSide(color: Colors.black, width: 1),
-                        alignment: Alignment.centerLeft,
-                        padding: EdgeInsets.only(left: 20),
-                        shape: const RoundedRectangleBorder(
-                            borderRadius: BorderRadius.zero,
-                            side: BorderSide(color: Colors.black, width: 1))),
-                    child: const Text('костюмы',
-                        maxLines: 1,
-                        style: CustomButtonTextStyle.buttonItemStyle)))
-          ],
-        ),
-        Row(
-          children: [
-            Expanded(
-                flex: 1,
-                child: OutlinedButton(
-                    onPressed: (() {
-                      log('more');
-                    }),
-                    style: OutlinedButton.styleFrom(
-                        tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                        side: BorderSide(color: Colors.black, width: 1),
-                        alignment: Alignment.center,
-                        shape: const RoundedRectangleBorder(
-                            borderRadius: BorderRadius.zero,
-                            side: BorderSide(color: Colors.black, width: 1))),
-                    child: const Text('штаны',
-                        maxLines: 1,
-                        style: CustomButtonTextStyle.buttonItemStyle))),
-            Expanded(
-                flex: 1,
-                child: OutlinedButton(
-                    onPressed: (() {
-                      log('more');
-                    }),
-                    style: OutlinedButton.styleFrom(
-                        tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                        alignment: Alignment.centerRight,
-                        padding: EdgeInsets.only(right: 16),
-                        side: BorderSide(color: Colors.black, width: 1),
-                        shape: const RoundedRectangleBorder(
-                            borderRadius: BorderRadius.zero,
-                            side: BorderSide(color: Colors.black, width: 1))),
-                    child: const Text('аксессуары',
-                        maxLines: 1,
-                        style: CustomButtonTextStyle.buttonItemStyle)))
-          ],
-        ),
+
+        CategoryButtons(),
+
         // тут кончаются кнопки
 
         const SizedBox(height: 48),
         Align(
           alignment: Alignment.centerLeft,
           child: Padding(
-            padding: EdgeInsets.only(left: 16),
+            padding: const EdgeInsets.only(left: 16),
             child: Text('подобрали для тебя',
                 style: CustomTextStyle.headerTextStyle),
           ),
@@ -186,12 +40,12 @@ class MainPage extends StatelessWidget {
             alignment: Alignment.centerLeft,
             child: Padding(
                 padding: EdgeInsets.only(left: 8),
-                child: SizedBox(height: 292, child: carousel()))),
+                child: SizedBox(height: 292, child: Carousel()))),
         //const SizedBox(height: 16),
         Align(
           alignment: Alignment.centerLeft,
           child: Padding(
-            padding: EdgeInsets.only(left: 16),
+            padding: const EdgeInsets.only(left: 16),
             child: IconButton(
               onPressed: null,
               icon: SvgPicture.asset('assets/icons/reup_icon_more.svg'),
@@ -235,32 +89,7 @@ class MainPage extends StatelessWidget {
               Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      collection(
-                        data: collectionData('Название коллекции', 'бренд',
-                            Image.asset('assets/images/reup_collection.jpg')),
-                      ),
-                      collection(
-                        data: collectionData('Название коллекции', 'бренд',
-                            Image.asset('assets/images/reup_collection.jpg')),
-                      ),
-                    ],
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      collection(
-                        data: collectionData('Название коллекции', 'бренд',
-                            Image.asset('assets/images/reup_collection.jpg')),
-                      ),
-                      collection(
-                        data: collectionData('Название коллекции', 'бренд',
-                            Image.asset('assets/images/reup_collection.jpg')),
-                      ),
-                    ],
-                  ),
+                  CollectionsSection(),
                   const SizedBox(
                     height: 48,
                   ),
@@ -282,7 +111,7 @@ class MainPage extends StatelessWidget {
                       alignment: Alignment.centerLeft,
                       child: Padding(
                           padding: EdgeInsets.only(left: 8),
-                          child: SizedBox(height: 292, child: carousel()))),
+                          child: SizedBox(height: 292, child: Carousel()))),
                   Align(
                     alignment: Alignment.centerRight,
                     child: IconButton(
@@ -311,7 +140,7 @@ class MainPage extends StatelessWidget {
             alignment: Alignment.centerLeft,
             child: Padding(
                 padding: EdgeInsets.only(left: 8),
-                child: SizedBox(height: 292, child: carousel()))),
+                child: SizedBox(height: 292, child: Carousel()))),
         Align(
           alignment: Alignment.centerLeft,
           child: Padding(
@@ -447,7 +276,7 @@ class MainPage extends StatelessWidget {
                   onPressed: null,
                   style: OutlinedButton.styleFrom(
                       tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                      side: BorderSide(color: Colors.black, width: 1),
+                      side: const BorderSide(color: Colors.black, width: 1),
                       shape: const RoundedRectangleBorder(
                         borderRadius: BorderRadius.zero,
                       )),
@@ -480,7 +309,7 @@ class _UpcycleWidgetState extends State<UpcycleWidget>
     _controller = AnimationController(vsync: this);
     if (scrollControllerUpcycle.hasClients) {
       scrollControllerUpcycle.animateTo(99999,
-          duration: Duration(hours: 2), curve: Curves.easeOut);
+          duration: const Duration(hours: 2), curve: Curves.easeOut);
     }
   }
 

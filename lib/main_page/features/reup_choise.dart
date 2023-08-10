@@ -2,16 +2,18 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:reup/styles.dart';
+import 'package:reup/common/styles.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 final controllerReupChoise = PageController(
   initialPage: 0,
 );
 
-Timer _timer = Timer.periodic(Duration(seconds: 7), (Timer timer) {});
+Timer _timer = Timer.periodic(const Duration(seconds: 7), (Timer timer) {});
 
 int _currentPage = 0;
+
+int _numberOfPages = 6;
 
 class ReupChoise extends StatefulWidget {
   const ReupChoise({
@@ -26,15 +28,15 @@ class _ReupChoiseState extends State<ReupChoise> {
   @override
   void initState() {
     super.initState();
-    _timer = Timer.periodic(Duration(seconds: 7), (Timer timer) {
-      if (_currentPage < 2) {
+    _timer = Timer.periodic(const Duration(seconds: 7), (Timer timer) {
+      if (_currentPage < _numberOfPages - 1) {
         _currentPage++;
       } else {
         _currentPage = 0;
       }
 
       controllerReupChoise.animateToPage(_currentPage,
-          duration: Duration(milliseconds: 350), curve: Curves.easeIn);
+          duration: const Duration(milliseconds: 350), curve: Curves.easeIn);
     });
   }
 
@@ -54,35 +56,48 @@ class _ReupChoiseState extends State<ReupChoise> {
               controller: controllerReupChoise,
               onPageChanged: (index) {
                 _currentPage = index;
+                _timer.cancel();
+                _timer =
+                    Timer.periodic(const Duration(seconds: 7), (Timer timer) {
+                  if (_currentPage < _numberOfPages - 1) {
+                    _currentPage++;
+                  } else {
+                    _currentPage = 0;
+                  }
+
+                  controllerReupChoise.animateToPage(_currentPage,
+                      duration: const Duration(milliseconds: 350),
+                      curve: Curves.easeIn);
+                });
               },
               children: [
-                reupChoisePage(
-                    data: reupChoiseData(
+                ReupChoisePage(
+                    data: ReupChoiseData(
                         'BEFREE',
                         'Наше дело не так однозначно, как может показаться: существующая теория напрямую зависит от стандартных подходов. Идейные соображения высшего порядка, а также разбавленное изрядной долей',
                         Image.asset('assets/images/reup_img3.jpg'))),
-                reupChoisePage(
-                    data: reupChoiseData(
+                ReupChoisePage(
+                    data: ReupChoiseData(
                         'BEFREE',
                         'Наше дело не так однозначно, как может показаться: существующая теория напрямую зависит от стандартных подходов. Идейные соображения высшего порядка, а также разбавленное изрядной долей',
                         Image.asset('assets/images/reup_img3.jpg'))),
-                reupChoisePage(
-                    data: reupChoiseData(
+                ReupChoisePage(
+                    data: ReupChoiseData(
                         'BEFREE',
                         'Наше дело не так однозначно, как может показаться: существующая теория напрямую зависит от стандартных подходов. Идейные соображения высшего порядка, а также разбавленное изрядной долей',
                         Image.asset('assets/images/reup_img3.jpg'))),
-                reupChoisePage(
-                    data: reupChoiseData(
+                ReupChoisePage(
+                    data: ReupChoiseData(
                         'BEFREE',
                         'Наше дело не так однозначно, как может показаться: существующая теория напрямую зависит от стандартных подходов. Идейные соображения высшего порядка, а также разбавленное изрядной долей',
                         Image.asset('assets/images/reup_img3.jpg'))),
-                reupChoisePage(
-                    data: reupChoiseData(
+                ReupChoisePage(
+                    data: ReupChoiseData(
                         'BEFREE',
                         'Наше дело не так однозначно, как может показаться: существующая теория напрямую зависит от стандартных подходов. Идейные соображения высшего порядка, а также разбавленное изрядной долей',
                         Image.asset('assets/images/reup_img3.jpg'))),
-                reupChoisePage(
-                    data: reupChoiseData(
+                ReupChoisePage(
+                    data: ReupChoiseData(
                         'BEFREE',
                         'Наше дело не так однозначно, как может показаться: существующая теория напрямую зависит от стандартных подходов. Идейные соображения высшего порядка, а также разбавленное изрядной долей',
                         Image.asset('assets/images/reup_img3.jpg'))),
@@ -114,40 +129,48 @@ class _ReupChoiseState extends State<ReupChoise> {
                   spacing: 4,
                   dotWidth: 8,
                   //expansionFactor: 37,
-                  expansionFactor: ((MediaQuery.of(context).size.width -
-                              32 -
-                              (5 * 4 + 5 * 8)) ~/
-                          8)
-                      .toDouble()
-                  //(MediaQuery.of(context).size.width - (5 * 4 * 8)) / 8,
-                  //expansionFactor:   length - (count-1) * 4
-                  //dotWidth: 180,     ((count-1) * 4 * 8 ) /8
-                  ),
+                  expansionFactor: _getExpansionFactor(context)),
             ),
           ),
         )
       ],
     );
   }
+
+  //TODO изменить цифры на переменные
+  double _getExpansionFactor(BuildContext context) {
+    int _numberOfInactivePages = _numberOfPages - 1;
+    int _distanceBetween =
+        4; // расстояние в пикселях между точками неактивных страниц
+    int _pointSize =
+        8; // размер неактиных точек (указывается еще в билдере smoothPage)
+
+    return ((MediaQuery.of(context).size.width -
+                32 -
+                (_numberOfInactivePages * _distanceBetween +
+                    _numberOfInactivePages * _pointSize)) ~/
+            _pointSize)
+        .toDouble();
+  }
 }
 
-class reupChoiseData {
+class ReupChoiseData {
   final String title;
   final String text;
   final Image img;
 
-  reupChoiseData(this.title, this.text, this.img);
+  ReupChoiseData(this.title, this.text, this.img);
 }
 
-class reupChoisePage extends StatefulWidget {
-  final reupChoiseData data;
-  const reupChoisePage({super.key, required this.data});
+class ReupChoisePage extends StatefulWidget {
+  final ReupChoiseData data;
+  const ReupChoisePage({super.key, required this.data});
 
   @override
-  State<reupChoisePage> createState() => _reupChoiseState();
+  State<ReupChoisePage> createState() => _reupChoiseState();
 }
 
-class _reupChoiseState extends State<reupChoisePage> {
+class _reupChoiseState extends State<ReupChoisePage> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -162,7 +185,7 @@ class _reupChoiseState extends State<reupChoisePage> {
           Align(
             alignment: Alignment.centerLeft,
             child: Padding(
-              padding: EdgeInsets.only(left: 16, right: 16),
+              padding: const EdgeInsets.only(left: 16, right: 16),
               child: Text(
                 widget.data.title,
                 style: CustomTextStyle.reupChoiseTitle,

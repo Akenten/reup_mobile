@@ -1,21 +1,18 @@
-//import 'dart:math';
 import 'dart:developer';
 import 'package:flutter/material.dart';
-//import 'package:flutter/foundation.dart';
-//import 'package:flutter/gestures.dart';
 import 'package:infinite_carousel/infinite_carousel.dart';
 import 'product.dart';
 
-class carousel extends StatefulWidget {
-  const carousel({super.key});
+class Carousel extends StatefulWidget {
+  const Carousel({super.key});
 
   @override
-  State<carousel> createState() => _carouselState();
+  State<Carousel> createState() => _CarouselState();
 }
 
-class _carouselState extends State<carousel> {
+class _CarouselState extends State<Carousel> {
   // Wheater to loop through elements
-  bool _loop = false;
+  final bool _loop = false;
 
   // Scroll controller for carousel
   late InfiniteScrollController _controller;
@@ -24,7 +21,7 @@ class _carouselState extends State<carousel> {
   int _selectedIndex = 0;
 
   // Width of each item
-  double _itemExtent = 191; //175
+  final double _itemExtent = 191; //175
 
   // Get screen width of viewport.
   double get screenWidth => MediaQuery.of(context).size.width;
@@ -67,8 +64,8 @@ class _carouselState extends State<carousel> {
                     var s = itemIndex.toString();
                     log(s);
                   },
-                  child: product(
-                      data: productData(
+                  child: Product(
+                      data: ProductData(
                           Image.asset('assets/images/reup_product.jpg'),
                           'befree',
                           'Блузка женская Лейди',

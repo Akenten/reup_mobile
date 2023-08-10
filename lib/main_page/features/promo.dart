@@ -3,14 +3,14 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'styles.dart';
+import '../../common/styles.dart';
 
 //controller for promo
 final controller = PageController(
   initialPage: 0,
 );
 
-Timer _timer = Timer.periodic(Duration(seconds: 7), (Timer timer) {});
+late Timer _timer;
 
 int currentPage = 0;
 
@@ -27,7 +27,7 @@ class _PromoState extends State<Promo> {
   @override
   void initState() {
     super.initState();
-    _timer = Timer.periodic(Duration(seconds: 7), (Timer timer) {
+    _timer = Timer.periodic(const Duration(seconds: 7), (Timer timer) {
       if (currentPage < 3) {
         currentPage++;
       } else {
@@ -35,7 +35,7 @@ class _PromoState extends State<Promo> {
       }
 
       controller.animateToPage(currentPage,
-          duration: Duration(milliseconds: 350), curve: Curves.easeIn);
+          duration: const Duration(milliseconds: 350), curve: Curves.easeIn);
     });
   }
 
@@ -53,6 +53,19 @@ class _PromoState extends State<Promo> {
         controller: controller,
         onPageChanged: (index) {
           currentPage = index;
+          _timer.cancel();
+          _timer = Timer.periodic(const Duration(seconds: 7), (Timer timer) {
+            if (currentPage < 3) {
+              currentPage++;
+            } else {
+              currentPage = 0;
+            }
+
+            controller.animateToPage(currentPage,
+                duration: const Duration(milliseconds: 350),
+                curve: Curves.easeIn);
+          });
+          // TODO остановка и запуск таймера
         },
         children: [
           PromoPage(

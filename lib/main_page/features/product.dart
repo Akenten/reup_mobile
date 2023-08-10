@@ -1,26 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:reup/styles.dart';
+import 'package:reup/common/styles.dart';
 import 'dart:developer';
 
-class product extends StatefulWidget {
-  final productData data;
-  const product({super.key, required this.data});
+class Product extends StatefulWidget {
+  final ProductData data;
+  const Product({super.key, required this.data});
 
   @override
-  State<product> createState() => _productState();
+  State<Product> createState() => _ProductState();
 }
 
-class productData {
+class ProductData {
   final Image img;
   final String brand;
   final String name;
   final String price;
 
-  productData(this.img, this.brand, this.name, this.price);
+  ProductData(this.img, this.brand, this.name, this.price);
 }
 
-class _productState extends State<product> {
+class _ProductState extends State<Product> {
   @override
   Widget build(BuildContext context) {
     return Container(

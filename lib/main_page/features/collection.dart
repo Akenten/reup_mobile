@@ -1,22 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:reup/styles.dart';
+import 'package:reup/common/styles.dart';
 
-class collection extends StatefulWidget {
-  final collectionData data;
-  const collection({super.key, required this.data});
+class Collection extends StatelessWidget {
+  final CollectionData data;
+  const Collection({super.key, required this.data});
 
-  @override
-  State<collection> createState() => _collectionState();
-}
-
-class collectionData {
-  final String collectionName;
-  final String Brand;
-  final Image img;
-  collectionData(this.collectionName, this.Brand, this.img);
-}
-
-class _collectionState extends State<collection> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -34,8 +22,8 @@ class _collectionState extends State<collection> {
             border: Border(bottom: BorderSide(color: Colors.black, width: 0.5)),
           ),
           child: FittedBox(
-            child: widget.data.img,
             fit: BoxFit.fill,
+            child: data.img,
           ),
         ),
         const SizedBox(height: 8),
@@ -44,7 +32,7 @@ class _collectionState extends State<collection> {
             child: Padding(
                 padding: const EdgeInsets.only(left: 8),
                 child: Text(
-                  widget.data.collectionName,
+                  data.collectionName,
                   style: CustomTextStyle.boldTextStyle,
                   maxLines: 1,
                 ))),
@@ -54,9 +42,9 @@ class _collectionState extends State<collection> {
         Align(
           alignment: Alignment.centerLeft,
           child: Padding(
-            padding: EdgeInsets.only(left: 8),
+            padding: const EdgeInsets.only(left: 8),
             child: Text(
-              widget.data.Brand,
+              data.brand,
               style: CustomTextStyle.promoTextStyle,
               maxLines: 1,
             ),
@@ -65,4 +53,11 @@ class _collectionState extends State<collection> {
       ]),
     );
   }
+}
+
+class CollectionData {
+  final String collectionName;
+  final String brand;
+  final Image img;
+  CollectionData(this.collectionName, this.brand, this.img);
 }
