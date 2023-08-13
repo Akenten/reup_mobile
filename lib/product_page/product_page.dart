@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:reup/product_page/custom_size_button.dart';
+import 'package:reup/product_page/custom_box_decoration.dart';
+import 'package:reup/product_page/product_image.dart';
 import 'product_characteristics.dart';
 import 'product_description.dart';
 
 class ProductPage extends StatelessWidget {
   const ProductPage({super.key});
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,11 +18,12 @@ class ProductPage extends StatelessWidget {
         leading: const BackButton(color: Colors.black),
         actions: const [
           IconButton(
-              onPressed: null,
-              icon: Icon(
-                Icons.favorite,
-                color: Colors.black,
-              ))
+            onPressed: null,
+            icon: Icon(
+              Icons.favorite,
+              color: Colors.black,
+            ),
+          )
         ],
       ),
       body: SingleChildScrollView(
@@ -29,24 +31,7 @@ class ProductPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(height: MediaQuery.of(context).viewPadding.top),
-            Stack(
-              children: [
-                Image.asset('assets/images/reup_img3.jpg'),
-                Padding(
-                  padding: const EdgeInsets.only(bottom: 16, right: 16),
-                  child: SizedBox(
-                    height: 20,
-                    width: 20,
-                    child: FloatingActionButton.small(
-                      onPressed: () => null,
-                      backgroundColor: Color.fromRGBO(228, 228, 228, 1),
-                      child: Text('!', style: TextStyle(color: Colors.black),),
-                    ),
-                  ),
-                )
-              ],
-              alignment: Alignment.bottomRight,
-            ),
+            const ProductImage(),
             // название товара, бренд, артикул, цена
             Padding(
               padding: const EdgeInsets.only(top: 16, left: 16, right: 16),
@@ -62,7 +47,7 @@ class ProductPage extends StatelessWidget {
                       letterSpacing: 1.04,
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 8,
                   ),
                   const Text(
@@ -74,7 +59,7 @@ class ProductPage extends StatelessWidget {
                       fontWeight: FontWeight.w700,
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 8,
                   ),
                   const Text(
@@ -86,13 +71,13 @@ class ProductPage extends StatelessWidget {
                       fontWeight: FontWeight.w300,
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 8,
                   ),
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
-                      Text(
+                      const Text(
                         '3990',
                         style: TextStyle(
                           fontFamily: 'Gilroy',
@@ -102,7 +87,7 @@ class ProductPage extends StatelessWidget {
                           decoration: TextDecoration.lineThrough,
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 8,
                       ),
                       Text(
@@ -125,7 +110,7 @@ class ProductPage extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
+                  const Text(
                     'выберите размер',
                     style: TextStyle(
                       fontFamily: 'Gilroy',
@@ -134,45 +119,29 @@ class ProductPage extends StatelessWidget {
                       fontWeight: FontWeight.w500,
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 8,
                   ),
-                  SizedBox(
-                    height: 42,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        size_button(
-                          size: '40-42',
-                        ),
-                        size_button(
-                          size: '42-44',
-                        ),
-                        size_button(
-                          size: '44-46',
-                        ),
-                        size_button(
-                          size: '46-48',
-                        ),
-                      ],
-                    ),
-                  ),
-                  SizedBox(
+                  const SizeButtonCompleted(
+                      availableSizes: ['40-42', '42-44', '44-46', '46-48']),
+                  const SizedBox(
                     height: 16,
                   ),
-                  Container(
-                    width: double.infinity,
-                    height: 42,
-                    decoration: CustomBoxDecoration.myBoxDecoration,
-                    child: Center(
-                      child: Text(
-                        'купить сейчас',
-                        style: TextStyle(
-                          fontFamily: 'Gilroy',
-                          color: Colors.black,
-                          fontSize: 14,
-                          fontWeight: FontWeight.w500,
-                          letterSpacing: 1.07,
+                  InkWell(
+                    onTap: () => null,
+                    child: Container(
+                      height: 42,
+                      decoration: CustomBoxDecoration.myBoxDecoration,
+                      child: const Center(
+                        child: Text(
+                          'купить сейчас',
+                          style: TextStyle(
+                            fontFamily: 'Gilroy',
+                            color: Colors.black,
+                            fontSize: 14,
+                            fontWeight: FontWeight.w500,
+                            letterSpacing: 1.07,
+                          ),
                         ),
                       ),
                     ),
@@ -180,7 +149,7 @@ class ProductPage extends StatelessWidget {
                 ],
               ),
             ),
-            Padding(
+            const Padding(
               padding: EdgeInsets.symmetric(horizontal: 16),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -208,8 +177,8 @@ class ProductPage extends StatelessWidget {
               indent: 16,
               endIndent: 16,
             ),
-            Padding(
-              padding: const EdgeInsets.all(16),
+            const Padding(
+              padding: EdgeInsets.all(16),
               child: ProductDescription(),
             ),
             const Divider(
@@ -218,8 +187,8 @@ class ProductPage extends StatelessWidget {
               indent: 16,
               endIndent: 16,
             ),
-            Padding(
-              padding: const EdgeInsets.all(16),
+            const Padding(
+              padding: EdgeInsets.all(16),
               child: ProductCharacteristics(),
             )
           ],
