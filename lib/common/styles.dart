@@ -79,6 +79,29 @@ class CustomTextStyle {
     fontWeight: FontWeight.w400,
     letterSpacing: 0.98,
   );
+
+  static const TextStyle reupCartName = TextStyle(
+    color: Colors.black,
+    fontSize: 16,
+    fontFamily: 'Gilroy',
+    fontWeight: FontWeight.w700,
+    letterSpacing: 1.30,
+  );
+
+  static const TextStyle reupLastPrice = TextStyle(
+    color: Colors.grey,
+    fontSize: 14,
+    fontFamily: 'Gilroy',
+    fontWeight: FontWeight.w500,
+    letterSpacing: 0.98,
+  );
+  static const TextStyle reupCartSummary = TextStyle(
+    color: Colors.black,
+    fontSize: 14,
+    fontFamily: 'Gilroy',
+    fontWeight: FontWeight.w500,
+    letterSpacing: 0.98,
+  );
 }
 
 // класс для описания стиля текста в кнопках

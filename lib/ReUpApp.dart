@@ -5,6 +5,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:reup/common/styles.dart';
 import 'main_page/main_page.dart';
 import 'package:flutter/services.dart';
+import 'cart/cart.dart';
 
 class ReUpApp extends StatelessWidget {
   const ReUpApp({super.key});
@@ -15,11 +16,11 @@ class ReUpApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-          appBar: const PreferredSize(
-            preferredSize: Size.fromHeight(48),
-            child: AppBar(),
-          ),
-          body: MainPage(),
+          // appBar: const PreferredSize(
+          //   preferredSize: Size.fromHeight(48),
+          //   child: AppBar(),
+          // ),
+          body: Cart(),
           backgroundColor: Colors.white,
           bottomNavigationBar: SizedBox(
             height: 56,

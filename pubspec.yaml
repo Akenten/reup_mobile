@@ -89,6 +89,10 @@ flutter:
     - assets/icons/reup_icon_inst.svg
     - assets/icons/reup_icon_fb.svg
     - assets/icons/reup_icon_tg.svg
+    - assets/icons/reup_icon_cross.svg
+    - assets/images/reup_cart_product.jpg
+    - assets/icons/reup_icon_more_buttons.svg
+    - assets/icons/reup_icon_trash_can.svg
   #  - assets/fonts/Gilroy-Light.ttf
     
   #   - images/a_dot_burr.jpeg
@@ -116,6 +120,8 @@ flutter:
             weight: 400
           - asset: assets/fonts/Gilroy/Gilroy-Medium.ttf
             weight: 500
+          - asset: assets/fonts/Gilroy/Gilroy-Heavy.ttf
+            weight: 700
   #   - family: Schyler
   #     fonts:
   #       - asset: fonts/Schyler-Regular.ttf
