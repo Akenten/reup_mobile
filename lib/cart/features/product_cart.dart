@@ -85,14 +85,14 @@ class ProductCart extends StatelessWidget {
                   Row(
                     children: [
                       Text(
-                        data.price.toString(),
+                        '${data.price} ₽',
                         style: CustomButtonTextStyle.buttonItemStyle,
                       ),
                       const SizedBox(
                         width: 16,
                       ),
                       Text(
-                        data.lastPrice.toString(),
+                        '${data.lastPrice} ₽',
                         style: CustomTextStyle.reupLastPrice,
                       ),
                     ],

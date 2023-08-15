@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:reup/cart/features/product_cart.dart';
 import 'package:reup/common/styles.dart';
 
 class SummaryData {
@@ -8,25 +9,34 @@ class SummaryData {
 }
 
 class Summary extends StatelessWidget {
+  final List<ProductCartData> data;
   //final SummaryData data;
-  const Summary({
+  Summary({
     super.key,
+    required this.data,
   });
 
   @override
   Widget build(BuildContext context) {
+    int sum = 0;
+    int sale = 0;
+    for (var i = 0; i < data.length; i++) {
+      sum += data[i].price;
+      sale += data[i].lastPrice;
+    }
+    sale -= sum;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const Row(
+        Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(
+            const Text(
               'итого:',
               style: CustomButtonTextStyle.buttonItemStyle,
             ),
             Text(
-              '10 000₽',
+              '$sum₽',
               style: CustomButtonTextStyle.buttonItemStyle,
             )
           ],
@@ -50,15 +60,15 @@ class Summary extends StatelessWidget {
         const SizedBox(
           height: 8,
         ),
-        const Row(
+        Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(
+            const Text(
               'скидка:',
               style: CustomTextStyle.reupCartSummary,
             ),
             Text(
-              '- 2 000₽',
+              '$sale₽',
               style: CustomTextStyle.reupCartSummary,
             ),
           ],
@@ -82,16 +92,6 @@ class Summary extends StatelessWidget {
         const SizedBox(
           height: 16,
         ),
-        // TextField(
-        //   decoration: InputDecoration(
-        //     //border: OutlineInputBorder(),
-        //     // Color.fromARGB(255, 188, 218, 99),
-        //     fillColor: Color.fromARGB(255, 182, 14, 14),
-        //     //hoverColor: Color.fromARGB(255, 243, 243, 243),
-
-        //     hintText: 'введите промокод',
-        //   ),
-        // )
         TextFormField(
           decoration: const InputDecoration(
             filled: true,

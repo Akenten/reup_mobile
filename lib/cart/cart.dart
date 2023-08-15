@@ -11,7 +11,7 @@ import 'package:reup/cart/features/product_cart.dart';
 
 class Cart extends StatelessWidget {
   // сюда должны попадать данные из бека
-  List items = [
+  List<ProductCartData> items = [
     ProductCartData(
         Image.asset('assets/images/reup_cart_product.jpg'),
         'топ Trendyol',

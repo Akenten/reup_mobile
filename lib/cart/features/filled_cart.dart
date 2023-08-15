@@ -5,6 +5,7 @@ import 'package:reup/common/styles.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:reup/cart/features/product_cart.dart';
 import 'package:reup/cart/features/summary.dart';
+import 'package:reup/cart/features/floating_bar.dart';
 
 int numberOfProucts = 0;
 String productsNameState = '';
@@ -25,13 +26,15 @@ String _getProductsNameState(BuildContext context) {
 }
 
 class FilledCart extends StatelessWidget {
-  final List items;
+  final List<ProductCartData> items;
+
   const FilledCart({super.key, required this.items});
 
   @override
   Widget build(BuildContext context) {
     numberOfProucts = items.length;
     productsNameState = _getProductsNameState(context);
+
     return Container(
       padding: const EdgeInsets.all(16),
       child: Column(
@@ -63,13 +66,25 @@ class FilledCart extends StatelessWidget {
               children:
                   //[
                   List.generate(items.length, (index) {
-            return ProductCart(data: items[index]);
+            return GestureDetector(
+                onTap: () {
+                  // first item index is 0
+                  var s = index.toString();
+                  log(s);
+                },
+                child: ProductCart(data: items[index]));
           })),
           const SizedBox(
             height: 32,
           ),
+          // Align(
+          //   alignment: FractionalOffset.bottomCenter,
+          //   child: FloatingBar(),
+          // ),
           // итого
-          Summary(),
+          Summary(
+            data: items,
+          ),
         ],
       ),
     );
