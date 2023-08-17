@@ -66,13 +66,15 @@ class FilledCart extends StatelessWidget {
               children:
                   //[
                   List.generate(items.length, (index) {
-            return GestureDetector(
-                onTap: () {
-                  // first item index is 0
-                  var s = index.toString();
-                  log(s);
-                },
-                child: ProductCart(data: items[index]));
+            return ProductCart(
+              data: items[index],
+              onTap: () {
+                log(index.toString());
+              },
+              // onDelete: () {
+              //   items.remove(items[index]);
+              // },
+            );
           })),
           const SizedBox(
             height: 32,

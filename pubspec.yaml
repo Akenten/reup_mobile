@@ -93,6 +93,8 @@ flutter:
     - assets/images/reup_cart_product.jpg
     - assets/icons/reup_icon_more_buttons.svg
     - assets/icons/reup_icon_trash_can.svg
+    - assets/icons/reup_icon_minus.svg
+    - assets/icons/reup_icon_plus.svg
   #  - assets/fonts/Gilroy-Light.ttf
     
   #   - images/a_dot_burr.jpeg

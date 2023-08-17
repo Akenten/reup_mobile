@@ -90,10 +90,10 @@ class CustomTextStyle {
 
   static const TextStyle reupLastPrice = TextStyle(
     color: Colors.grey,
-    fontSize: 14,
+    fontSize: 12,
     fontFamily: 'Gilroy',
     fontWeight: FontWeight.w500,
-    letterSpacing: 0.98,
+    letterSpacing: 0.84,
   );
   static const TextStyle reupCartSummary = TextStyle(
     color: Colors.black,

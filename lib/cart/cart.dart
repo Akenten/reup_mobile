@@ -9,6 +9,10 @@ import 'package:reup/cart/features/empty_cart.dart';
 import 'package:reup/main_page/features/carousel.dart';
 import 'package:reup/cart/features/product_cart.dart';
 
+// корзину надо редизайнить
+// как закрепить виджет оформления заказа внизу экрана + сделать так чтобы он пропадал когда появляется виджет суммы
+// как реализовать удаление товара из корзины + анимация
+
 class Cart extends StatelessWidget {
   // сюда должны попадать данные из бека
   List<ProductCartData> items = [
@@ -65,7 +69,7 @@ class Cart extends StatelessWidget {
     return SingleChildScrollView(
       child: Column(
         children: [
-          CartBar(),
+          //CartBar(),
           items.isNotEmpty
               ? FilledCart(
                   items: items,

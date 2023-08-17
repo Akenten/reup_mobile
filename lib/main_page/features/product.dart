@@ -24,7 +24,7 @@ class _ProductState extends State<Product> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 175,
+      width: 183, //175,
       height: 292,
       child: Stack(
         children: [
@@ -70,13 +70,15 @@ class _ProductState extends State<Product> {
             child: OutlinedButton(
               onPressed: null,
               style: OutlinedButton.styleFrom(
+                  //maximumSize: Size(102, 32),
                   backgroundColor: Colors.white,
+                  side: const BorderSide(color: Colors.black, width: 0.5),
                   tapTargetSize: MaterialTapTargetSize.shrinkWrap,
                   shape: const RoundedRectangleBorder(
                       borderRadius: BorderRadius.zero,
-                      side: BorderSide(color: Colors.black, width: 1.0))),
+                      side: BorderSide(color: Colors.black, width: 0.5))),
               child: const Text('в корзину',
-                  style: CustomButtonTextStyle.buttonBoldStyle),
+                  maxLines: 1, style: CustomButtonTextStyle.buttonBoldStyle),
             ),
           ),
           // линия
