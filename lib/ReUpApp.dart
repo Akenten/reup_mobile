@@ -7,12 +7,18 @@ import 'main_page/main_page.dart';
 import 'package:flutter/services.dart';
 import 'cart/cart.dart';
 
-class ReUpApp extends StatelessWidget {
+class ReUpApp extends StatefulWidget {
   const ReUpApp({super.key});
 
   @override
+  State<ReUpApp> createState() => _ReUpAppState();
+}
+
+int currentPageIndex = 0;
+
+class _ReUpAppState extends State<ReUpApp> {
+  @override
   Widget build(BuildContext context) {
-    //int currentPageIndex = 0;
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
@@ -20,27 +26,43 @@ class ReUpApp extends StatelessWidget {
           //   preferredSize: Size.fromHeight(48),
           //   child: AppBar(),
           // ),
-          body: Cart(),
+          body: <Widget>[
+            MainPage(),
+            Cart(),
+            Cart(),
+            Cart(),
+            Cart(),
+          ][currentPageIndex],
           backgroundColor: Colors.white,
           bottomNavigationBar: SizedBox(
             height: 56,
-            child: NavigationBar(backgroundColor: Colors.white, destinations: [
-              NavigationDestination(
-                  icon: SvgPicture.asset('assets/icons/reup_icon.svg'),
-                  label: ''),
-              NavigationDestination(
-                  icon: SvgPicture.asset('assets/icons/reup_icon_list.svg'),
-                  label: ''),
-              NavigationDestination(
-                  icon: SvgPicture.asset('assets/icons/reup_icon_cart.svg'),
-                  label: ''),
-              NavigationDestination(
-                  icon: SvgPicture.asset('assets/icons/reup_icon_favorite.svg'),
-                  label: ''),
-              NavigationDestination(
-                  icon: SvgPicture.asset('assets/icons/reup_icon_profile.svg'),
-                  label: ''),
-            ]),
+            child: NavigationBar(
+                onDestinationSelected: (int index) {
+                  setState(() {
+                    currentPageIndex = index;
+                  });
+                },
+                selectedIndex: currentPageIndex,
+                backgroundColor: Colors.white,
+                destinations: [
+                  NavigationDestination(
+                      icon: SvgPicture.asset('assets/icons/reup_icon.svg'),
+                      label: ''),
+                  NavigationDestination(
+                      icon: SvgPicture.asset('assets/icons/reup_icon_list.svg'),
+                      label: ''),
+                  NavigationDestination(
+                      icon: SvgPicture.asset('assets/icons/reup_icon_cart.svg'),
+                      label: ''),
+                  NavigationDestination(
+                      icon: SvgPicture.asset(
+                          'assets/icons/reup_icon_favorite.svg'),
+                      label: ''),
+                  NavigationDestination(
+                      icon: SvgPicture.asset(
+                          'assets/icons/reup_icon_profile.svg'),
+                      label: ''),
+                ]),
           )),
     );
   }

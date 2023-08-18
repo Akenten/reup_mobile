@@ -54,25 +54,33 @@ class _ProductCartState extends State<ProductCart> {
             Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
               Expanded(
                 flex: 1,
-                child: Stack(
+                child: Column(
                   children: [
-                    widget.data.image,
-                    Positioned(
-                        top: 0,
-                        left: 0,
-                        child: Checkbox(
-                            fillColor: MaterialStateProperty.all(Colors.white),
-                            checkColor: Colors.green,
-                            activeColor: Colors.white,
-                            splashRadius: 0,
-                            materialTapTargetSize:
-                                MaterialTapTargetSize.shrinkWrap,
-                            value: _isCheked,
-                            onChanged: (value) {
-                              setState(() {
-                                _isCheked = value!;
-                              });
-                            }))
+                    const SizedBox(
+                      height: 16,
+                    ),
+                    Stack(
+                      children: [
+                        widget.data.image,
+                        Positioned(
+                            top: 0,
+                            left: 0,
+                            child: Checkbox(
+                                fillColor:
+                                    MaterialStateProperty.all(Colors.white),
+                                checkColor: Colors.green,
+                                activeColor: Colors.white,
+                                splashRadius: 0,
+                                materialTapTargetSize:
+                                    MaterialTapTargetSize.shrinkWrap,
+                                value: _isCheked,
+                                onChanged: (value) {
+                                  setState(() {
+                                    _isCheked = value!;
+                                  });
+                                }))
+                      ],
+                    ),
                   ],
                 ),
               ),

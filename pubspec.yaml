@@ -39,6 +39,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   infinite_carousel: ^1.0.3
   smooth_page_indicator: ^1.1.0
+  visibility_detector: ^0.4.0+2
 
 dev_dependencies:
   flutter_test:
