@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:reup/features/common/styles.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class CartBar extends StatelessWidget {
-  const CartBar({
+class TopBarCatalog extends StatelessWidget {
+  const TopBarCatalog({
     super.key,
   });
 
@@ -19,15 +19,15 @@ class CartBar extends StatelessWidget {
           width: 32,
         ),
         const Text(
-          'корзина',
+          'каталог',
           style: CustomTextStyle.reupCartName,
           maxLines: 1,
         ),
         IconButton(
           onPressed: (() {
-            log('close');
+            log('search');
           }),
-          icon: SvgPicture.asset('assets/icons/reup_icon_cross.svg'),
+          icon: SvgPicture.asset('assets/icons/reup_search.svg'),
           iconSize: 16,
         )
       ]),

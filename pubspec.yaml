@@ -40,6 +40,7 @@ dependencies:
   infinite_carousel: ^1.0.3
   smooth_page_indicator: ^1.1.0
   visibility_detector: ^0.4.0+2
+  flutter_carousel_widget: ^2.1.0
 
 dev_dependencies:
   flutter_test:
@@ -96,6 +97,14 @@ flutter:
     - assets/icons/reup_icon_trash_can.svg
     - assets/icons/reup_icon_minus.svg
     - assets/icons/reup_icon_plus.svg
+    - assets/images/reup_outerwear.jpg
+    - assets/images/reup_footwear.jpg
+    - assets/images/reup_pants.jpg
+    - assets/images/reup_accessories.jpg
+    - assets/images/reup_bags.jpg
+    - assets/images/reup_shirts.jpg
+    - assets/images/reup_dresses.jpg
+    - assets/images/reup_costumes.jpg
   #  - assets/fonts/Gilroy-Light.ttf
     
   #   - images/a_dot_burr.jpeg

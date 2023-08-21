@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:reup/common/styles.dart';
+import 'package:reup/features/common/styles.dart';
 
 class FloatingBar extends StatelessWidget {
   const FloatingBar({super.key});

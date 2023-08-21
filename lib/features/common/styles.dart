@@ -125,6 +125,15 @@ class CustomButtonTextStyle {
     overflow: TextOverflow.ellipsis,
   );
 
+  static const TextStyle buttonItemStyleWhite = TextStyle(
+    fontFamily: 'Gilroy',
+    color: Colors.white,
+    fontSize: 16,
+    fontWeight: FontWeight.w700,
+    letterSpacing: 1.12,
+    overflow: TextOverflow.ellipsis,
+  );
+
 //обычный текст для кнопок
   static const TextStyle basicStyle = TextStyle(
     color: Colors.black,

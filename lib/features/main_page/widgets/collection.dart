@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:reup/common/styles.dart';
+import 'package:reup/features/common/styles.dart';
 
 class Collection extends StatelessWidget {
   final CollectionData data;

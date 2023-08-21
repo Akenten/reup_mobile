@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:reup/common/styles.dart';
+import 'package:reup/features/common/styles.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 final controllerReupChoise = PageController(

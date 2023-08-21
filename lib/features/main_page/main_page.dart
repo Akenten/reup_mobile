@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'features/carousel.dart';
-import 'features/reup_choise.dart';
-import 'features/collection.dart';
+import 'widgets/carousel.dart';
+import 'widgets/reup_choise.dart';
+import 'widgets/collection.dart';
 import '../common/styles.dart';
-import 'features/promo.dart';
-import 'features/category_buttons.dart';
-import 'features/collections_section.dart';
+import 'widgets/promo.dart';
+import 'widgets/category_buttons.dart';
+import 'widgets/collections_section.dart';
 
 class MainPage extends StatelessWidget {
   const MainPage({super.key});

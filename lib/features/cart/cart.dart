@@ -1,16 +1,13 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
-import 'package:reup/cart/features/filled_cart.dart';
-import 'package:reup/common/styles.dart';
+import 'package:reup/features/cart/widgets/filled_cart.dart';
+import 'package:reup/features/common/styles.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:reup/cart/features/cart_bar.dart';
-import 'package:reup/cart/features/empty_cart.dart';
-import 'package:reup/main_page/features/carousel.dart';
-import 'package:reup/cart/features/product_cart.dart';
-
-// как закрепить виджет оформления заказа внизу экрана + сделать так чтобы он пропадал когда появляется виджет суммы
-// как реализовать удаление товара из корзины + анимация
+import 'package:reup/features/cart/widgets/cart_bar.dart';
+import 'package:reup/features/cart/widgets/empty_cart.dart';
+import 'package:reup/features/main_page/widgets/carousel.dart';
+import 'package:reup/features/cart/widgets/product_cart.dart';
 
 class Cart extends StatelessWidget {
   // сюда должны попадать данные из бека

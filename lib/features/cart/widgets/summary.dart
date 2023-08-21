@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:reup/cart/features/product_cart.dart';
-import 'package:reup/common/styles.dart';
+import 'package:reup/features/cart/widgets/product_cart.dart';
+import 'package:reup/features/common/styles.dart';
 
 class SummaryData {
   final int finalSum;

@@ -1,7 +1,7 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
-import 'package:reup/common/styles.dart';
+import 'package:reup/features/common/styles.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class EmptyCart extends StatelessWidget {

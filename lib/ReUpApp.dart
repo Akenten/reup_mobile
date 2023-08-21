@@ -2,10 +2,11 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:reup/common/styles.dart';
-import 'main_page/main_page.dart';
+import 'package:reup/features/common/styles.dart';
+import 'features/main_page/main_page.dart';
 import 'package:flutter/services.dart';
-import 'cart/cart.dart';
+import 'features/cart/cart.dart';
+import 'features/catalog/catalog.dart';
 
 class ReUpApp extends StatefulWidget {
   const ReUpApp({super.key});
@@ -28,7 +29,7 @@ class _ReUpAppState extends State<ReUpApp> {
           // ),
           body: <Widget>[
             MainPage(),
-            Cart(),
+            Catalog(),
             Cart(),
             Cart(),
             Cart(),
