@@ -3,6 +3,8 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:reup/order_registration_page/order_registration_page.dart';
+import 'package:reup/order_succeed_page/order_succeed_page.dart';
 import 'main_page.dart';
 
 void main() {
@@ -18,11 +20,11 @@ class ReUpApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-          appBar: const PreferredSize(
-            preferredSize: Size.fromHeight(48),
-            child: AppBar(),
-          ),
-          body: MainPage(),
+          // appBar: const PreferredSize(
+          //   preferredSize: Size.fromHeight(48),
+          //   child: AppBar(),
+          // ),
+          body: OrderRegistrationPage(),
           backgroundColor: Colors.white,
           bottomNavigationBar: SizedBox(
             height: 56,

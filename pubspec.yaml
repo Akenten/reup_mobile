@@ -73,6 +73,9 @@ flutter:
     - assets/icons/reup_icon_cart.svg
     - assets/icons/reup_icon_favorite.svg
     - assets/icons/reup_icon_profile.svg
+    - assets/icons/reup_arrow_down.svg
+    - assets/icons/reup_checkbox.svg
+
   #  - assets/fonts/Gilroy-Light.ttf
     
   #   - images/a_dot_burr.jpeg
