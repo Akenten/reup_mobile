@@ -188,40 +188,54 @@ class MainPage extends StatelessWidget {
         // ),
 
 // соцсети
-        // Row(
-        //   children: [
-        //     // Text(
-        //     //   'REUP',
-        //     //   style: GoogleFonts.delaGothicOne(
-        //     //     color: Colors.black,
-        //     //     fontSize: 24,
-        //     //     fontWeight: FontWeight.w400,
-        //     //     letterSpacing: 0.96,
-        //     //   ),
-        //     // ),
-        //     //const Expanded(child: SizedBox()),
-        //     IconButton(
-        //       onPressed: null,
-        //       icon: SvgPicture.asset('assets/icons/reup_icon_vk.svg'),
-        //       //iconSize: 40,
-        //     ),
-        //     IconButton(
-        //       onPressed: null,
-        //       icon: SvgPicture.asset('assets/icons/reup_icon_inst.svg'),
-        //       //iconSize: 40,
-        //     ),
-        //     IconButton(
-        //       onPressed: null,
-        //       icon: SvgPicture.asset('assets/icons/reup_icon_fb.svg'),
-        //       //iconSize: 40,
-        //     ),
-        //     IconButton(
-        //       onPressed: null,
-        //       icon: SvgPicture.asset('assets/icons/reup_icon_tg.svg'),
-        //       //iconSize: 40,
-        //     ),
-        //   ],
-        // ),
+        Padding(
+          padding: EdgeInsets.only(left: 16, right: 16),
+          child: Row(
+            children: [
+              Text('REUP', style: CustomTextStyle.headerTextStyle),
+              Spacer(),
+              IconButton(
+                  style: IconButton.styleFrom(
+                      tapTargetSize: MaterialTapTargetSize.shrinkWrap),
+                  onPressed: null,
+                  icon: Image.asset('assets/icons/reup_icon_inst.jpg')),
+              SizedBox(
+                width: 8,
+              ),
+              IconButton(
+                  style: IconButton.styleFrom(
+                      tapTargetSize: MaterialTapTargetSize.shrinkWrap),
+                  onPressed: null,
+                  icon: Image.asset('assets/icons/reup_icon_tg.jpg'))
+
+              //const Expanded(child: SizedBox()),
+              // IconButton(
+              //   onPressed: null,
+              //   icon: SvgPicture.asset(
+              //     'assets/icons/reup_icon_vk.svg',
+              //     fit: BoxFit.contain,
+              //   ),
+              //   //iconSize: 40,
+              // ),
+
+              // IconButton(
+              //   onPressed: null,
+              //   icon: SvgPicture.asset('assets/icons/reup_icon_inst.svg'),
+              //   //iconSize: 40,
+              // ),
+              // IconButton(
+              //   onPressed: null,
+              //   icon: SvgPicture.asset('assets/icons/reup_icon_fb.svg'),
+              //   //iconSize: 40,
+              // ),
+              // IconButton(
+              //   onPressed: null,
+              //   icon: SvgPicture.asset('assets/icons/reup_icon_tg.svg'),
+              //   //iconSize: 40,
+              // ),
+            ],
+          ),
+        ),
 
         // текстовые кнопки для помощи
         Align(

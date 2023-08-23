@@ -7,6 +7,7 @@ import 'features/main_page/main_page.dart';
 import 'package:flutter/services.dart';
 import 'features/cart/cart.dart';
 import 'features/catalog/catalog.dart';
+import 'features/catalog/widgets/topBar.dart';
 
 class ReUpApp extends StatefulWidget {
   const ReUpApp({super.key});
@@ -23,10 +24,17 @@ class _ReUpAppState extends State<ReUpApp> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-          // appBar: const PreferredSize(
-          //   preferredSize: Size.fromHeight(48),
-          //   child: AppBar(),
-          // ),
+          appBar: currentPageIndex == 0
+              ? const PreferredSize(
+                  preferredSize: Size.fromHeight(48),
+                  child: AppBar(),
+                )
+              : currentPageIndex == 1
+                  ? const PreferredSize(
+                      preferredSize: Size.fromHeight(48),
+                      child: TopBarCatalog(),
+                    )
+                  : null,
           body: <Widget>[
             MainPage(),
             Catalog(),

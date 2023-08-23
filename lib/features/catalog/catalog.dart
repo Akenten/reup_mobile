@@ -9,7 +9,7 @@ class Catalog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView(children: [
-      TopBarCatalog(),
+      //TopBarCatalog(),
       ButtonsCarousel(),
       Categories(),
     ]);

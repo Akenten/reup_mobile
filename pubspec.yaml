@@ -105,6 +105,8 @@ flutter:
     - assets/images/reup_shirts.jpg
     - assets/images/reup_dresses.jpg
     - assets/images/reup_costumes.jpg
+    - assets/icons/reup_icon_tg.jpg
+    - assets/icons/reup_icon_inst.jpg
   #  - assets/fonts/Gilroy-Light.ttf
     
   #   - images/a_dot_burr.jpeg
