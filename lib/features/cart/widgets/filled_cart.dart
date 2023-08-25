@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:reup/ReUpApp.dart';
 import 'package:reup/features/common/styles.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:reup/features/cart/widgets/product_cart.dart';
@@ -65,6 +66,8 @@ class _FilledCartState extends State<FilledCart> {
                       padding: EdgeInsets.zero,
                       tapTargetSize: MaterialTapTargetSize.shrinkWrap,
                     ),
+
+                    // TODO добавить callback
                     onPressed: null,
                     child: const Text(
                       'выбрать все',
@@ -100,9 +103,11 @@ class _FilledCartState extends State<FilledCart> {
                 onVisibilityChanged: (info) {
                   if (info.visibleFraction > 0 && _showFloatingBar) {
                     log('hide');
+
                     setState(() => _showFloatingBar = false);
                   } else if (info.visibleFraction <= 0 && !_showFloatingBar) {
                     log('show');
+                    //showBottomBar = true;
                     setState(() => _showFloatingBar = true);
                   }
                 },

@@ -189,17 +189,17 @@ class MainPage extends StatelessWidget {
 
 // соцсети
         Padding(
-          padding: EdgeInsets.only(left: 16, right: 16),
+          padding: const EdgeInsets.only(left: 16, right: 16),
           child: Row(
             children: [
               Text('REUP', style: CustomTextStyle.headerTextStyle),
-              Spacer(),
+              const Spacer(),
               IconButton(
                   style: IconButton.styleFrom(
                       tapTargetSize: MaterialTapTargetSize.shrinkWrap),
                   onPressed: null,
                   icon: Image.asset('assets/icons/reup_icon_inst.jpg')),
-              SizedBox(
+              const SizedBox(
                 width: 8,
               ),
               IconButton(
@@ -207,32 +207,6 @@ class MainPage extends StatelessWidget {
                       tapTargetSize: MaterialTapTargetSize.shrinkWrap),
                   onPressed: null,
                   icon: Image.asset('assets/icons/reup_icon_tg.jpg'))
-
-              //const Expanded(child: SizedBox()),
-              // IconButton(
-              //   onPressed: null,
-              //   icon: SvgPicture.asset(
-              //     'assets/icons/reup_icon_vk.svg',
-              //     fit: BoxFit.contain,
-              //   ),
-              //   //iconSize: 40,
-              // ),
-
-              // IconButton(
-              //   onPressed: null,
-              //   icon: SvgPicture.asset('assets/icons/reup_icon_inst.svg'),
-              //   //iconSize: 40,
-              // ),
-              // IconButton(
-              //   onPressed: null,
-              //   icon: SvgPicture.asset('assets/icons/reup_icon_fb.svg'),
-              //   //iconSize: 40,
-              // ),
-              // IconButton(
-              //   onPressed: null,
-              //   icon: SvgPicture.asset('assets/icons/reup_icon_tg.svg'),
-              //   //iconSize: 40,
-              // ),
             ],
           ),
         ),
