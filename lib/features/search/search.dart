@@ -1,3 +1,4 @@
+import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:reup/features/common/styles.dart';
@@ -5,6 +6,7 @@ import 'package:reup/features/search/widgets/popular_search.dart';
 import 'package:reup/features/search/widgets/recent_search.dart';
 import 'package:reup/features/search/widgets/recomendations.dart';
 import 'package:reup/features/search/widgets/product_search.dart';
+import 'package:reup/features/search/widgets/search_bar.dart';
 
 class Search extends StatefulWidget {
   const Search({super.key});
@@ -14,6 +16,8 @@ class Search extends StatefulWidget {
 }
 
 class _SearchState extends State<Search> {
+  TextEditingController searchController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Material(
@@ -21,28 +25,9 @@ class _SearchState extends State<Search> {
         children: [
           Padding(
               padding: const EdgeInsets.all(16),
-              //padding: const EdgeInsets.only(left: 16, right: 16),
               child: Column(
                 children: [
-                  Container(
-                    decoration: const BoxDecoration(
-                        border:
-                            Border(bottom: BorderSide(color: Colors.black))),
-                    child: TextFormField(
-                      autofocus: true,
-                      decoration: InputDecoration(
-                          suffixIcon: IconButton(
-                              onPressed: null,
-                              icon: SvgPicture.asset(
-                                'assets/icons/reup_search.svg',
-                                width: 16,
-                                height: 16,
-                              )),
-                          hintText: 'хочу найти...',
-                          border: InputBorder.none,
-                          hintStyle: CustomButtonTextStyle.buttonBoldStyle),
-                    ),
-                  ),
+                  SearchBarText(searchController: searchController),
                   const SizedBox(
                     height: 16,
                   ),
@@ -72,25 +57,89 @@ class _SearchState extends State<Search> {
                   const SizedBox(
                     height: 32,
                   ),
-                  Row(
+                  Column(
                     children: [
-                      ProuctSearch(
-                        data: ProductSearchData(
-                            Image.asset(
-                                'assets/images/reup_product_search.jpg'),
-                            'джинсы крутецкие',
-                            'befree'),
+                      Row(
+                        children: [
+                          Expanded(
+                            flex: 1,
+                            child: ProuctSearch(
+                              data: ProductSearchData(
+                                  Image.asset(
+                                      'assets/images/reup_product_search.jpg'),
+                                  'джинсы крутецкие',
+                                  'befree'),
+                            ),
+                          ),
+                          const SizedBox(
+                            width: 8,
+                          ),
+                          Expanded(
+                            flex: 1,
+                            child: ProuctSearch(
+                              data: ProductSearchData(
+                                  Image.asset(
+                                      'assets/images/reup_product_search.jpg'),
+                                  'джинсы крутецкие',
+                                  'befree'),
+                            ),
+                          ),
+                        ],
                       ),
-                      const SizedBox(
-                        width: 8,
+                      Row(
+                        children: [
+                          Expanded(
+                            flex: 1,
+                            child: ProuctSearch(
+                              data: ProductSearchData(
+                                  Image.asset(
+                                      'assets/images/reup_product_search.jpg'),
+                                  'джинсы крутецкие',
+                                  'befree'),
+                            ),
+                          ),
+                          const SizedBox(
+                            width: 8,
+                          ),
+                          Expanded(
+                            flex: 1,
+                            child: ProuctSearch(
+                              data: ProductSearchData(
+                                  Image.asset(
+                                      'assets/images/reup_product_search.jpg'),
+                                  'джинсы крутецкие',
+                                  'befree'),
+                            ),
+                          ),
+                        ],
                       ),
-                      ProuctSearch(
-                        data: ProductSearchData(
-                            Image.asset(
-                                'assets/images/reup_product_search.jpg'),
-                            'джинсы крутецкие',
-                            'befree'),
-                      ),
+                      Row(
+                        children: [
+                          Expanded(
+                            flex: 1,
+                            child: ProuctSearch(
+                              data: ProductSearchData(
+                                  Image.asset(
+                                      'assets/images/reup_product_search.jpg'),
+                                  'джинсы крутецкие',
+                                  'befree'),
+                            ),
+                          ),
+                          const SizedBox(
+                            width: 8,
+                          ),
+                          Expanded(
+                            flex: 1,
+                            child: ProuctSearch(
+                              data: ProductSearchData(
+                                  Image.asset(
+                                      'assets/images/reup_product_search.jpg'),
+                                  'джинсы крутецкие',
+                                  'befree'),
+                            ),
+                          ),
+                        ],
+                      )
                     ],
                   )
                 ],
