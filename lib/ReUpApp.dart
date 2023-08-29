@@ -8,6 +8,7 @@ import 'package:flutter/services.dart';
 import 'features/cart/cart.dart';
 import 'features/catalog/catalog.dart';
 import 'features/catalog/widgets/topBar.dart';
+import 'features/search/search.dart';
 
 class ReUpApp extends StatefulWidget {
   const ReUpApp({super.key});
@@ -97,6 +98,8 @@ class AppBar extends StatelessWidget {
                     const ImageIcon(AssetImage('assets/icons/reup_search.png')),
                 iconSize: 32,
                 onPressed: (() {
+                  Navigator.of(context)
+                      .push(MaterialPageRoute(builder: (context) => Search()));
                   log('message');
                 }))
           ],
