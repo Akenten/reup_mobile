@@ -36,10 +36,10 @@ class _ProductCartState extends State<ProductCart> {
   int _quantity = 1;
   late int _finalPrice;
   late int _fullPrice;
+  bool _isCheked = false;
 
   @override
   Widget build(BuildContext context) {
-    bool _isCheked = false;
     _finalPrice = _quantity * widget.data.price;
     _fullPrice = _quantity * widget.data.lastPrice;
     return GestureDetector(

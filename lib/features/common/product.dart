@@ -103,11 +103,16 @@ class _ProductState extends State<Product> {
               child: Container(
                 width: 73,
                 height: 36,
-                child: Center(
+                child: Align(
+                  alignment: Alignment.center,
+                  child: Padding(
+                    padding: EdgeInsets.only(left: 8),
                     child: Text(
-                  widget.data.price,
-                  style: CustomTextStyle.boldTextStyle,
-                )),
+                      widget.data.price,
+                      style: CustomTextStyle.boldTextStyle,
+                    ),
+                  ),
+                ),
               ))
         ],
       ),

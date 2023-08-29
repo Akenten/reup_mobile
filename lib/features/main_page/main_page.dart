@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'widgets/carousel.dart';
+import '../common/carousel.dart';
 import 'widgets/reup_choise.dart';
 import 'widgets/collection.dart';
 import '../common/styles.dart';

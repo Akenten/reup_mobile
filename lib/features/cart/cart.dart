@@ -3,7 +3,7 @@ import 'package:reup/features/cart/widgets/filled_cart.dart';
 import 'package:reup/features/common/styles.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:reup/features/cart/widgets/empty_cart.dart';
-import 'package:reup/features/main_page/widgets/carousel.dart';
+import 'package:reup/features/common/carousel.dart';
 import 'package:reup/features/cart/widgets/product_cart.dart';
 
 class Cart extends StatelessWidget {
