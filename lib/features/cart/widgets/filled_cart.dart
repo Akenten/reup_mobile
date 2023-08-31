@@ -43,6 +43,12 @@ class _FilledCartState extends State<FilledCart> {
   bool _showFloatingBar = true;
 
   @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     numberOfProucts = widget.items.length;
     productsNameState = _getProductsNameState(context);
@@ -103,11 +109,12 @@ class _FilledCartState extends State<FilledCart> {
                 onVisibilityChanged: (info) {
                   if (info.visibleFraction > 0 && _showFloatingBar) {
                     log('hide');
-
+                    if (!mounted) return;
                     setState(() => _showFloatingBar = false);
                   } else if (info.visibleFraction <= 0 && !_showFloatingBar) {
                     log('show');
                     //showBottomBar = true;
+                    if (!mounted) return;
                     setState(() => _showFloatingBar = true);
                   }
                 },

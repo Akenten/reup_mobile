@@ -51,7 +51,7 @@ class CustomTextStyle {
     color: Colors.black,
     fontSize: 14,
     fontFamily: 'Gilroy',
-    fontWeight: FontWeight.w300,
+    fontWeight: FontWeight.w500,
     letterSpacing: 0.98,
   );
 

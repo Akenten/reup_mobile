@@ -10,6 +10,7 @@ import 'features/catalog/catalog.dart';
 import 'features/catalog/widgets/topBar.dart';
 import 'features/search/search.dart';
 import 'package:reup/features/main_page/widgets/top_bar.dart';
+import 'package:reup/features/favorites/favorites.dart';
 
 class ReUpApp extends StatefulWidget {
   const ReUpApp({super.key});
@@ -41,7 +42,7 @@ class _ReUpAppState extends State<ReUpApp> {
             MainPage(),
             Catalog(),
             Cart(),
-            Cart(),
+            Favorites(),
             Cart(),
           ][currentPageIndex],
           backgroundColor: Colors.white,

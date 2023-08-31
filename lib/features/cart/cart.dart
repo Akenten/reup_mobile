@@ -88,8 +88,7 @@ class Cart extends StatelessWidget {
           const Align(
               alignment: Alignment.centerLeft,
               child: Padding(
-                  padding: EdgeInsets.only(left: 8),
-                  child: SizedBox(height: 292, child: Carousel()))),
+                  padding: EdgeInsets.only(left: 8), child: Carousel())),
           Align(
             alignment: Alignment.centerLeft,
             child: Padding(
@@ -124,8 +123,7 @@ class Cart extends StatelessWidget {
           const Align(
               alignment: Alignment.centerLeft,
               child: Padding(
-                  padding: EdgeInsets.only(left: 8),
-                  child: SizedBox(height: 292, child: Carousel()))),
+                  padding: EdgeInsets.only(left: 8), child: Carousel())),
           Align(
             alignment: Alignment.centerLeft,
             child: Padding(

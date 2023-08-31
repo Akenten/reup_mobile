@@ -38,9 +38,9 @@ class MainPage extends StatelessWidget {
         const SizedBox(height: 16),
         const Align(
             alignment: Alignment.centerLeft,
-            child: Padding(
-                padding: EdgeInsets.only(left: 8),
-                child: SizedBox(height: 292, child: Carousel()))),
+            child: Padding(padding: EdgeInsets.only(left: 8), child: Carousel()
+                //SizedBox(height: 292, child: Carousel())
+                )),
         //const SizedBox(height: 16),
         Align(
           alignment: Alignment.centerLeft,
@@ -111,7 +111,7 @@ class MainPage extends StatelessWidget {
                       alignment: Alignment.centerLeft,
                       child: Padding(
                           padding: EdgeInsets.only(left: 8),
-                          child: SizedBox(height: 292, child: Carousel()))),
+                          child: Carousel())),
                   Align(
                     alignment: Alignment.centerRight,
                     child: IconButton(
@@ -138,9 +138,8 @@ class MainPage extends StatelessWidget {
         // карусель товаров
         const Align(
             alignment: Alignment.centerLeft,
-            child: Padding(
-                padding: EdgeInsets.only(left: 8),
-                child: SizedBox(height: 292, child: Carousel()))),
+            child:
+                Padding(padding: EdgeInsets.only(left: 8), child: Carousel())),
         Align(
           alignment: Alignment.centerLeft,
           child: Padding(
