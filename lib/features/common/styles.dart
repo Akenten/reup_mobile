@@ -102,6 +102,21 @@ class CustomTextStyle {
     fontWeight: FontWeight.w500,
     letterSpacing: 0.98,
   );
+  static const TextStyle reupProfileText = TextStyle(
+    color: Colors.black,
+    fontSize: 16,
+    fontFamily: 'Gilroy',
+    fontWeight: FontWeight.w400,
+    letterSpacing: 1.12,
+  );
+
+  static const TextStyle reupHintText = TextStyle(
+    color: Color.fromARGB(255, 79, 79, 79),
+    fontSize: 16,
+    fontFamily: 'Gilroy',
+    fontWeight: FontWeight.w300,
+    letterSpacing: 1.12,
+  );
 }
 
 // класс для описания стиля текста в кнопках

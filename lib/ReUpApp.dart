@@ -11,6 +11,7 @@ import 'features/catalog/widgets/topBar.dart';
 import 'features/search/search.dart';
 import 'package:reup/features/main_page/widgets/top_bar.dart';
 import 'package:reup/features/favorites/favorites.dart';
+import 'package:reup/features/Profile/profile.dart';
 
 class ReUpApp extends StatefulWidget {
   const ReUpApp({super.key});
@@ -43,7 +44,7 @@ class _ReUpAppState extends State<ReUpApp> {
             Catalog(),
             Cart(),
             Favorites(),
-            Cart(),
+            Profile(),
           ][currentPageIndex],
           backgroundColor: Colors.white,
           bottomNavigationBar: SizedBox(

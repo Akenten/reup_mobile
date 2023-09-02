@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:reup/features/favorites/widgets/prod.dart';
 import 'package:reup/features/common/styles.dart';
+import 'package:reup/features/common/product.dart';
 
 int numberOfProucts = 0;
 String productsNameState = '';
@@ -33,7 +33,7 @@ class FilledFavorites extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
-          padding: EdgeInsets.only(left: 16),
+          padding: const EdgeInsets.only(left: 16),
           child: Text(
             '$numberOfProucts $productsNameState',
             style: CustomTextStyle.headerTextStyle,
@@ -54,7 +54,7 @@ class FilledFavorites extends StatelessWidget {
             children: List.generate(
               items.length,
               (index) {
-                return Prod(data: items[index]);
+                return Product(data: items[index]);
               },
             )),
       ],

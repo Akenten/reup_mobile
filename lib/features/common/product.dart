@@ -1,121 +1,122 @@
-// import 'package:flutter/material.dart';
-// import 'package:flutter_svg/flutter_svg.dart';
-// import 'package:reup/features/common/styles.dart';
-// import 'dart:developer';
+import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:reup/features/common/styles.dart';
+import 'dart:developer';
 
-// class Product extends StatefulWidget {
-//   final ProductData data;
-//   const Product({super.key, required this.data});
+class Product extends StatefulWidget {
+  final ProductData data;
+  const Product({super.key, required this.data});
 
-//   @override
-//   State<Product> createState() => _ProductState();
-// }
+  @override
+  State<Product> createState() => _ProductState();
+}
 
-// class ProductData {
-//   final Image img;
-//   final String brand;
-//   final String name;
-//   final String price;
+class ProductData {
+  final Image img;
+  final String brand;
+  final String name;
+  final String price;
 
-//   ProductData(this.img, this.brand, this.name, this.price);
-// }
+  ProductData(this.img, this.brand, this.name, this.price);
+}
 
-// class _ProductState extends State<Product> {
-//   @override
-//   Widget build(BuildContext context) {
-//     return Container(
-//       width: 183, //175,
-//       height: 292,
-//       child: Stack(
-//         children: [
-//           // изображение товара
+class _ProductState extends State<Product> {
+  @override
+  Widget build(BuildContext context) {
+    return FittedBox(
+      fit: BoxFit.fitWidth,
+      child: SizedBox(
+        width: MediaQuery.of(context).size.width / 2 - 16,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Stack(children: [
+              // изображение товара
 
-//           Container(
-//               child: widget
-//                   .data.img), //Image.asset('assets/images/reup_product.jpg')),
-//           Align(
-//               alignment: Alignment.topRight,
-//               child: IconButton(
-//                 onPressed: (() {
-//                   log('fav');
-//                 }),
-//                 icon: SvgPicture.asset('assets/icons/reup_icon_favorite.svg'),
-//                 iconSize: 16,
-//                 style: IconButton.styleFrom(
-//                   tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-//                 ),
-//               )),
-//           //бренд
-//           Positioned(
-//             top: 218,
-//             left: 0,
-//             child: Text(
-//               widget.data.brand,
-//               style: CustomTextStyle.brandTextStyle,
-//             ),
-//           ),
-//           //название товара
-//           Positioned(
-//             top: 238,
-//             left: 0,
-//             child: Text(
-//               widget.data.name,
-//               style: CustomTextStyle.productTextStyle,
-//             ),
-//           ),
-//           // кнопка в корзину
-//           Positioned(
-//             left: 0,
-//             bottom: 0,
-//             child: OutlinedButton(
-//               onPressed: null,
-//               style: OutlinedButton.styleFrom(
-//                   //maximumSize: Size(102, 32),
-//                   backgroundColor: Colors.white,
-//                   side: const BorderSide(color: Colors.black, width: 0.5),
-//                   tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-//                   shape: const RoundedRectangleBorder(
-//                       borderRadius: BorderRadius.zero,
-//                       side: BorderSide(color: Colors.black, width: 0.5))),
-//               child: const Text('в корзину',
-//                   maxLines: 1, style: CustomButtonTextStyle.buttonBoldStyle),
-//             ),
-//           ),
-//           // линия
-//           Positioned(
-//             bottom: 36,
-//             left: 0,
-//             child: Container(
-//               width: 175,
-//               decoration: const ShapeDecoration(
-//                 shape: RoundedRectangleBorder(
-//                   side: BorderSide(
-//                     width: 0.50,
-//                     //strokeAlign:
-//                   ),
-//                 ),
-//               ),
-//             ),
-//           ),
-//           Positioned(
-//               bottom: 0,
-//               right: 0,
-//               child: Container(
-//                 width: 73,
-//                 height: 36,
-//                 child: Align(
-//                   alignment: Alignment.center,
-//                   child: Padding(
-//                     padding: EdgeInsets.only(left: 8),
-//                     child: Text(
-//                       widget.data.price,
-//                       style: CustomTextStyle.boldTextStyle,
-//                     ),
-//                   ),
-//                 ),
-//               ))
-//         ],
-//       ),
-//     );
-//   }
-// }
+              Container(
+                  child: widget.data
+                      .img), //Image.asset('assets/images/reup_product.jpg')),
+              Align(
+                  alignment: Alignment.topRight,
+                  child: IconButton(
+                    onPressed: (() {
+                      log('fav');
+                    }),
+                    icon:
+                        SvgPicture.asset('assets/icons/reup_icon_favorite.svg'),
+                    iconSize: 16,
+                    style: IconButton.styleFrom(
+                      tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                    ),
+                  )),
+            ]),
+            const SizedBox(
+              height: 8,
+            ),
+            Text(
+              widget.data.brand,
+              style: CustomTextStyle.brandTextStyle,
+              maxLines: 1,
+            ),
+            const SizedBox(
+              height: 4,
+            ),
+            FittedBox(
+              fit: BoxFit.fitWidth,
+              child: Text(
+                widget.data.name,
+                style: CustomTextStyle.productTextStyle,
+                maxLines: 1,
+              ),
+            ),
+            Container(
+              //width: 175,
+              decoration: const ShapeDecoration(
+                shape: RoundedRectangleBorder(
+                  side: BorderSide(
+                    width: 0.50,
+                    //strokeAlign:
+                  ),
+                ),
+              ),
+            ),
+            Row(
+              children: [
+                Expanded(
+                  flex: 2,
+                  child: OutlinedButton(
+                    onPressed: null,
+                    style: OutlinedButton.styleFrom(
+                        //maximumSize: Size(102, 32),
+                        backgroundColor: Colors.white,
+                        side: const BorderSide(color: Colors.black, width: 0.5),
+                        tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                        shape: const RoundedRectangleBorder(
+                            borderRadius: BorderRadius.zero,
+                            side: BorderSide(color: Colors.black, width: 0.5))),
+                    child: const FittedBox(
+                      fit: BoxFit.fitWidth,
+                      child: Text('в корзину',
+                          maxLines: 1,
+                          style: CustomButtonTextStyle.buttonBoldStyle),
+                    ),
+                  ),
+                ),
+                const SizedBox(
+                  width: 8,
+                ),
+                Expanded(
+                  flex: 1,
+                  child: Text(
+                    widget.data.price,
+                    style: CustomTextStyle.boldTextStyle,
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}

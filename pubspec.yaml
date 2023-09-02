@@ -108,6 +108,7 @@ flutter:
     - assets/icons/reup_icon_tg.jpg
     - assets/icons/reup_icon_inst.jpg
     - assets/images/reup_product_search.jpg
+    - assets/icons/reup_icon_back_arrow.svg
   #  - assets/fonts/Gilroy-Light.ttf
     
   #   - images/a_dot_burr.jpeg

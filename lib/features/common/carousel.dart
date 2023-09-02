@@ -1,8 +1,8 @@
 import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:infinite_carousel/infinite_carousel.dart';
-//import 'product.dart';
-import 'package:reup/features/favorites/widgets/prod.dart';
+import 'product.dart';
+//import 'package:reup/features/favorites/widgets/prod.dart';
 
 class Carousel extends StatefulWidget {
   const Carousel({super.key});
@@ -65,7 +65,7 @@ class _CarouselState extends State<Carousel> {
                     var s = itemIndex.toString();
                     log(s);
                   },
-                  child: Prod(
+                  child: Product(
                       data: ProductData(
                           Image.asset('assets/images/reup_product.jpg'),
                           'befree',
