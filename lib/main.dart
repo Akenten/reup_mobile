@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'main_page.dart';
+import 'search_results_page/search_results_page.dart';
 
 void main() {
   //SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
@@ -18,11 +19,11 @@ class ReUpApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-          appBar: const PreferredSize(
-            preferredSize: Size.fromHeight(48),
-            child: AppBar(),
-          ),
-          body: MainPage(),
+          // appBar: const PreferredSize(
+          //   preferredSize: Size.fromHeight(48),
+          //   child: AppBar(),
+          // ),
+          body: SearchResultsPage(),
           backgroundColor: Colors.white,
           bottomNavigationBar: SizedBox(
             height: 56,
