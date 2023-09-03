@@ -12,11 +12,14 @@ class Profile extends StatelessWidget {
       children: [
         Container(
           padding: const EdgeInsets.fromLTRB(16, 8, 16, 8),
-          child: const Center(
-            child: Text(
-              'профиль',
-              style: CustomTextStyle.reupCartName,
-              maxLines: 1,
+          child: const SizedBox(
+            height: 42,
+            child: Center(
+              child: Text(
+                'профиль',
+                style: CustomTextStyle.reupCartName,
+                maxLines: 1,
+              ),
             ),
           ),
         ),

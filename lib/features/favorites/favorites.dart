@@ -19,7 +19,7 @@ class Favorites extends StatelessWidget {
     ProductData(Image.asset('assets/images/reup_product.jpg'), 'befree',
         'Блузка женская Лейди', '7500₽'),
     ProductData(Image.asset('assets/images/reup_product.jpg'), 'befree',
-        'полинка какашка', '7500₽')
+        'Блузка женская Лейди', '7500₽')
   ];
   Favorites({super.key});
 

@@ -2,6 +2,7 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:reup/features/common/styles.dart';
+import 'package:reup/features/Profile/widgets/text_field.dart';
 
 //TODO собрать требовния на стейт страницы
 //цвет textfield - ов должен меняться в зависимости от значения _buttonEdit
@@ -64,67 +65,23 @@ class _UserDataState extends State<UserData> {
             const SizedBox(
               height: 8,
             ),
-            SizedBox(
-              height: 42,
-              child: TextField(
-                controller: controller[0],
-                decoration: const InputDecoration(
-                    fillColor: Colors.grey,
-                    hintText: 'фамилия*',
-                    hintStyle: CustomTextStyle.reupHintText,
-                    border: OutlineInputBorder(
-                        borderSide: BorderSide(
-                            color: Color.fromARGB(255, 130, 130, 130)))),
-              ),
+            TextFieldUserData(
+              controller: controller[0],
+              hintText: 'фамилия*',
             ),
             const SizedBox(
               height: 8,
             ),
-            SizedBox(
-              height: 42,
-              child: TextField(
-                controller: controller[1],
-                decoration: const InputDecoration(
-                    fillColor: Colors.grey,
-                    hintText: 'имя*',
-                    hintStyle: CustomTextStyle.reupHintText,
-                    border: OutlineInputBorder(
-                        borderSide: BorderSide(
-                            color: Color.fromARGB(255, 130, 130, 130)))),
-              ),
-            ),
+            TextFieldUserData(controller: controller[1], hintText: 'имя*'),
             const SizedBox(
               height: 8,
             ),
-            SizedBox(
-              height: 42,
-              child: TextField(
-                controller: controller[2],
-                decoration: const InputDecoration(
-                    fillColor: Colors.grey,
-                    hintText: 'отчество*',
-                    hintStyle: CustomTextStyle.reupHintText,
-                    border: OutlineInputBorder(
-                        borderSide: BorderSide(
-                            color: Color.fromARGB(255, 130, 130, 130)))),
-              ),
-            ),
+            TextFieldUserData(controller: controller[2], hintText: 'отчество*'),
             const SizedBox(
               height: 8,
             ),
-            SizedBox(
-              height: 42,
-              child: TextField(
-                controller: controller[3],
-                decoration: const InputDecoration(
-                    fillColor: Colors.grey,
-                    hintText: 'дд.мм.гггг',
-                    hintStyle: CustomTextStyle.reupHintText,
-                    border: OutlineInputBorder(
-                        borderSide: BorderSide(
-                            color: Color.fromARGB(255, 130, 130, 130)))),
-              ),
-            ),
+            TextFieldUserData(
+                controller: controller[3], hintText: 'дд.мм.гггг*'),
             const SizedBox(
               height: 8,
             ),
@@ -135,51 +92,17 @@ class _UserDataState extends State<UserData> {
             const SizedBox(
               height: 8,
             ),
-            SizedBox(
-              height: 42,
-              child: TextField(
-                controller: controller[4],
-                decoration: const InputDecoration(
-                    fillColor: Colors.grey,
-                    hintText: 'электронная почта',
-                    hintStyle: CustomTextStyle.reupHintText,
-                    border: OutlineInputBorder(
-                        borderSide: BorderSide(
-                            color: Color.fromARGB(255, 130, 130, 130)))),
-              ),
-            ),
+            TextFieldUserData(
+                controller: controller[4], hintText: 'электронная почта'),
             const SizedBox(
               height: 8,
             ),
-            SizedBox(
-              height: 42,
-              child: TextField(
-                controller: controller[5],
-                decoration: const InputDecoration(
-                    fillColor: Colors.grey,
-                    hintText: 'номер телефона',
-                    hintStyle: CustomTextStyle.reupHintText,
-                    border: OutlineInputBorder(
-                        borderSide: BorderSide(
-                            color: Color.fromARGB(255, 130, 130, 130)))),
-              ),
-            ),
+            TextFieldUserData(
+                controller: controller[5], hintText: 'номер телефона'),
             const SizedBox(
               height: 8,
             ),
-            SizedBox(
-              height: 42,
-              child: TextField(
-                controller: controller[6],
-                decoration: const InputDecoration(
-                    fillColor: Colors.grey,
-                    hintText: 'город',
-                    hintStyle: CustomTextStyle.reupHintText,
-                    border: OutlineInputBorder(
-                        borderSide: BorderSide(
-                            color: Color.fromARGB(255, 130, 130, 130)))),
-              ),
-            ),
+            TextFieldUserData(controller: controller[6], hintText: 'город'),
             const SizedBox(
               height: 8,
             ),
@@ -259,6 +182,7 @@ class _UserDataState extends State<UserData> {
                   log(controller[4].text);
                   log(controller[5].text);
                   log(controller[6].text);
+                  _isChekedM == true ? log('мужик') : log('вумен');
                   setState(() {
                     _buttonEdit = !_buttonEdit;
                   });
