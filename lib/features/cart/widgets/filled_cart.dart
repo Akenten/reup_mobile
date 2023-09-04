@@ -1,12 +1,9 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
-import 'package:reup/ReUpApp.dart';
 import 'package:reup/features/common/styles.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:reup/features/cart/widgets/product_cart.dart';
 import 'package:reup/features/cart/widgets/summary.dart';
-import 'package:reup/features/cart/widgets/floating_bar.dart';
 import 'package:visibility_detector/visibility_detector.dart';
 
 // TODO отобразить нижнюю панель

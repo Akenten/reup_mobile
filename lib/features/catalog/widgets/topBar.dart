@@ -1,8 +1,7 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:reup/features/common/styles.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:reup/features/search/search.dart';
 
 class TopBarCatalog extends StatelessWidget {
   const TopBarCatalog({
@@ -25,7 +24,8 @@ class TopBarCatalog extends StatelessWidget {
         ),
         IconButton(
           onPressed: (() {
-            log('search');
+            Navigator.of(context)
+                .push(MaterialPageRoute(builder: (context) => Search()));
           }),
           icon: SvgPicture.asset('assets/icons/reup_search.svg'),
           iconSize: 16,

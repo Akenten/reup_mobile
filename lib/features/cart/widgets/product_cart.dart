@@ -1,9 +1,6 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:reup/features/common/styles.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:reup/features/cart/widgets/product_cart.dart';
 
 class ProductCartData {
   final Image image;
@@ -245,52 +242,9 @@ class _ProductCartState extends State<ProductCart> {
                         ],
                       ),
                     )
-                    //тут редизайн
-                    // Row(
-                    //   children: [
-                    // Text(
-                    //   '${widget.data.price} ₽',
-                    //   style: CustomButtonTextStyle.buttonItemStyle,
-                    // ),
-                    //     const SizedBox(
-                    //       width: 16,
-                    //     ),
-                    // Text(
-                    //   '${widget.data.lastPrice} ₽',
-                    //   style: CustomTextStyle.reupLastPrice,
-                    // ),
-                    //   ],
-                    // )
                   ],
                 ),
               ),
-              // Column(
-              //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              //   // вместо трех точек - чекбокс
-              //   children: [
-              //     IconButton(
-              //       onPressed: null,
-              //       icon: SvgPicture.asset(
-              //           'assets/icons/reup_icon_more_buttons.svg'),
-              //       iconSize: 16,
-              //       style: IconButton.styleFrom(
-              //         tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-              //       ),
-              //     ),
-              //     // Spacer(
-              //     //   flex: 2,
-              //     // ),
-              // IconButton(
-              //   onPressed: null,
-              //   icon: SvgPicture.asset(
-              //       'assets/icons/reup_icon_trash_can.svg'),
-              //   iconSize: 16,
-              //   style: IconButton.styleFrom(
-              //     tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-              //   ),
-              // )
-              //   ],
-              // ),
             ]),
             const SizedBox(
               height: 16,
