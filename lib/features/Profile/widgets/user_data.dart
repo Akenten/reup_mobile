@@ -7,6 +7,8 @@ import 'package:reup/features/Profile/widgets/text_field.dart';
 //TODO собрать требовния на стейт страницы
 //цвет textfield - ов должен меняться в зависимости от значения _buttonEdit
 
+bool btn = false;
+
 class UserData extends StatefulWidget {
   const UserData({super.key});
 
@@ -68,20 +70,32 @@ class _UserDataState extends State<UserData> {
             TextFieldUserData(
               controller: controller[0],
               hintText: 'фамилия*',
+              state: _buttonEdit,
             ),
-            const SizedBox(
-              height: 8,
-            ),
-            TextFieldUserData(controller: controller[1], hintText: 'имя*'),
-            const SizedBox(
-              height: 8,
-            ),
-            TextFieldUserData(controller: controller[2], hintText: 'отчество*'),
             const SizedBox(
               height: 8,
             ),
             TextFieldUserData(
-                controller: controller[3], hintText: 'дд.мм.гггг*'),
+              controller: controller[1],
+              hintText: 'имя*',
+              state: _buttonEdit,
+            ),
+            const SizedBox(
+              height: 8,
+            ),
+            TextFieldUserData(
+              controller: controller[2],
+              hintText: 'отчество*',
+              state: _buttonEdit,
+            ),
+            const SizedBox(
+              height: 8,
+            ),
+            TextFieldUserData(
+              controller: controller[3],
+              hintText: 'дд.мм.гггг*',
+              state: _buttonEdit,
+            ),
             const SizedBox(
               height: 8,
             ),
@@ -93,16 +107,26 @@ class _UserDataState extends State<UserData> {
               height: 8,
             ),
             TextFieldUserData(
-                controller: controller[4], hintText: 'электронная почта'),
+              controller: controller[4],
+              hintText: 'электронная почта',
+              state: _buttonEdit,
+            ),
             const SizedBox(
               height: 8,
             ),
             TextFieldUserData(
-                controller: controller[5], hintText: 'номер телефона'),
+              controller: controller[5],
+              hintText: 'номер телефона',
+              state: _buttonEdit,
+            ),
             const SizedBox(
               height: 8,
             ),
-            TextFieldUserData(controller: controller[6], hintText: 'город'),
+            TextFieldUserData(
+              controller: controller[6],
+              hintText: 'город',
+              state: _buttonEdit,
+            ),
             const SizedBox(
               height: 8,
             ),
@@ -128,12 +152,14 @@ class _UserDataState extends State<UserData> {
                       ),
                       splashRadius: 0,
                       value: _isChekedW,
-                      onChanged: (value) {
-                        setState(() {
-                          _isChekedW = value!;
-                          _isChekedM = !_isChekedW;
-                        });
-                      }),
+                      onChanged: _buttonEdit == true
+                          ? null
+                          : (value) {
+                              setState(() {
+                                _isChekedW = value!;
+                                _isChekedM = !_isChekedW;
+                              });
+                            }),
                 ),
                 const SizedBox(
                   width: 8,
@@ -154,12 +180,14 @@ class _UserDataState extends State<UserData> {
                       ),
                       splashRadius: 0,
                       value: _isChekedM,
-                      onChanged: (value) {
-                        setState(() {
-                          _isChekedM = value!;
-                          _isChekedW = !_isChekedM;
-                        });
-                      }),
+                      onChanged: _buttonEdit == true
+                          ? null
+                          : (value) {
+                              setState(() {
+                                _isChekedM = value!;
+                                _isChekedW = !_isChekedM;
+                              });
+                            }),
                 ),
                 const SizedBox(
                   width: 8,
