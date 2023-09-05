@@ -9,7 +9,7 @@ class Catalog extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView(children: const [
       ButtonsCarousel(),
-      Categories(),
+      CategoriesTile(),
     ]);
   }
 }

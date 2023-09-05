@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:reup/features/catalog/widgets/categories.dart';
 import 'package:reup/features/common/styles.dart';
+import 'package:reup/features/categories/categories.dart';
 
 class ButtonsCarousel extends StatefulWidget {
   const ButtonsCarousel({super.key});
@@ -40,6 +42,10 @@ class _ButtonsCarouselState extends State<ButtonsCarousel> {
                     i.isSelected = false;
                   }
                   buttonData[index].isSelected = true;
+                  if (index == 2) {
+                    Navigator.of(context).push(
+                        MaterialPageRoute(builder: (context) => Categories()));
+                  }
                   // тут будет код смены контента
                 });
               },

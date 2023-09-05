@@ -41,6 +41,7 @@ dependencies:
   smooth_page_indicator: ^1.1.0
   visibility_detector: ^0.4.0+2
   flutter_carousel_widget: ^2.1.0
+  getwidget: ^4.0.0
 
 dev_dependencies:
   flutter_test:
@@ -109,6 +110,9 @@ flutter:
     - assets/icons/reup_icon_inst.jpg
     - assets/images/reup_product_search.jpg
     - assets/icons/reup_icon_back_arrow.svg
+    - assets/images/vintage.jpg
+    - assets/icons/reup_radio_button_active.svg
+    - assets/icons/reup_radio_button_disabled.svg
   #  - assets/fonts/Gilroy-Light.ttf
     
   #   - images/a_dot_burr.jpeg

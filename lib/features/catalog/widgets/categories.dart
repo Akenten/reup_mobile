@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class Categories extends StatelessWidget {
-  const Categories({
+class CategoriesTile extends StatelessWidget {
+  const CategoriesTile({
     super.key,
   });
 
