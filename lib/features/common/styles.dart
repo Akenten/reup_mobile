@@ -117,6 +117,13 @@ class CustomTextStyle {
     fontWeight: FontWeight.w300,
     letterSpacing: 1.12,
   );
+  static const TextStyle reupOrderLabel = TextStyle(
+    color: Colors.black,
+    fontSize: 12,
+    fontFamily: 'Gilroy',
+    fontWeight: FontWeight.w700,
+    letterSpacing: 0.84,
+  );
 }
 
 // класс для описания стиля текста в кнопках
