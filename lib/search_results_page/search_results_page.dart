@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:reup/search_results_page/search_results_buttons_actions.dart';
 import 'package:reup/search_results_page/top_button.dart';
 
 import '../features/common/product.dart';
@@ -50,11 +51,21 @@ class SearchResultsPage extends StatelessWidget {
                 ),
               ),
             ),
-            const Row(
+            Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                TopButton(flag: false, text: 'сортировать'),
-                TopButton(flag: true, text: 'фильтры'),
+                TopButton(
+                  flag: false,
+                  text: 'сортировать',
+                  onTap: () =>
+                      SearchResultsButtonsActions().moveToSortSetting(context),
+                ),
+                TopButton(
+                  flag: true,
+                  text: 'фильтры',
+                  onTap: () => SearchResultsButtonsActions()
+                      .moveToFilterSetting(context),
+                ),
               ],
             ),
             Expanded(
@@ -69,7 +80,13 @@ class SearchResultsPage extends StatelessWidget {
                   ),
                   itemCount: 40,
                   itemBuilder: (BuildContext context, int index) {
-                    return Product(data: ProductData(Image.asset('assets/images/reup_product.jpg'), 'Brand', 'Name', '$index price'),);
+                    return Product(
+                      data: ProductData(
+                          Image.asset('assets/images/reup_product.jpg'),
+                          'Brand',
+                          'Name',
+                          '$index price'),
+                    );
                   },
                 ),
               ),

@@ -1,16 +1,21 @@
 import 'package:flutter/material.dart';
 
 class TopButton extends StatelessWidget {
-  const TopButton({super.key, required this.flag, required this.text, this.func});
+  const TopButton({
+    super.key,
+    required this.flag,
+    required this.text,
+    this.onTap,
+  });
   final bool flag;
   final String text;
-  final Function? func;
+  final void Function()? onTap;
 
   @override
   Widget build(BuildContext context) {
     return Flexible(
       child: InkWell(
-        onTap: () => func,
+        onTap: () => onTap?.call(),
         child: Container(
           height: 44,
           decoration: flag
