@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'dart:async';
 
-late Timer _timer;
+//late Timer _timer;
 
 class UpcycleWidget extends StatefulWidget {
   const UpcycleWidget({super.key});
@@ -20,14 +20,14 @@ class _UpcycleWidgetState extends State<UpcycleWidget>
   @override
   void initState() {
     super.initState();
-    _timer = Timer(const Duration(seconds: 4), () {
-      WidgetsBinding.instance.addPostFrameCallback((_) {
-        if (scrollControllerUpcycle.hasClients) {
-          scrollControllerUpcycle.animateTo(999999,
-              duration: Duration(hours: 5), curve: Curves.easeOut);
-        }
-      });
-    });
+    // _timer = Timer(const Duration(seconds: 4), () {
+    //   WidgetsBinding.instance.addPostFrameCallback((_) {
+    //     if (scrollControllerUpcycle.hasClients) {
+    //       scrollControllerUpcycle.animateTo(999999,
+    //           duration: Duration(hours: 5), curve: Curves.easeOut);
+    //     }
+    //   });
+    // });
 
     // _controller = AnimationController(vsync: this);
     // _controller.animateTo(99,
@@ -44,7 +44,7 @@ class _UpcycleWidgetState extends State<UpcycleWidget>
   void dispose() {
     _controller.dispose();
     super.dispose();
-    _timer.cancel();
+    //_timer.cancel();
   }
 
   @override
