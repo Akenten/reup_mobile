@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:reup/features/common/styles.dart';
 
+// экран открывается если заказов нет
 class EmptyOrder extends StatelessWidget {
   const EmptyOrder({super.key});
 

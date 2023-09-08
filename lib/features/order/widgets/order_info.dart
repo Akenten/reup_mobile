@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:reup/features/common/styles.dart';
 
+//отображает информацию о заказе - дата, тип оплаты и адрес доставки
+
 class OrderInfoData {
   String date;
   String payment;

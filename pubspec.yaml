@@ -113,6 +113,10 @@ flutter:
     - assets/images/vintage.jpg
     - assets/icons/reup_radio_button_active.svg
     - assets/icons/reup_radio_button_disabled.svg
+    - assets/images/reup_ad2.svg
+    - assets/images/reup_ad2.1.jpg
+    - assets/images/reup_ad3.jpg
+    - assets/images/reup_ad3.1.svg
   #  - assets/fonts/Gilroy-Light.ttf
     
   #   - images/a_dot_burr.jpeg

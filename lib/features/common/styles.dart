@@ -124,6 +124,12 @@ class CustomTextStyle {
     fontWeight: FontWeight.w700,
     letterSpacing: 0.84,
   );
+  static TextStyle reupAdText = GoogleFonts.delaGothicOne(
+    color: Colors.black,
+    fontSize: 14,
+    fontWeight: FontWeight.w400,
+    letterSpacing: 0.56,
+  );
 }
 
 // класс для описания стиля текста в кнопках

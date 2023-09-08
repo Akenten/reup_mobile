@@ -1,3 +1,5 @@
+import 'dart:async';
+import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import '../common/carousel.dart';
@@ -7,6 +9,8 @@ import '../common/styles.dart';
 import 'widgets/promo.dart';
 import 'widgets/category_buttons.dart';
 import 'widgets/collections_section.dart';
+import 'widgets/ad_section.dart';
+import 'widgets/upcycle.dart';
 
 class MainPage extends StatelessWidget {
   const MainPage({super.key});
@@ -129,7 +133,7 @@ class MainPage extends StatelessWidget {
           ),
         ),
         //анимашка
-        //UpcycleWidget(),
+        UpcycleWidget(),
         //tr(),
         const SizedBox(
           height: 48,
@@ -155,36 +159,7 @@ class MainPage extends StatelessWidget {
           ),
         ),
 
-        // Row(
-        //   //crossAxisAlignment: CrossAxisAlignment.stretch,
-        //   children: [
-        //     Expanded(
-        //         child: Image.asset(
-        //       'assets/images/reup_ad1.jpg',
-        //       fit: BoxFit.fitWidth,
-        //     )),
-        //     Expanded(
-        //         child: Container(
-        //       color: Colors.red,
-        //       child: FittedBox(
-        //         child: IconButton(
-        //           onPressed: (() {
-        //             log('tap');
-        //           }),
-        //           style: IconButton.styleFrom(
-        //               tapTargetSize: MaterialTapTargetSize.shrinkWrap),
-        //           //iconSize: double.infinity,
-        //           icon: SvgPicture.asset(
-        //             'assets/images/reup_ad1.1.svg',
-        //             fit: BoxFit.contain,
-        //           ),
-        //           iconSize: 100,
-        //         ),
-        //         fit: BoxFit.fill,
-        //       ),
-        //     ))
-        //   ],
-        // ),
+        const AdSection(),
 
 // соцсети
         Padding(
@@ -274,51 +249,5 @@ class MainPage extends StatelessWidget {
         ])
       ],
     ));
-  }
-}
-
-class UpcycleWidget extends StatefulWidget {
-  const UpcycleWidget({super.key});
-
-  @override
-  State<UpcycleWidget> createState() => _UpcycleWidgetState();
-}
-
-class _UpcycleWidgetState extends State<UpcycleWidget>
-    with SingleTickerProviderStateMixin {
-  late AnimationController _controller;
-
-  ScrollController scrollControllerUpcycle = ScrollController();
-
-  @override
-  void initState() {
-    super.initState();
-    _controller = AnimationController(vsync: this);
-    if (scrollControllerUpcycle.hasClients) {
-      scrollControllerUpcycle.animateTo(99999,
-          duration: const Duration(hours: 2), curve: Curves.easeOut);
-    }
-  }
-
-  @override
-  void dispose() {
-    _controller.dispose();
-    super.dispose();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      height: 100,
-      child: ListView.builder(
-        scrollDirection: Axis.horizontal,
-        shrinkWrap: true,
-        itemBuilder: (context, index) {
-          return SvgPicture.asset('assets/icons/upcycle.svg');
-        },
-        itemCount: 999999,
-        controller: scrollControllerUpcycle,
-      ),
-    );
   }
 }
