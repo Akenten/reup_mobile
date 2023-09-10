@@ -5,9 +5,9 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:reup/features/common/styles.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
-final controllerReupChoise = PageController(
-  initialPage: 0,
-);
+// final controllerReupChoise = PageController(
+//   initialPage: 0,
+// );
 
 Timer _timer = Timer.periodic(const Duration(seconds: 7), (Timer timer) {});
 
@@ -16,9 +16,10 @@ int _currentPage = 0;
 int _numberOfPages = 6;
 
 class ReupChoise extends StatefulWidget {
-  const ReupChoise({
-    super.key,
-  });
+  final PageController controllerReupChoise;
+  final Color color;
+  const ReupChoise(
+      {super.key, required this.controllerReupChoise, required this.color});
 
   @override
   State<ReupChoise> createState() => _ReupChoiseState();
@@ -35,8 +36,13 @@ class _ReupChoiseState extends State<ReupChoise> {
         _currentPage = 0;
       }
 
-      controllerReupChoise.animateToPage(_currentPage,
-          duration: const Duration(milliseconds: 350), curve: Curves.easeIn);
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        if (widget.controllerReupChoise.hasClients) {
+          widget.controllerReupChoise.animateToPage(_currentPage,
+              duration: const Duration(milliseconds: 350),
+              curve: Curves.easeIn);
+        }
+      });
     });
   }
 
@@ -53,7 +59,7 @@ class _ReupChoiseState extends State<ReupChoise> {
         SizedBox(
           height: 500,
           child: PageView(
-              controller: controllerReupChoise,
+              controller: widget.controllerReupChoise,
               onPageChanged: (index) {
                 _currentPage = index;
                 _timer.cancel();
@@ -64,43 +70,57 @@ class _ReupChoiseState extends State<ReupChoise> {
                   } else {
                     _currentPage = 0;
                   }
-
-                  controllerReupChoise.animateToPage(_currentPage,
-                      duration: const Duration(milliseconds: 350),
-                      curve: Curves.easeIn);
+                  WidgetsBinding.instance.addPostFrameCallback((_) {
+                    if (widget.controllerReupChoise.hasClients) {
+                      widget.controllerReupChoise.animateToPage(_currentPage,
+                          duration: const Duration(milliseconds: 350),
+                          curve: Curves.easeIn);
+                    }
+                  });
                 });
               },
               children: [
                 ReupChoisePage(
-                    data: ReupChoiseData(
-                        'BEFREE',
-                        'Наше дело не так однозначно, как может показаться: существующая теория напрямую зависит от стандартных подходов. Идейные соображения высшего порядка, а также разбавленное изрядной долей',
-                        Image.asset('assets/images/reup_img3.jpg'))),
+                  data: ReupChoiseData(
+                      'BEFREE',
+                      'Наше дело не так однозначно, как может показаться: существующая теория напрямую зависит от стандартных подходов. Идейные соображения высшего порядка, а также разбавленное изрядной долей',
+                      Image.asset('assets/images/reup_img3.jpg')),
+                  color: widget.color,
+                ),
+                ReupChoisePage(
+                  data: ReupChoiseData(
+                      'BEFREE',
+                      'Наше дело не так однозначно, как может показаться: существующая теория напрямую зависит от стандартных подходов. Идейные соображения высшего порядка, а также разбавленное изрядной долей',
+                      Image.asset('assets/images/reup_img3.jpg')),
+                  color: widget.color,
+                ),
                 ReupChoisePage(
                     data: ReupChoiseData(
                         'BEFREE',
                         'Наше дело не так однозначно, как может показаться: существующая теория напрямую зависит от стандартных подходов. Идейные соображения высшего порядка, а также разбавленное изрядной долей',
-                        Image.asset('assets/images/reup_img3.jpg'))),
+                        Image.asset('assets/images/reup_img3.jpg')),
+                    color: widget.color),
                 ReupChoisePage(
-                    data: ReupChoiseData(
-                        'BEFREE',
-                        'Наше дело не так однозначно, как может показаться: существующая теория напрямую зависит от стандартных подходов. Идейные соображения высшего порядка, а также разбавленное изрядной долей',
-                        Image.asset('assets/images/reup_img3.jpg'))),
+                  data: ReupChoiseData(
+                      'BEFREE',
+                      'Наше дело не так однозначно, как может показаться: существующая теория напрямую зависит от стандартных подходов. Идейные соображения высшего порядка, а также разбавленное изрядной долей',
+                      Image.asset('assets/images/reup_img3.jpg')),
+                  color: widget.color,
+                ),
                 ReupChoisePage(
-                    data: ReupChoiseData(
-                        'BEFREE',
-                        'Наше дело не так однозначно, как может показаться: существующая теория напрямую зависит от стандартных подходов. Идейные соображения высшего порядка, а также разбавленное изрядной долей',
-                        Image.asset('assets/images/reup_img3.jpg'))),
+                  data: ReupChoiseData(
+                      'BEFREE',
+                      'Наше дело не так однозначно, как может показаться: существующая теория напрямую зависит от стандартных подходов. Идейные соображения высшего порядка, а также разбавленное изрядной долей',
+                      Image.asset('assets/images/reup_img3.jpg')),
+                  color: widget.color,
+                ),
                 ReupChoisePage(
-                    data: ReupChoiseData(
-                        'BEFREE',
-                        'Наше дело не так однозначно, как может показаться: существующая теория напрямую зависит от стандартных подходов. Идейные соображения высшего порядка, а также разбавленное изрядной долей',
-                        Image.asset('assets/images/reup_img3.jpg'))),
-                ReupChoisePage(
-                    data: ReupChoiseData(
-                        'BEFREE',
-                        'Наше дело не так однозначно, как может показаться: существующая теория напрямую зависит от стандартных подходов. Идейные соображения высшего порядка, а также разбавленное изрядной долей',
-                        Image.asset('assets/images/reup_img3.jpg'))),
+                  data: ReupChoiseData(
+                      'BEFREE',
+                      'Наше дело не так однозначно, как может показаться: существующая теория напрямую зависит от стандартных подходов. Идейные соображения высшего порядка, а также разбавленное изрядной долей',
+                      Image.asset('assets/images/reup_img3.jpg')),
+                  color: widget.color,
+                ),
               ]),
         ),
 
@@ -115,11 +135,11 @@ class _ReupChoiseState extends State<ReupChoise> {
         //индикатор страниц
         Container(
           width: MediaQuery.of(context).size.width,
-          color: const Color.fromARGB(255, 188, 218, 99),
+          color: widget.color,
           child: Padding(
             padding: const EdgeInsets.only(left: 16, right: 16),
             child: SmoothPageIndicator(
-              controller: controllerReupChoise,
+              controller: widget.controllerReupChoise,
               count: 6,
               effect: ExpandingDotsEffect(
                   dotColor: Colors.white.withOpacity(0.5),
@@ -132,7 +152,8 @@ class _ReupChoiseState extends State<ReupChoise> {
                   expansionFactor: _getExpansionFactor(context)),
             ),
           ),
-        )
+        ),
+        Container(height: 16, color: widget.color)
       ],
     );
   }
@@ -163,8 +184,9 @@ class ReupChoiseData {
 }
 
 class ReupChoisePage extends StatefulWidget {
+  final Color color;
   final ReupChoiseData data;
-  const ReupChoisePage({super.key, required this.data});
+  const ReupChoisePage({super.key, required this.data, required this.color});
 
   @override
   State<ReupChoisePage> createState() => _reupChoiseState();
@@ -174,7 +196,7 @@ class _reupChoiseState extends State<ReupChoisePage> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: const Color.fromARGB(255, 188, 218, 99),
+      color: widget.color,
       height: 500, //446
       width: MediaQuery.of(context).size.width,
       child: Column(
