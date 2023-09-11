@@ -16,10 +16,14 @@ int _currentPage = 0;
 int _numberOfPages = 6;
 
 class ReupChoise extends StatefulWidget {
+  final bool showMoreButton;
   final PageController controllerReupChoise;
   final Color color;
   const ReupChoise(
-      {super.key, required this.controllerReupChoise, required this.color});
+      {super.key,
+      required this.controllerReupChoise,
+      required this.color,
+      required this.showMoreButton});
 
   @override
   State<ReupChoise> createState() => _ReupChoiseState();
@@ -48,6 +52,7 @@ class _ReupChoiseState extends State<ReupChoise> {
 
   @override
   void dispose() {
+    widget.controllerReupChoise.dispose();
     super.dispose();
     _timer.cancel();
   }
@@ -57,7 +62,7 @@ class _ReupChoiseState extends State<ReupChoise> {
     return Column(
       children: [
         SizedBox(
-          height: 500,
+          height: widget.showMoreButton == true ? 500 : 440,
           child: PageView(
               controller: widget.controllerReupChoise,
               onPageChanged: (index) {
@@ -86,6 +91,7 @@ class _ReupChoiseState extends State<ReupChoise> {
                       'Наше дело не так однозначно, как может показаться: существующая теория напрямую зависит от стандартных подходов. Идейные соображения высшего порядка, а также разбавленное изрядной долей',
                       Image.asset('assets/images/reup_img3.jpg')),
                   color: widget.color,
+                  showMoreButton: widget.showMoreButton,
                 ),
                 ReupChoisePage(
                   data: ReupChoiseData(
@@ -93,19 +99,7 @@ class _ReupChoiseState extends State<ReupChoise> {
                       'Наше дело не так однозначно, как может показаться: существующая теория напрямую зависит от стандартных подходов. Идейные соображения высшего порядка, а также разбавленное изрядной долей',
                       Image.asset('assets/images/reup_img3.jpg')),
                   color: widget.color,
-                ),
-                ReupChoisePage(
-                    data: ReupChoiseData(
-                        'BEFREE',
-                        'Наше дело не так однозначно, как может показаться: существующая теория напрямую зависит от стандартных подходов. Идейные соображения высшего порядка, а также разбавленное изрядной долей',
-                        Image.asset('assets/images/reup_img3.jpg')),
-                    color: widget.color),
-                ReupChoisePage(
-                  data: ReupChoiseData(
-                      'BEFREE',
-                      'Наше дело не так однозначно, как может показаться: существующая теория напрямую зависит от стандартных подходов. Идейные соображения высшего порядка, а также разбавленное изрядной долей',
-                      Image.asset('assets/images/reup_img3.jpg')),
-                  color: widget.color,
+                  showMoreButton: widget.showMoreButton,
                 ),
                 ReupChoisePage(
                   data: ReupChoiseData(
@@ -113,6 +107,7 @@ class _ReupChoiseState extends State<ReupChoise> {
                       'Наше дело не так однозначно, как может показаться: существующая теория напрямую зависит от стандартных подходов. Идейные соображения высшего порядка, а также разбавленное изрядной долей',
                       Image.asset('assets/images/reup_img3.jpg')),
                   color: widget.color,
+                  showMoreButton: widget.showMoreButton,
                 ),
                 ReupChoisePage(
                   data: ReupChoiseData(
@@ -120,6 +115,23 @@ class _ReupChoiseState extends State<ReupChoise> {
                       'Наше дело не так однозначно, как может показаться: существующая теория напрямую зависит от стандартных подходов. Идейные соображения высшего порядка, а также разбавленное изрядной долей',
                       Image.asset('assets/images/reup_img3.jpg')),
                   color: widget.color,
+                  showMoreButton: widget.showMoreButton,
+                ),
+                ReupChoisePage(
+                  data: ReupChoiseData(
+                      'BEFREE',
+                      'Наше дело не так однозначно, как может показаться: существующая теория напрямую зависит от стандартных подходов. Идейные соображения высшего порядка, а также разбавленное изрядной долей',
+                      Image.asset('assets/images/reup_img3.jpg')),
+                  color: widget.color,
+                  showMoreButton: widget.showMoreButton,
+                ),
+                ReupChoisePage(
+                  data: ReupChoiseData(
+                      'BEFREE',
+                      'Наше дело не так однозначно, как может показаться: существующая теория напрямую зависит от стандартных подходов. Идейные соображения высшего порядка, а также разбавленное изрядной долей',
+                      Image.asset('assets/images/reup_img3.jpg')),
+                  color: widget.color,
+                  showMoreButton: widget.showMoreButton,
                 ),
               ]),
         ),
@@ -184,9 +196,14 @@ class ReupChoiseData {
 }
 
 class ReupChoisePage extends StatefulWidget {
+  final bool showMoreButton;
   final Color color;
   final ReupChoiseData data;
-  const ReupChoisePage({super.key, required this.data, required this.color});
+  const ReupChoisePage(
+      {super.key,
+      required this.data,
+      required this.color,
+      required this.showMoreButton});
 
   @override
   State<ReupChoisePage> createState() => _reupChoiseState();
@@ -197,7 +214,7 @@ class _reupChoiseState extends State<ReupChoisePage> {
   Widget build(BuildContext context) {
     return Container(
       color: widget.color,
-      height: 500, //446
+      height: widget.showMoreButton == true ? 500 : 440, //446
       width: MediaQuery.of(context).size.width,
       child: Column(
         children: [
@@ -224,20 +241,24 @@ class _reupChoiseState extends State<ReupChoisePage> {
               style: CustomTextStyle.reupChoiseText,
             ),
           ),
-          Align(
-            alignment: Alignment.centerLeft,
-            child: Padding(
-              padding: const EdgeInsets.only(left: 16),
-              child: IconButton(
-                onPressed: null,
-                icon: SvgPicture.asset('assets/icons/reup_icon_more.svg'),
-                iconSize: 64,
-                style: const ButtonStyle(
-                  tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+          widget.showMoreButton == true
+              ? Align(
+                  alignment: Alignment.centerLeft,
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 16),
+                    child: IconButton(
+                      onPressed: null,
+                      icon: SvgPicture.asset('assets/icons/reup_icon_more.svg'),
+                      iconSize: 64,
+                      style: const ButtonStyle(
+                        tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                      ),
+                    ),
+                  ),
+                )
+              : SizedBox(
+                  height: 16,
                 ),
-              ),
-            ),
-          ),
           widget.data.img,
           const SizedBox(
             height: 8,

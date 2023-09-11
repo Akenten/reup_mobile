@@ -73,6 +73,7 @@ class MainPage extends StatelessWidget {
         ReupChoise(
           controllerReupChoise: PageController(initialPage: 0),
           color: const Color.fromARGB(255, 188, 218, 99),
+          showMoreButton: true,
         ),
 
 // раздел с коллекциями

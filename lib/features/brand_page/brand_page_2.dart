@@ -84,6 +84,7 @@ class BrandPage2 extends StatelessWidget {
           ReupChoise(
             controllerReupChoise: PageController(initialPage: 0),
             color: const Color.fromARGB(255, 156, 182, 233),
+            showMoreButton: false,
           ),
           const SizedBox(
             height: 16,
