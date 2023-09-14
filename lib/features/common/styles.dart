@@ -130,6 +130,21 @@ class CustomTextStyle {
     fontWeight: FontWeight.w400,
     letterSpacing: 0.56,
   );
+  static const TextStyle reupUnderlined = TextStyle(
+    color: Colors.black,
+    fontSize: 16,
+    fontFamily: 'Gilroy',
+    fontWeight: FontWeight.w300,
+    letterSpacing: 1.12,
+    decoration: TextDecoration.underline,
+  );
+  static const TextStyle reupPinCode = TextStyle(
+    color: Colors.black,
+    fontSize: 24,
+    fontFamily: 'Gilroy',
+    fontWeight: FontWeight.w700,
+    letterSpacing: 0.98,
+  );
 }
 
 // класс для описания стиля текста в кнопках

@@ -3,6 +3,7 @@ import 'package:reup/features/common/styles.dart';
 import 'package:reup/features/Profile/widgets/user_data.dart';
 import 'package:reup/features/order/empty_order.dart';
 import 'package:reup/features/order/widgets/order_details.dart';
+import 'package:reup/features/login/registration_screen.dart';
 
 class Profile extends StatelessWidget {
   const Profile({super.key});
@@ -106,7 +107,10 @@ class Profile extends StatelessWidget {
           ),
         ),
         GestureDetector(
-          onTap: null,
+          onTap: (() {
+            Navigator.of(context)
+                .push(MaterialPageRoute(builder: (context) => Registration()));
+          }),
           child: Container(
             height: 50,
             width: MediaQuery.of(context).size.width - 32,
