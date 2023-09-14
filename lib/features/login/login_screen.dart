@@ -66,33 +66,12 @@ class _LoginScreenState extends State<LoginScreen> {
                 ontap: (() {
                   if (controller.text.isNotEmpty) {
                     Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => CodeScreen(
+                        builder: (context) => const CodeScreen(
                               firstTimeAuth: false,
                             )));
                   }
                 }),
                 text: 'отправить код'),
-            // OutlinedButton(
-            //   onPressed: (() {
-            //     if (controller.text.isNotEmpty) {
-            //       Navigator.of(context).push(MaterialPageRoute(
-            //           builder: (context) => CodeScreen(
-            //                 firstTimeAuth: false,
-            //               )));
-            //     }
-            //   }),
-            //   style: OutlinedButton.styleFrom(
-            //       minimumSize: Size(MediaQuery.of(context).size.width, 42),
-            //       tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-            //       side: const BorderSide(color: Colors.black, width: 1),
-            //       shape: const RoundedRectangleBorder(
-            //         borderRadius: BorderRadius.zero,
-            //       )),
-            //   child: const Text(
-            //     'отправить код',
-            //     style: CustomButtonTextStyle.buttonBoldStyle,
-            //   ),
-            // ),
             const Spacer(),
             const Text(
               'еще не зарегестрированы?',
