@@ -1,5 +1,6 @@
 import 'dart:developer';
 import 'package:flutter/material.dart';
+import 'package:reup/features/common/outlined_button.dart';
 import 'package:reup/features/common/styles.dart';
 import 'package:reup/features/Profile/widgets/text_field.dart';
 import 'package:getwidget/getwidget.dart';
@@ -107,30 +108,19 @@ class _RegistrationState extends State<Registration> {
                 ],
               ),
               const SizedBox(height: 48),
-              OutlinedButton(
-                onPressed: (() {
-                  log(controller[0].text);
-                  log(controller[1].text);
-                  log(controller[2].text);
-                  if (_isCheked) {
-                    Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => CodeScreen(
-                              firstTimeAuth: true,
-                            )));
-                  }
-                }),
-                style: OutlinedButton.styleFrom(
-                    minimumSize: Size(MediaQuery.of(context).size.width, 42),
-                    tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                    side: const BorderSide(color: Colors.black, width: 1),
-                    shape: const RoundedRectangleBorder(
-                      borderRadius: BorderRadius.zero,
-                    )),
-                child: const Text(
-                  'продолжить',
-                  style: CustomButtonTextStyle.buttonBoldStyle,
-                ),
-              ),
+              ReupOutlinedButton(
+                  ontap: (() {
+                    log(controller[0].text);
+                    log(controller[1].text);
+                    log(controller[2].text);
+                    if (_isCheked) {
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => const CodeScreen(
+                                firstTimeAuth: true,
+                              )));
+                    }
+                  }),
+                  text: 'продолжить'),
               const Spacer(),
               const Text(
                 'уже зарегестрированы?',

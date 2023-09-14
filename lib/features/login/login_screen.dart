@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:reup/features/common/outlined_button.dart';
 import 'package:reup/features/common/styles.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:reup/features/Profile/widgets/text_field.dart';
@@ -61,27 +62,37 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
             ),
             const SizedBox(height: 16),
-            OutlinedButton(
-              onPressed: (() {
-                if (controller.text.isNotEmpty) {
-                  Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => CodeScreen(
-                            firstTimeAuth: false,
-                          )));
-                }
-              }),
-              style: OutlinedButton.styleFrom(
-                  minimumSize: Size(MediaQuery.of(context).size.width, 42),
-                  tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                  side: const BorderSide(color: Colors.black, width: 1),
-                  shape: const RoundedRectangleBorder(
-                    borderRadius: BorderRadius.zero,
-                  )),
-              child: const Text(
-                'отправить код',
-                style: CustomButtonTextStyle.buttonBoldStyle,
-              ),
-            ),
+            ReupOutlinedButton(
+                ontap: (() {
+                  if (controller.text.isNotEmpty) {
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => CodeScreen(
+                              firstTimeAuth: false,
+                            )));
+                  }
+                }),
+                text: 'отправить код'),
+            // OutlinedButton(
+            //   onPressed: (() {
+            //     if (controller.text.isNotEmpty) {
+            //       Navigator.of(context).push(MaterialPageRoute(
+            //           builder: (context) => CodeScreen(
+            //                 firstTimeAuth: false,
+            //               )));
+            //     }
+            //   }),
+            //   style: OutlinedButton.styleFrom(
+            //       minimumSize: Size(MediaQuery.of(context).size.width, 42),
+            //       tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+            //       side: const BorderSide(color: Colors.black, width: 1),
+            //       shape: const RoundedRectangleBorder(
+            //         borderRadius: BorderRadius.zero,
+            //       )),
+            //   child: const Text(
+            //     'отправить код',
+            //     style: CustomButtonTextStyle.buttonBoldStyle,
+            //   ),
+            // ),
             const Spacer(),
             const Text(
               'еще не зарегестрированы?',

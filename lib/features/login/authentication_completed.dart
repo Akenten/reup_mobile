@@ -1,5 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:reup/features/common/outlined_button.dart';
 import 'package:reup/features/common/styles.dart';
 import 'package:reup/features/Profile/profile.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -21,8 +22,7 @@ class AuthenticationCompleted extends StatelessWidget {
                 const Spacer(),
                 IconButton(
                     onPressed: (() {
-                      // Navigator.of(context).push(MaterialPageRoute(
-                      //     builder: (context) => Material(child: MainPage())));
+                      // куда?
                     }),
                     icon: SvgPicture.asset('assets/icons/reup_icon_cross.svg'))
               ],
@@ -53,23 +53,29 @@ class AuthenticationCompleted extends StatelessWidget {
                           ),
                         ]),
                   )
-                : OutlinedButton(
-                    onPressed: (() {
+                : ReupOutlinedButton(
+                    ontap: (() {
                       log('buy');
                     }),
-                    style: OutlinedButton.styleFrom(
-                        minimumSize:
-                            Size(MediaQuery.of(context).size.width, 42),
-                        tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                        side: const BorderSide(color: Colors.black, width: 1),
-                        shape: const RoundedRectangleBorder(
-                          borderRadius: BorderRadius.zero,
-                        )),
-                    child: const Text(
-                      'к покупкам',
-                      style: CustomButtonTextStyle.buttonBoldStyle,
-                    ),
+                    text: 'к покупкам',
                   )
+            //  OutlinedButton(
+            // onPressed: (() {
+            //   log('buy');
+            // }),
+            //     style: OutlinedButton.styleFrom(
+            //         minimumSize:
+            //             Size(MediaQuery.of(context).size.width, 42),
+            //         tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+            //         side: const BorderSide(color: Colors.black, width: 1),
+            //         shape: const RoundedRectangleBorder(
+            //           borderRadius: BorderRadius.zero,
+            //         )),
+            //     child: const Text(
+            //       'к покупкам',
+            //       style: CustomButtonTextStyle.buttonBoldStyle,
+            //     ),
+            //   )
           ],
         ),
       ),

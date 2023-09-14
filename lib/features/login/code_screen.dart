@@ -45,6 +45,7 @@ class CodeScreen extends StatelessWidget {
             Text(
               firstTimeAuth ? 'регистрация' : 'вход в личный кабинет',
               style: CustomTextStyle.headerTextStyle,
+              textAlign: TextAlign.center,
             ),
             const SizedBox(height: 32),
             const Text(
