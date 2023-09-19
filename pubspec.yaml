@@ -122,6 +122,11 @@ flutter:
     - assets/images/reup_brand_fuse.jpg
     - assets/images/reup_brand_fuse_item1.jpg
     - assets/images/reup_brand_fuse_item2.jpg
+    - assets/images/reup_bp1_promo.jpg
+    - assets/icons/reup_icon_forward_arrow.svg
+    - assets/images/reup_bp1_ad1.1.jpg
+    - assets/images/reup_bp1_ad1.2.jpg
+    - assets/images/reup_bp1_promo2.jpg
   #  - assets/fonts/Gilroy-Light.ttf
     
   #   - images/a_dot_burr.jpeg

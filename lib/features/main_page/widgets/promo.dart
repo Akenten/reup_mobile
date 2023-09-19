@@ -3,6 +3,7 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:reup/features/brand_page/brand_page_1.dart';
 import '../../common/styles.dart';
 import 'package:reup/features/brand_page/brand_page_2.dart';
 
@@ -179,8 +180,14 @@ class PromoPage extends StatelessWidget {
                         alignment: Alignment.centerLeft,
                         child: IconButton(
                           onPressed: (() {
-                            Navigator.of(context).push(MaterialPageRoute(
-                                builder: (context) => BrandPage2()));
+                            if (currentPage == 0) {
+                              Navigator.of(context).push(MaterialPageRoute(
+                                  builder: (context) => BrandPage2()));
+                            } else {
+                              Navigator.of(context).push(MaterialPageRoute(
+                                  builder: (context) => BrandPage1()));
+                            }
+
                             log('more');
                           }),
                           icon: SvgPicture.asset(

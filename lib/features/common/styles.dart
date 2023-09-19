@@ -3,6 +3,12 @@ import 'package:google_fonts/google_fonts.dart';
 
 // класс для описания стиля текста
 class CustomTextStyle {
+  static TextStyle reupWhite = GoogleFonts.delaGothicOne(
+    color: Colors.white,
+    fontSize: 16,
+    fontWeight: FontWeight.w400,
+    letterSpacing: 0.64,
+  );
 //обычный текст
 //название бренда в коллекции
   static const TextStyle promoTextStyle = TextStyle(
@@ -145,6 +151,13 @@ class CustomTextStyle {
     fontWeight: FontWeight.w700,
     letterSpacing: 0.98,
   );
+  static const TextStyle reupbp1Ad = TextStyle(
+    color: Colors.black,
+    fontSize: 20,
+    fontFamily: 'Gilroy',
+    fontWeight: FontWeight.w700,
+    letterSpacing: 1.4,
+  );
 }
 
 // класс для описания стиля текста в кнопках
@@ -183,6 +196,21 @@ class CustomButtonTextStyle {
     fontSize: 16,
     fontFamily: 'Gilroy',
     fontWeight: FontWeight.w300,
+    letterSpacing: 1.12,
+  );
+
+  static const TextStyle chipWhite = TextStyle(
+    color: Colors.white,
+    fontSize: 16,
+    fontFamily: 'Gilroy',
+    fontWeight: FontWeight.w700,
+    letterSpacing: 1.12,
+  );
+  static const TextStyle chipBlack = TextStyle(
+    color: Colors.black,
+    fontSize: 16,
+    fontFamily: 'Gilroy',
+    fontWeight: FontWeight.w700,
     letterSpacing: 1.12,
   );
 }
