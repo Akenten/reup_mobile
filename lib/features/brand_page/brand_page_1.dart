@@ -2,11 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:reup/features/brand_page/widgets/top_bar_brand.dart';
 import 'package:reup/features/common/product.dart';
 import 'package:reup/features/common/styles.dart';
-import 'package:reup/features/main_page/widgets/reup_choise.dart';
 import 'package:reup/features/categories/widgets/buttons_categories.dart';
 import 'package:reup/features/main_page/widgets/footer.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:getwidget/getwidget.dart';
 import 'package:reup/features/brand_page/widgets/chip.dart';
 import 'package:reup/features/brand_page/widgets/ad_brand_text.dart';
 
@@ -82,28 +80,6 @@ class _BrandPage1State extends State<BrandPage1> {
             'Блузка женская Лейди', '7500₽')
       ]);
 
-  // final List<ProductData> items = [
-  //   ProductData(Image.asset('assets/images/reup_product.jpg'), 'befree',
-  //       'Блузка женская Лейди', '7500₽'),
-  //   ProductData(Image.asset('assets/images/reup_product.jpg'), 'befree',
-  //       'Блузка женская Лейди', '7500₽'),
-  //   ProductData(Image.asset('assets/images/reup_product.jpg'), 'befree',
-  //       'Блузка женская Лейди', '7500₽'),
-  //   ProductData(Image.asset('assets/images/reup_product.jpg'), 'befree',
-  //       'Блузка женская Лейди', '7500₽'),
-  //   ProductData(Image.asset('assets/images/reup_product.jpg'), 'befree',
-  //       'Блузка женская Лейди', '7500₽'),
-  //   ProductData(Image.asset('assets/images/reup_product.jpg'), 'befree',
-  //       'Блузка женская Лейди', '7500₽')
-  // ];
-  // final List<String> categories = [
-  //   'штаны',
-  //   'втулка',
-  //   'береза',
-  //   'хайпбист',
-  //   'кандибобер'
-  // ];
-
   @override
   Widget build(BuildContext context) {
     return Material(
@@ -118,10 +94,6 @@ class _BrandPage1State extends State<BrandPage1> {
               child: Stack(
                 children: [
                   data.imgpromo,
-                  // Image.asset(
-                  //   'assets/images/reup_bp1_promo.jpg',
-                  //   fit: BoxFit.fitWidth,
-                  // ),
                   Align(
                       alignment: Alignment.topCenter,
                       child: Text(
@@ -205,8 +177,8 @@ class _BrandPage1State extends State<BrandPage1> {
               height: 16,
             ),
             AdBrandText(
-              header: data.ad1promo, //'готовимся к лету',
-              text: data.ad1text, //'текстовый блок 1',
+              header: data.ad1promo,
+              text: data.ad1text,
               color: Color.fromARGB(255, 121, 145, 245),
               ontap: (() {}),
             ),
@@ -217,25 +189,17 @@ class _BrandPage1State extends State<BrandPage1> {
                 Expanded(
                   flex: 1,
                   child: data.imgbrand1,
-                  // Image.asset(
-                  //   'assets/images/reup_bp1_ad1.1.jpg',
-                  //   fit: BoxFit.fill,
-                  // )
                 ),
                 const SizedBox(width: 8),
                 Expanded(
                   flex: 1,
                   child: data.imgbrand2,
-                  //  Image.asset(
-                  //   'assets/images/reup_bp1_ad1.2.jpg',
-                  //   fit: BoxFit.fill,
-                  // )
                 )
               ],
             ),
             AdBrandText(
-              header: data.ad2promo, //'header2',
-              text: data.ad2text, //'текстовый блок 2',
+              header: data.ad2promo,
+              text: data.ad2text,
               color: Colors.white,
               ontap: (() {}),
             ),
@@ -247,11 +211,6 @@ class _BrandPage1State extends State<BrandPage1> {
                       width: MediaQuery.of(context).size.width,
                       height: 179,
                       child: data.imgpromo2),
-                  // Image.asset(
-                  //   'assets/images/reup_bp1_promo2.jpg',
-                  //   width: MediaQuery.of(context).size.width,
-                  //   height: 179,
-                  // ),
                   Align(
                       alignment: Alignment.bottomCenter,
                       child: Text(
